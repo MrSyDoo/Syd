@@ -6,8 +6,8 @@ import asyncio
 import logging
 from info import *
 from pyrogram import Client
-from Mrsyd.util.config_parser import TokenParser
-from Mrsyd.bot import multi_clients, work_loads, TechVJBot
+from MrSyd.util.config_parser import TokenParser
+from MrSyd.bot import multi_clients, work_loads, TechVJBot
 
 
 async def initialize_clients():
