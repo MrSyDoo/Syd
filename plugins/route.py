@@ -6,12 +6,12 @@ import re, math, logging, secrets, mimetypes, time
 from info import *
 from aiohttp import web
 from aiohttp.http_exceptions import BadStatusLine
-from TechVJ.bot import multi_clients, work_loads, TechVJBot
-from TechVJ.server.exceptions import FIleNotFound, InvalidHash
-from TechVJ import StartTime, __version__
-from TechVJ.util.custom_dl import ByteStreamer
-from TechVJ.util.time_format import get_readable_time
-from TechVJ.util.render_template import render_page
+from MrSyD.bot import multi_clients, work_loads, TechVJBot
+from MrSyD.server.exceptions import FIleNotFound, InvalidHash
+from MrSyD import StartTime, __version__
+from MrSyD.util.custom_dl import ByteStreamer
+from MrSyD.util.time_format import get_readable_time
+from MrSyD.util.render_template import render_page
 
 routes = web.RouteTableDef()
 
