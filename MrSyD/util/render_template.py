@@ -1,9 +1,9 @@
 import jinja2
 from info import *
-from TechVJ.bot import TechVJBot
-from TechVJ.util.human_readable import humanbytes
-from TechVJ.util.file_properties import get_file_ids
-from TechVJ.server.exceptions import InvalidHash
+from MrSyD.bot import TechVJBot
+from MrSyD.util.human_readable import humanbytes
+from MrSyD.util.file_properties import get_file_ids
+from MrSyD.server.exceptions import InvalidHash
 import urllib.parse
 import logging
 import aiohttp
