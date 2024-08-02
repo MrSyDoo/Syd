@@ -3,7 +3,7 @@ import asyncio
 import logging
 from info import *
 from typing import Dict, Union
-from TechVJ.bot import work_loads
+from MrSyD.bot import work_loads
 from pyrogram import Client, utils, raw
 from TechVJ.util.file_properties import get_file_ids
 from pyrogram.session import Session, Auth
