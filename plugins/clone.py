@@ -62,7 +62,7 @@ async def restart_bots():
             vj = Client(
                 f"{bot_token}", API_ID, API_HASH,
                 bot_token=bot_token,
-                plugins={"root": "CloneTechVJ"},
+                plugins={"root": "MrSyDClone"},
             )
             await vj.start()
         except Exception as e:
