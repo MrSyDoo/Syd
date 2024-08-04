@@ -790,6 +790,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
           'api': api.text
        }
        await db.update_bot(me.id, data)
+       await message.reply_text("ok")
        await message.reply("**Successfully Uᴩᴅᴀᴛᴇᴅ Settings**")
 
 
@@ -815,6 +816,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
        data = {
            'button1': nam.text,
            'btnlink1': url.text
+       }
+       await db.update_bot(me.id, data)
+       await message.reply("**Successfully  Settings**")
+
+    elif query.data == "btn2":
+       await query.message.delete()
+       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       if not url.text.startswith(('https://', 'http://', 't.me/')):
+           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           return 
+       data = {
+           'button2': nam.text,
+           'btnlink2': url.text
        }
        await db.update_bot(me.id, data)
        await message.reply("**Successfully  Settings**")
