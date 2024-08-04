@@ -8,7 +8,7 @@ from database.users_chats_db import db
 
 
 
-@Client.on_message(filters.private & filters.command(['edit']))
+@Client.on_message(filters.command("edit") & filters.private)
 async def settings(client, message):
     me = await client.get_me()
     owner = await db.get_bot(me.id)
