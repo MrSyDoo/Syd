@@ -43,16 +43,24 @@ async def start(client, message):
         if cd["group_link"] != None:
             sy = cd["group_link"]
             buttons[1].insert(1, InlineKeyboardButton('⚡ Gʀᴏᴜᴩ ⚡', url=sy))
-        if cd["button2"] != None:
-            bu = cd["button2"]
-            up = cd["btnlink2"]
-            buttons.append([InlineKeyboardButton(bu, url=up)])
-        if cd["button1"] != None:
-            bu = cd["button1"]
-            up = cd["btnlink1"]
-            buttons.append([InlineKeyboardButton(bu, url=up)])
+
+        buttons[1] = [button for button in buttons[1] if button is not None]
+        
+        if cd["button1"] is not None and cd["btnlink1"] is not None:
+            button1 = InlineKeyboardButton(cd["button1"], url=cd["btnlink1"])
+        else:
+            button1 = None
+    
+        if cd["button2"] is not None and cd["btnlink2"] is not None:
+            button2 = InlineKeyboardButton(cd["button2"], url=cd["btnlink2"])
+        else:
+            button2 = None
+    
+        if button1 or button2:
+            buttons.append([button for button in [button1, button2] if button is not None])
+
         if cd["update_channel_link"] != None:
-            up = cd["update_channel_link"]
+            up = cd["update_channel_link"] tu
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAEKVaxlCWGs1Ri6ti45xliLiUeweCnu4AACBAADwSQxMYnlHW4Ls8gQMAQ") 
