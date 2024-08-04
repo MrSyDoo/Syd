@@ -792,6 +792,32 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await db.update_bot(me.id, data)
        await message.reply("**Successfully Uᴩᴅᴀᴛᴇᴅ Settings**")
 
+
+    elif query.data == "update":
+       await query.message.delete()
+       link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
+       if not link.text.startswith(('https://', 'http://')):
+           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           return 
+       data = {
+           'update_channel_link': link.text
+       }
+       await db.update_bot(me.id, data)
+       await message.reply("**Successfully Added All Settings**")
+
+
+    elif query.data == "group":
+       await query.message.delete()
+       link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
+       if not link.text.startswith(('https://', 'http://')):
+           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           return 
+       data = {
+           'group_link': link.text
+       }
+       await db.update_bot(me.id, data)
+       await message.reply("**Successfully  Settings**")
+
     if query.data.startswith("file"):
         clicked = query.from_user.id
         try:
