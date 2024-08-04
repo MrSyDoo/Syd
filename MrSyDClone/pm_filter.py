@@ -805,7 +805,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await db.update_bot(me.id, data)
        await message.reply("**Successfully Added All Settings**")
 
-
+    elif query.data == "group":
+       await query.message.delete()
+       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       
     elif query.data == "group":
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
