@@ -326,6 +326,11 @@ def main_buttons():
        InlineKeyboardButton('Gʀᴏᴜᴩ',
                     callback_data='group')
        ],[
+       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+                    callback_data='btn1'),
+       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+                    callback_data='btn2')
+       ],[
        InlineKeyboardButton('⚙️ Extra Settings',
                     callback_data='settings#nextfilters')
        ],[      
