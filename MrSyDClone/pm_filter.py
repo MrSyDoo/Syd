@@ -790,8 +790,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
           'api': api.text
        }
        await db.update_bot(me.id, data)
-       await message.reply_text("ok")
-       await message.reply("**Successfully Uᴩᴅᴀᴛᴇᴅ Settings**")
+       await query.message.reply("**Successfully Uᴩᴅᴀᴛᴇᴅ Settings**")
 
 
     elif query.data == "update":
