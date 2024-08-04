@@ -29,4 +29,38 @@ async def settings_query(bot, query):
      await query.message.edit_text(
        "<b>Change Your Settings As Your Wish</b>",
        reply_markup=main_buttons())
-       
+
+  elif type=="url":
+     me = await client.get_me()
+     url = await client.ask(message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
+     api = await client.ask(message.chat.id, "<b>Now Send Your Api</b>")
+     try:
+         shortzy = Shortzy(api_key=api.text, base_site=url.text)
+         link = 'https://t.me/+-VpGTWWWTldhZWNl'
+         await shortzy.convert(link)
+     except Exception as e:
+         await message.reply(f"**Error In Converting Link**\n\n<code>{e}</code>\n\n**Start The Process Again By - /settings**", reply_markup=InlineKeyboardMarkup(btn))
+         return
+     data = {
+        'url': url.text,
+        'api': api.text
+     }
+     await db.update_bot(me.id, data)
+     await message.reply("**Successfully Uᴩᴅᴀᴛᴇᴅ Settings**")
+
+def main_buttons():
+  buttons = [[
+       InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
+                    callback_data=f'settings#url')
+       ],[
+       InlineKeyboardButton('🕵‍♀ Filters',
+                    callback_data=f'settings#filters'),
+       InlineKeyboardButton('🏓 Button',
+                    callback_data=f'settings#button')
+       ],[
+       InlineKeyboardButton('⚙️ Extra Settings',
+                    callback_data='settings#nextfilters')
+       ],[      
+       InlineKeyboardButton('🔙 Back', callback_data='settings#syd')
+       ]]
+  return InlineKeyboardMarkup(buttons)
