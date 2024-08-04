@@ -122,6 +122,10 @@ class Database:
             'tutorial': None,
             'update_channel_link': None,
             'group_link': None,
+            'button1': None,
+            '':, None,
+ #           '':, None,
+  #          '':, None,
             'fsub': AUTH_CHANNEL
         }
         await self.bot.insert_one(settings)
