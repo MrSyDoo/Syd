@@ -775,7 +775,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(text = script.CLONE_ABOUT_TXT.format(me.mention, temp.U_NAME, temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "url":
-       me = await client.get_me()
        url = await client.ask(message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
        api = await client.ask(message.chat.id, "<b>Now Send Your Api</b>")
        try:
