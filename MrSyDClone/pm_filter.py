@@ -771,7 +771,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
         ]]
         await query.message.edit_text(text = script.CLONE_ABOUT_TXT.format(me.mention, temp.U_NAME, temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
-        
+
+    elif query.data == "url":
+       me = await client.get_me()
+       url = await client.ask(message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
+       api = await client.ask(message.chat.id, "<b>Now Send Your Api</b>")
+       try:
+           shortzy = Shortzy(api_key=api.text, base_site=url.text)
+           link = 'https://t.me/+-VpGTWWWTldhZWNl'
+           await shortzy.convert(link)
+       except Exception as e:
+           await message.reply(f"**Error In Converting Link**\n\n<code>{e}</code>\n\n**Start The Process Again By - /settings**", reply_markup=InlineKeyboardMarkup(btn))
+           return
+       data = {
+          'url': url.text,
+          'api': api.text
+       }
+       await db.update_bot(me.id, data)
+       await message.reply("**Successfully Uᴩᴅᴀᴛᴇᴅ Settings**")
+
     if query.data.startswith("file"):
         clicked = query.from_user.id
         try:
