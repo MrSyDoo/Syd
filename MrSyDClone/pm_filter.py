@@ -805,11 +805,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await db.update_bot(me.id, data)
        await message.reply("**Successfully Added All Settings**")
 
-    elif query.data == "group":
+    elif query.data == "btn1":
        await query.message.delete()
        nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
        url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
-       
+       if not url.text.startswith(('https://', 'http://', 't.me/')):
+           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           return 
+       data = {
+           'button1': nam.text,
+           'btnlink1': url.text
+       }
+       await db.update_bot(me.id, data)
+       await message.reply("**Successfully  Settings**")
+
     elif query.data == "group":
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
