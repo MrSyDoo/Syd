@@ -120,7 +120,9 @@ class Database:
             'url': None,
             'api': None,
             'tutorial': None,
-            'update_channel_link': None
+            'update_channel_link': None,
+            'group_link': None,
+            'fsub': AUTH_CHANNEL
         }
         await self.bot.insert_one(settings)
 
