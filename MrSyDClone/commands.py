@@ -305,10 +305,10 @@ def main_buttons():
        InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
                     callback_data='url')
        ],[
-       InlineKeyboardButton('🕵‍♀ Filters',
-                    callback_data='channel'),
-       InlineKeyboardButton('🏓 Button',
-                    callback_data=f'settings#button')
+       InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ',
+                    callback_data='update'),
+       InlineKeyboardButton('Gʀᴏᴜᴩ',
+                    callback_data='group')
        ],[
        InlineKeyboardButton('⚙️ Extra Settings',
                     callback_data='settings#nextfilters')
