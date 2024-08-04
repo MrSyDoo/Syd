@@ -845,7 +845,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        await message.reply("**Successfully  Settings**")
-
+        
+    elif query.data == "fsub":
+       await query.message.delete()
+       fsub = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
+       if not link.text.startswith(('-100')):
+           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           return 
+       data = {
+           'fsub': fsub.text
+       }
+       await db.update_bot(me.id, data)
+       await message.reply("**Successfully  Settings**")
+        
     if query.data.startswith("file"):
         clicked = query.from_user.id
         try:
