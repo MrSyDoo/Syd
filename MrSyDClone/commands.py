@@ -244,11 +244,17 @@ async def settings(client, message):
     if not link.text.startswith(('https://', 'http://')):
         await message.reply("**Invalid Link. Start The Process Again By - /settings**")
         return 
+    group = await client.ask(message.chat.id, "<b>Now Send Me Your group Channel Link Which Is Shown In Your Start Button.</b>")
+    if not group.text.startswith(('https://', 'http://')):
+        await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+        return 
+
     data = {
         'url': url.text,
         'api': api.text,
         'tutorial': tutorial.text,
-        'update_channel_link': link.text
+        'update_channel_link': link.text,
+        'group_link': group.text
     }
     await db.update_bot(me.id, data)
     await message.reply("**Successfully Added All Settings**")
@@ -266,7 +272,8 @@ async def reset_settings(client, message):
             'url': None,
             'api': None,
             'tutorial': None,
-            'update_channel_link': None
+            'update_channel_link': None,
+            'group_link': None
         }
         await db.update_bot(me.id, data)
         await message.reply("**Successfully Reset All Settings To Default.**")
