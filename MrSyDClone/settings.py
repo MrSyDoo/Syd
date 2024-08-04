@@ -9,7 +9,7 @@ from database.users_chats_db import db
 
 
 @Client.on_message(filters.command("edit") & filters.private)
-async def settings(client, message):
+async def setting(client, message):
     me = await client.get_me()
     owner = await db.get_bot(me.id)
     if owner["user_id"] != message.from_user.id:
@@ -21,7 +21,7 @@ async def settings(client, message):
         quote=True
     )
 @Client.on_callback_query(filters.regex(r'^settings'))
-async def settings_query(bot, query):
+async def setting_query(bot, query):
   user_id = query.from_user.id
   i, type = query.data.split("#")
   buttons = [[InlineKeyboardButton('🔙 Back', callback_data="settings#main")]]
