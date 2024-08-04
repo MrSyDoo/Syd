@@ -1,11 +1,11 @@
 import motor.motor_asyncio
-from info import AUTH_CHANNEL, CLONE_DB_URI
+from info import AUTH_CHANNEL, CLONE_DATABASE_URI
 
 class JoinReqs:
 
     def __init__(self):
-        if CLONE_DB_URI:
-            self.client = motor.motor_asyncio.AsyncIOMotorClient(CLONE_DB_URI)
+        if CLONE_DATABASE_URI:
+            self.client = motor.motor_asyncio.AsyncIOMotorClient(CLONE_DATABASE_URI)
             self.db = self.client["JoinReqs"]
             self.col = self.db[str(AUTH_CHANNEL)]
         else:
