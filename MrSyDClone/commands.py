@@ -303,7 +303,7 @@ async def setting(client, message):
 def main_buttons():
   buttons = [[
        InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
-                    callback_data=f'settings#url')
+                    callback_data='url')
        ],[
        InlineKeyboardButton('🕵‍♀ Filters',
                     callback_data=f'settings#filters'),
