@@ -776,8 +776,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "url":
        await query.message.delete()
-       url = await client.ask(message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
-       api = await client.ask(message.chat.id, "<b>Now Send Your Api</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
+       api = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
        try:
            shortzy = Shortzy(api_key=api.text, base_site=url.text)
            link = 'https://t.me/+-VpGTWWWTldhZWNl'
