@@ -38,4 +38,4 @@ class JoinReqs:
         await self.col.delete_many({})
 
     async def get_all_users_count(self):
-        return await self.col.count_documents({})count_documents({})
+        return await self.col.count_documents({})
