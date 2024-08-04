@@ -60,7 +60,7 @@ async def start(client, message):
             buttons.append([button for button in [button1, button2] if button is not None])
 
         if cd["update_channel_link"] != None:
-            up = cd["update_channel_link"] tu
+            up = cd["update_channel_link"]
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAEKVaxlCWGs1Ri6ti45xliLiUeweCnu4AACBAADwSQxMYnlHW4Ls8gQMAQ") 
