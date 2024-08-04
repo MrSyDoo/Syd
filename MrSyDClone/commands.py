@@ -306,7 +306,7 @@ def main_buttons():
                     callback_data='url')
        ],[
        InlineKeyboardButton('🕵‍♀ Filters',
-                    callback_data=f'settings#filters'),
+                    callback_data='channel'),
        InlineKeyboardButton('🏓 Button',
                     callback_data=f'settings#button')
        ],[
