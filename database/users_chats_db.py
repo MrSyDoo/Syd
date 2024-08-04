@@ -123,9 +123,9 @@ class Database:
             'update_channel_link': None,
             'group_link': None,
             'button1': None,
-            'btnlink1':, None,
-            'button2':, None,
-            'btnlink2':, None,
+            'btnlink1': None,
+            'button2': None,
+            'btnlink2': None,
  #           '':, None,
   #          '':, None,
             'fsub': AUTH_CHANNEL
