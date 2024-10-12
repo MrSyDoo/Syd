@@ -1,7 +1,7 @@
 import motor.motor_asyncio
 from pyrogram import Client
 from info import AUTH_CHANNEL, CLONE_DATABASE_URI
-from .clone_bot_userdb import clonedb
+from .clone_bot_userdb import clonedb as db
 class JoinReqs:
 
     def __init__(self):
