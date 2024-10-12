@@ -1,4 +1,5 @@
 import motor.motor_asyncio
+from pyrogram import Client
 from info import AUTH_CHANNEL, CLONE_DATABASE_URI
 
 class JoinReqs:
