@@ -12,17 +12,17 @@ async def setup():
 async def main():
     SYD_CHANNEL = await setup()
 
-class JoinReqs:
+    class JoinReqs:
 
-    def __init__(self):
-        if CLONE_DATABASE_URI:
-            self.client = motor.motor_asyncio.AsyncIOMotorClient(CLONE_DATABASE_URI)
-            self.db = self.client["JoinReqs"]
-            self.col = self.db[str(SYD_CHANNEL)]
-        else:
-            self.client = None
-            self.db = None
-            self.col = None
+        def __init__(self):
+            if CLONE_DATABASE_URI:
+                self.client = motor.motor_asyncio.AsyncIOMotorClient(CLONE_DATABASE_URI)
+                self.db = self.client["JoinReqs"]
+                self.col = self.db[str(SYD_CHANNEL)]
+            else:
+                self.client = None
+                self.db = None
+                self.col = None
 
     def isActive(self):
         if self.client is not None:
