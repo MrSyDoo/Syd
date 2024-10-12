@@ -91,7 +91,7 @@ async def next_page(bot, query):
         ]
     )
     btn.insert(0, [
-        InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}"),
+        InlineKeyboardButton("Sᴇɴᴅ ᴀʟL", callback_data=f"sendfiles#{key}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
         InlineKeyboardButton("ʏᴇᴀʀs", callback_data=f"years#{key}")
     ])
@@ -240,7 +240,7 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
         ]
     )
     btn.insert(0, [
-        InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}"),
+        InlineKeyboardButton("Sᴇɴᴅ ᴀʟL", callback_data=f"sendfiles#{key}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
         InlineKeyboardButton("ʏᴇᴀʀs", callback_data=f"years#{key}")
     ])
@@ -352,7 +352,7 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
         ]
     )
     btn.insert(0, [
-        InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}"),
+        InlineKeyboardButton("Sᴇɴᴅ ᴀʟL", callback_data=f"sendfiles#{key}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
         InlineKeyboardButton("ʏᴇᴀʀs", callback_data=f"years#{key}")
     ])
@@ -466,7 +466,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ]
     )
     btn.insert(0, [
-        InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}"),
+        InlineKeyboardButton("Sᴇɴᴅ ᴀʟL", callback_data=f"sendfiles#{key}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
         InlineKeyboardButton("ʏᴇᴀʀs", callback_data=f"years#{key}")
     ])
@@ -520,13 +520,13 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="👇 𝖲𝖾𝗅𝖾𝖼𝗍 Season 👇", callback_data="ident"
+                text="👇 𝖲ᴇʟᴇᴄᴛ Sᴇᴀꜱᴏɴ 👇", callback_data="ident"
             )
         ],
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"next_{req}_{key}_{offset}")])
+    btn.append([InlineKeyboardButton(text="↭ Bᴀᴄᴋ ᴛᴏ ꜰɪʟᴇS ​↭", callback_data=f"next_{req}_{key}_{offset}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
 
@@ -607,7 +607,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         ]
     )
     btn.insert(0, [
-        InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}"),
+        InlineKeyboardButton("Sᴇɴᴅ ᴀʟL", callback_data=f"sendfiles#{key}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
         InlineKeyboardButton("ʏᴇᴀʀs", callback_data=f"years#{key}")
     ])   
@@ -715,7 +715,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
         ]
     )
     btn.insert(0, [
-        InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}"),
+        InlineKeyboardButton("Sᴇɴᴅ ᴀʟL", callback_data=f"sendfiles#{key}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
         InlineKeyboardButton("ʏᴇᴀʀs", callback_data=f"years#{key}")
     ])
