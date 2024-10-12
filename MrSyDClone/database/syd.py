@@ -4,9 +4,13 @@ from pyrogram import Client
 from info import AUTH_CHANNEL, CLONE_DATABASE_URI
 from .clone_bot_userdb import clonedb as db
 
-me = await client.get_me()
-cd = await db.get_bot(me.id)
-SYD_CHANNEL = cd["fsub"]
+async def setup():
+    me = await client.get_me()
+    cd = await db.get_bot(me.id)
+    return cd["fsub"]
+
+async def main():
+    SYD_CHANNEL = await setup()
 
 class JoinReqs:
 
