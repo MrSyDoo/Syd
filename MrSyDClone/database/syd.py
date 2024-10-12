@@ -2,15 +2,17 @@ import motor.motor_asyncio
 from pyrogram import Client
 from info import AUTH_CHANNEL, CLONE_DATABASE_URI
 from .clone_bot_userdb import clonedb as db
+
+me = await client.get_me()
+cd = await db.get_bot(me.id)
+SYD_CHANNEL = cd["fsub"]
+
 class JoinReqs:
 
     def __init__(self):
         if CLONE_DATABASE_URI:
             self.client = motor.motor_asyncio.AsyncIOMotorClient(CLONE_DATABASE_URI)
             self.db = self.client["JoinReqs"]
-            me = await client.get_me()
-            cd = await db.get_bot(me.id)
-            SYD_CHANNEL = cd["fsub"]
             self.col = self.db[str(SYD_CHANNEL)]
         else:
             self.client = None
