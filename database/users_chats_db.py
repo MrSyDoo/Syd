@@ -126,8 +126,6 @@ class Database:
             'btnlink1': None,
             'button2': None,
             'btnlink2': None,
- #           '':, None,
-  #          '':, None,
             'fsub': AUTH_CHANNEL
         }
         await self.bot.insert_one(settings)
