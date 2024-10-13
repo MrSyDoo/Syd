@@ -848,7 +848,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "fsub":
        await query.message.delete()
        fsub = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
-       if not link.text.startswith(('-100')):
+       if not fsub.text.startswith(('-100')):
            await message.reply("**Invalid Link. Start The Process Again By - /settings**")
            return 
        data = {
