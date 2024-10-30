@@ -8,6 +8,7 @@ import motor.motor_asyncio
 from pymongo import MongoClient
 from info import AUTH_CHANNEL, DATABASE_NAME, DATABASE_URI, CUSTOM_FILE_CAPTION, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, PICS, IS_TUTORIAL
 import time
+from Script import script
 import datetime
 
 my_client = MongoClient(DATABASE_URI)
@@ -128,8 +129,8 @@ class Database:
             'btnlink2': None,
             'fsub': AUTH_CHANNEL,
             'pics': PICS,
-            'strtsyd': CLONE_START_TXT,
-            'abtsyd': CLONE_ABOUT_TXT
+            'strtsyd': script.CLONE_START_TXT,
+            'abtsyd': script.CLONE_ABOUT_TXT
         }
         await self.bot.insert_one(settings)
 
