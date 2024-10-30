@@ -126,7 +126,10 @@ class Database:
             'btnlink1': None,
             'button2': None,
             'btnlink2': None,
-            'fsub': AUTH_CHANNEL
+            'fsub': AUTH_CHANNEL,
+            'pics': PICS,
+            'strtsyd': CLONE_START_TXT,
+            'abtsyd': CLONE_ABOUT_TXT
         }
         await self.bot.insert_one(settings)
 
