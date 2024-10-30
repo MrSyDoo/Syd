@@ -78,7 +78,11 @@ async def start(client, message):
         )
         await message.reply_photo(photo=random.choice(PIC))
         await message.reply_text(
-            text=mssud,
+            text=syd.format(
+                mention=message.from_user.mention if message.from_user else message.chat.title, 
+                username=me.username, 
+                firstname=me.first_name
+            ),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
