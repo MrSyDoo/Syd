@@ -71,6 +71,7 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAxkBAAEEKj1nIa7WGhcFwOhn1d_L6Bo8i94QagACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         await asyncio.sleep(1)
         await m.delete()
+        syd = cd["strtsyd"]
         await message.reply_photo(photo=random.choice(PIC))
         await message.reply_text(
             text=syd.format(
