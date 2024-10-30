@@ -68,7 +68,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         POC = cd["pics"]
         PIC = POC.split()
-        m=await message.reply_sticker("CAACAgUAAxkBAAEEKj1nIa7WGhcFwOhn1d_L6Bo8i94QagACKxEAAh6lEVXmKTGWbQABUOMeBA") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEKm5nIga6Z9y1Q0N3KeizmSEyaRP38gACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         await asyncio.sleep(1)
         await m.delete()
         syd = cd["strtsyd"]
