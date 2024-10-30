@@ -314,6 +314,7 @@ async def settings(client, message):
         'tutorial': tutorial.text,
         'update_channel_link': link.text,
         'group_link': group.text
+        'pics': PICS
     }
     await db.update_bot(me.id, data)
     await message.reply("**Successfully Added All Settings**")
