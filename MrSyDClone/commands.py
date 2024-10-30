@@ -336,8 +336,8 @@ async def reset_settings(client, message):
             'update_channel_link': None,
             'group_link': None,
             'pics': PICS,
-            'strtsyd': CLONE_START_TXT,
-            'abtsyd': CLONE_ABOUT_TXT
+            'strtsyd': script.CLONE_START_TXT,
+            'abtsyd': script.CLONE_ABOUT_TXT
         }
         await db.update_bot(me.id, data)
         await message.reply("**Successfully Reset All Settings To Default.**")
