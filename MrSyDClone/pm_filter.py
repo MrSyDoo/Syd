@@ -818,7 +818,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            await message.reply("**Invalid Link. Start The Process Again By - /settings**")
            return 
        data = {
-           'pic': link.text
+           'pics': link.text
        }
        await db.update_bot(me.id, data)
        await message.reply("**Successfully Added All Settings**")
