@@ -379,6 +379,14 @@ def main_buttons():
        InlineKeyboardButton('ꜰ-ꜱᴜʙ',
                     callback_data='fsub')
        ],[
+       InlineKeyboardButton('ꜰ-ꜱᴜʙ',
+                    callback_data='pic')
+       ],[
+       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+                    callback_data='srt'),
+       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+                    callback_data='atb')
+       ],[
        InlineKeyboardButton('⚙️ Extra Settings',
                     callback_data='settings#nextfilters')
        ],[      
