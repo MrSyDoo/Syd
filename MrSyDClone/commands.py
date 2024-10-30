@@ -75,11 +75,7 @@ async def start(client, message):
         syd = cd["strtsyd"]
         await message.reply_photo(photo=random.choice(PIC))
         await message.reply_text(
-            text=syd.format(
-                mention=message.from_user.mention, 
-                username=me.username, 
-                firstname=me.first_name
-            ),
+            text=syd,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
