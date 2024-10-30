@@ -314,7 +314,6 @@ async def settings(client, message):
         'tutorial': tutorial.text,
         'update_channel_link': link.text,
         'group_link': group.text
-        'pics': PICS
     }
     await db.update_bot(me.id, data)
     await message.reply("**Successfully Added All Settings**")
@@ -333,7 +332,10 @@ async def reset_settings(client, message):
             'api': None,
             'tutorial': None,
             'update_channel_link': None,
-            'group_link': None
+            'group_link': None,
+            'pics': PICS,
+            'strtsyd': CLONE_START_TXT,
+            'abtsyd': CLONE_ABOUT_TXT
         }
         await db.update_bot(me.id, data)
         await message.reply("**Successfully Reset All Settings To Default.**")
