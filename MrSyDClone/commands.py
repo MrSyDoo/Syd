@@ -27,12 +27,8 @@ async def start(client, message):
             buttons.append([InlineKeyboardButton('🍿 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🍿', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         syd = cd["strtsyd"]
-        mssyd = syd.format(
-            mention=message.from_user.mention if message.from_user else message.chat.title, 
-            username=me.username, 
-            firstname=me.first_name
-        )
-        await message.reply(mssyd, reply_markup=reply_markup)
+
+        await message.reply(syd, reply_markup=reply_markup)
         return 
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
         await clonedb.add_user(me.id, message.from_user.id)
@@ -68,7 +64,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         POC = cd["pics"]
         PIC = POC.split()
-        m=await message.reply_sticker("CAACAgUAAxkBAAEEKm5nIga6Z9y1Q0N3KeizmSEyaRP38gACKxEAAh6lEVXmKTGWbQABUOMeBA") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEKnlnIgyZjIZDVAeRDyaL1S5FO0jKpwAC2w8AAr6xKFc_i74CwzHdxh4E") 
         await asyncio.sleep(1)
         await m.delete()
         syd = cd["strtsyd"]
