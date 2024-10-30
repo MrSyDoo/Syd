@@ -816,6 +816,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        link = []
        await query.message.reply("<b>Now Send Me Your Update Channel Links One by One. Type /end when you are finished.</b>")
        while True:
+           response = await client.ask(query.message.chat.id, "<b>Send a link or type /end to finish:</b>")
            if response.text == "/end":
                break
            if not response.text.startswith(('https://', 'http://')):
