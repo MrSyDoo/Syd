@@ -813,12 +813,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "pic":
        await query.message.delete()
-       link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
-       if not link.text.startswith(('https://', 'http://')):
-           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
-           return 
+       link = []
+       await query.message.reply("<b>Now Send Me Your Update Channel Links One by One. Type /end when you are finished.</b>")
+       while True:
+           if response.text == "/end":
+               break
+           if not response.text.startswith(('https://', 'http://')):
+               await response.reply("**Invalid Link. Please send a valid link starting with 'http://' or 'https://'.**")
+               continue
+           links.append(response.text)
+       tgsyd = ' '.join(links)
        data = {
-           'pics': link.text
+           'pics': tgsyd
        }
        await db.update_bot(me.id, data)
        await query.message.reply("**Successfully Added All Settings**")
