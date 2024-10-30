@@ -802,6 +802,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await db.update_bot(me.id, data)
        await message.reply("**Successfully Added All Settings**")
 
+    elif query.data == "srt":
+       await query.message.delete()
+       abt = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
+       data = {
+           'strtsyd': abt.text
+       }
+       await db.update_bot(me.id, data)
+       await message.reply("**Successfully Added All Settings**")
+
     elif query.data == "pic":
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
