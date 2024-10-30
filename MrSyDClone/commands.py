@@ -31,7 +31,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         syd = cd["strtsyd"]
         mssyd = syd.format(mention=message.from_user.mention if message.from_user else message.chat.title, username=me.username, firstname=me.first_name)
-        await message.reply(mssyd), reply_markup=reply_markup)
+        await message.reply(mssyd, reply_markup=reply_markup)
         return 
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
         await clonedb.add_user(me.id, message.from_user.id)
