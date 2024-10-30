@@ -70,7 +70,7 @@ async def start(client, message):
         await m.delete()
         await message.reply_photo(photo=random.choice(POC))
         await message.reply_text(
-            text=script.CLONE_START_TXT.format(message.from_user.mention, me.username, me.first_name),
+            text=script.CLONE_START_TXT.format(mention=message.from_user.mention, username=me.username, firstname=me.first_name),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
