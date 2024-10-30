@@ -30,7 +30,8 @@ async def start(client, message):
             buttons.append([InlineKeyboardButton('🍿 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🍿', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         syd = cd["strtsyd"]
-        await message.reply(syd.format(mention=message.from_user.mention if message.from_user else message.chat.title, username=me.username, firstname=me.first_name), reply_markup=reply_markup)
+        mssyd = syd.format(mention=message.from_user.mention if message.from_user else message.chat.title, username=me.username, firstname=me.first_name)
+        await message.reply(mssyd), reply_markup=reply_markup)
         return 
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
         await clonedb.add_user(me.id, message.from_user.id)
@@ -71,7 +72,7 @@ async def start(client, message):
         await m.delete()
         await message.reply_photo(photo=random.choice(PIC))
         await message.reply_text(
-            text=syd.format(mention=message.from_user.mention, username=me.username, firstname=me.first_name),
+            text=mssyd,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
