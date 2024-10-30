@@ -800,7 +800,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'abtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully Added All Settings**")
+       await query.message.reply("**Successfully Added All Settings**")
 
     elif query.data == "srt":
        await query.message.delete()
@@ -809,7 +809,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'strtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully Added All Settings**")
+       await query.message.reply("**Successfully Added All Settings**")
 
     elif query.data == "pic":
        await query.message.delete()
@@ -821,53 +821,53 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'pics': link.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully Added All Settings**")
+       await query.message.reply("**Successfully Added All Settings**")
 
     elif query.data == "update":
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
        if not link.text.startswith(('https://', 'http://')):
-           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           await query.message.reply("**Invalid Link. Start The Process Again By - /settings**")
            return 
        data = {
            'update_channel_link': link.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully Added All Settings**")
+       await query.message.reply("**Successfully Added All Settings**")
 
     elif query.data == "btn1":
        await query.message.delete()
        nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
        url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
        if not url.text.startswith(('https://', 'http://', 't.me/')):
-           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           await query.message.reply("**Invalid Link. Start The Process Again By - /settings**")
            return 
        data = {
            'button1': nam.text,
            'btnlink1': url.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully  Settings**")
+       await query.message.reply("**Successfully  Settings**")
 
     elif query.data == "btn2":
        await query.message.delete()
        nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
        url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
        if not url.text.startswith(('https://', 'http://', 't.me/')):
-           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           await query.message.reply("**Invalid Link. Start The Process Again By - /settings**")
            return 
        data = {
            'button2': nam.text,
            'btnlink2': url.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully  Settings**")
+       await query.message.reply("**Successfully  Settings**")
 
     elif query.data == "group":
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
        if not link.text.startswith(('https://', 'http://')):
-           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           await query.message.reply("**Invalid Link. Start The Process Again By - /settings**")
            return 
        data = {
            'group_link': link.text
@@ -879,13 +879,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await query.message.delete()
        fsub = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
        if not fsub.text.startswith(('-100')):
-           await message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           await query.message.reply("**Invalid Link. Start The Process Again By - /settings**")
            return 
        data = {
            'fsub': fsub.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully  Settings**")
+       await query.message.reply("**Successfully  Settings**")
         
     if query.data.startswith("file"):
         clicked = query.from_user.id
