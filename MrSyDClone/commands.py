@@ -65,10 +65,11 @@ async def start(client, message):
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         POC = cd["pics"]
+        PIC = POC.split()
         m=await message.reply_sticker("CAACAgUAAxkBAAEEKj1nIa7WGhcFwOhn1d_L6Bo8i94QagACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         await asyncio.sleep(1)
         await m.delete()
-        await message.reply_photo(photo=random.choice(POC))
+        await message.reply_photo(photo=random.choice(PIC))
         await message.reply_text(
             text=syd.format(mention=message.from_user.mention, username=me.username, firstname=me.first_name),
             reply_markup=reply_markup,
