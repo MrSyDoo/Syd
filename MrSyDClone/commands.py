@@ -1,6 +1,3 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
 
 # Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
 
@@ -74,9 +71,14 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAxkBAAEEKj1nIa7WGhcFwOhn1d_L6Bo8i94QagACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         await asyncio.sleep(1)
         await m.delete()
+        mssud = syd.format(
+            mention=message.from_user.mention if message.from_user else message.chat.title, 
+            username=me.username, 
+            firstname=me.first_name
+        )
         await message.reply_photo(photo=random.choice(PIC))
         await message.reply_text(
-            text=mssyd,
+            text=mssud,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
