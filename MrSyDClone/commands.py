@@ -27,7 +27,12 @@ async def start(client, message):
             buttons.append([InlineKeyboardButton('🍿 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🍿', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         syd = cd["strtsyd"]
-
+        if "{username}" in syd:
+            syd = syd.replace("{username}", me.username)
+        if "{mention}" in syd:
+            syd = syd.replace("{mention}", message.from_user.mention)
+        if "{firstname}" in syd:
+            syd = syd.replace("{firstname}", me.first_name)
         await message.reply(syd, reply_markup=reply_markup)
         return 
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
