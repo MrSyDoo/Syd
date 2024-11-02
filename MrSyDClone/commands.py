@@ -67,6 +67,7 @@ async def start(client, message):
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(photo=random.choice(PIC))
+        syd = cd["strtsyd"]
         await message.reply_text(
             text=syd,
             reply_markup=reply_markup,
