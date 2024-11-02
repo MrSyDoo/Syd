@@ -27,13 +27,6 @@ async def start(client, message):
             buttons.append([InlineKeyboardButton('🍿 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🍿', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         syd = cd["strtsyd"]
-        replacements = {
-            "{username}": me.username,
-            "{mention}": message.from_user.mention,
-            "{firstname}": me.first_name
-        }
-        for key, value in replacements.items():
-            syd = syd.replace(key, value)
         await message.reply(syd, reply_markup=reply_markup)
         return 
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
@@ -74,14 +67,6 @@ async def start(client, message):
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(photo=random.choice(PIC))
-        syd = cd["strtsyd"]
-        replacements = {
-            "{username}": me.username,
-            "{mention}": message.from_user.mention,
-            "{firstname}": me.first_name
-        }
-        for key, value in replacements.items():
-            syd = syd.replace(key, value)
         await message.reply_text(
             text=syd,
             reply_markup=reply_markup,
