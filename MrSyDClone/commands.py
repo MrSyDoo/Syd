@@ -66,7 +66,7 @@ async def start(client, message):
         await m.delete()
         POC = cd.get("pics", "")
         PIC = POC.split() if POC else []
-        await message.reply_photo(photo=random.choice(PIC))
+        await message.reply_photo(photo=random.choice(PIC or PICS))
         syd = cd["strtsyd"]
         await message.reply_text(
             text=syd,
