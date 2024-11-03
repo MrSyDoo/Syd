@@ -61,11 +61,11 @@ async def start(client, message):
             up = cd["update_channel_link"]
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
-        POC = cd["pics"]
-        PIC = POC.split()
         m=await message.reply_sticker("CAACAgUAAxkBAAEEK21nJjqtbM5o1sdHNsVKl80M2Swd5AACGxAAAo1nsFXxBJlwZupzwx4E") 
         await asyncio.sleep(1)
         await m.delete()
+        POC = cd["pics"]
+        PIC = POC.split()
         await message.reply_photo(photo=random.choice(PIC))
         syd = cd["strtsyd"]
         await message.reply_text(
