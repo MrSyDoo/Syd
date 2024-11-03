@@ -73,7 +73,8 @@ async def start(client, message):
             syd = cd["strtsyd"]
             mdsyd = message.from_user.mention
             mrssyd = me.username
-            syd = syd.replace("{mention}", "mdsyd").replace("{username}", "mrssyd")
+            mrssud = me.first_name
+            syd = syd.replace("{mention}", mdsyd).replace("{username}", mrssyd).replace("{firstname}", mrssud)
             await message.reply_text(
                 text=syd,
                 reply_markup=reply_markup,
