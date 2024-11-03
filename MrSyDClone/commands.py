@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
+    await message.reply_text("1")
     me = await client.get_me()
     cd = await db.get_bot(me.id)
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
@@ -29,6 +30,7 @@ async def start(client, message):
         syd = cd["strtsyd"]
         await message.reply(syd, reply_markup=reply_markup)
         return 
+    await message.reply_text("1")
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
         await clonedb.add_user(me.id, message.from_user.id)
     if len(message.command) != 2:
@@ -38,30 +40,9 @@ async def start(client, message):
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('Δʙᴏᴜᴛ 🔎', callback_data='about')
         ]]
-        if cd["group_link"] != None:
-            sy = cd["group_link"]
-            buttons[1].insert(1, InlineKeyboardButton('⚡ Gʀᴏᴜᴩ ⚡', url=sy))
-
-        buttons[1] = [button for button in buttons[1] if button is not None]
-        
-        if cd["button1"] is not None and cd["btnlink1"] is not None:
-            button1 = InlineKeyboardButton(cd["button1"], url=cd["btnlink1"])
-        else:
-            button1 = None
-    
-        if cd["button2"] is not None and cd["btnlink2"] is not None:
-            button2 = InlineKeyboardButton(cd["button2"], url=cd["btnlink2"])
-        else:
-            button2 = None
-    
-        if button1 or button2:
-            buttons.append([button for button in [button1, button2] if button is not None])
-
-        if cd["update_channel_link"] != None:
-            up = cd["update_channel_link"]
-            buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
+        await message.reply_text("1")
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAxkBAAEEK21nJjqtbM5o1sdHNsVKl80M2Swd5AACGxAAAo1nsFXxBJlwZupzwx4E") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEK39nJwRDO8e7n_vE1SMsZYyNPt27bwACBwkAAg7Q-FTSyopKXb2ASB4E") 
         await asyncio.sleep(1)
         await m.delete()
         #POC = cd.get("pics", "")
