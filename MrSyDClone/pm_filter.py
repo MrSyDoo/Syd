@@ -812,18 +812,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
 
     elif query.data == "pic":
-       await query.message.delete()
-       collected_links = await collect_links(query.message.chat.id)
-       if not collected_links:
-           await query.message.reply("**Process ended. No links collected.**")
-           return
-       tgsyd = ' '.join(collected_links)
-       data = {
-           'pics': tgsyd
-       }
-       await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
-    
+        await query.message.delete()
+        links = []  # Initialize the list to hold the links
+        max_links = 5  # Set the maximum number of links to collect
+
+        for _ in range(max_links):
+            # Ask the user for a link
+            link_input = await client.ask(query.message.chat.id, "<b>Send a link or type /end to finish:</b>")
+            
+            # Check if the user wants to end the process
+            if link_input.text.lower() == '/end':
+                break
+            links.append(link_input.text)
+        if links:
+            # Join the collected links into a single string
+            tgsyd = ' '.join(links)
+            data = {'pics': tgsyd}
+            await db.update_bot(me.id, data)
+            await query.message.reply("**Sᴜᴄᴄᴇꜱꜱғᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+        else:
+            await query.message.reply("**No links collected.**")
+
     elif query.data == "update":
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
