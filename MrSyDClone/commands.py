@@ -71,6 +71,9 @@ async def start(client, message):
         await message.reply_photo(photo=random.choice(PIC or PICS))
         try:
             syd = cd["strtsyd"]
+            mdsyd = message.from_user.mention
+            mrssyd = me.username
+            syd = syd.replace("{mention}", "mdsyd").replace("{username}", "mrssyd")
             await message.reply_text(
                 text=syd,
                 reply_markup=reply_markup,
