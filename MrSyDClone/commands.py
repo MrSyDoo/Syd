@@ -16,7 +16,6 @@ logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
-    await message.reply_text("1")
     me = await client.get_me()
     cd = await db.get_bot(me.id)
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
@@ -67,9 +66,9 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAxkBAAEEK39nJwRDO8e7n_vE1SMsZYyNPt27bwACBwkAAg7Q-FTSyopKXb2ASB4E") 
         await asyncio.sleep(1)
         await m.delete()
-        #POC = cd.get("pics", "")
-        #PIC = POC.split() if POC else []
-      #  await message.reply_photo(photo=random.choice(PIC or PICS))
+        POC = cd.get("pics", "")
+        PIC = POC.split() if POC else []
+        await message.reply_photo(photo=random.choice(PIC or PICS))
         try:
             syd = cd["strtsyd"]
             await message.reply_text(
