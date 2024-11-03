@@ -776,21 +776,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "url":
        await query.message.delete()
-       url = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
-       api = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       url = await client.ask(query.message.chat.id, "<b>Nᴏᴡ Sᴇɴᴅ Mᴇ Yᴏᴜʀ Sʜᴏʀᴛʟɪɴᴋ Sɪᴛᴇ Dᴏᴍᴀɪɴ Oʀ Uʀʟ Wɪᴛʜᴏᴜᴛ https://</b>")
+       api = await client.ask(query.message.chat.id, "<b>Nᴏᴡ Sᴇɴᴅ Yᴏᴜʀ Aᴩɪ</b>")
        try:
            shortzy = Shortzy(api_key=api.text, base_site=url.text)
            link = 'https://t.me/+-VpGTWWWTldhZWNl'
            await shortzy.convert(link)
        except Exception as e:
-           await message.reply(f"**Error In Converting Link**\n\n<code>{e}</code>\n\n**Start The Process Again By - /settings**", reply_markup=InlineKeyboardMarkup(btn))
+           await message.reply(f"**Eʀʀᴏʀ Iɴ Cᴏɴᴠᴇʀᴛɪɴɢ Lɪɴᴋ**\n\n<code>{e}</code>\n\n**Sᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ By - /settings** \nIꜰ Pʀᴏʙʟᴇᴍ Cᴏɴᴛɪɴᴜᴇꜱ Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Oᴡɴᴇʀ @SYD_XYZ", reply_markup=InlineKeyboardMarkup(btn))
            return
        data = {
           'url': url.text,
           'api': api.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully Uᴩᴅᴀᴛᴇᴅ Settings**")
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
 
 
     elif query.data == "atb":
@@ -800,36 +800,30 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'abtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully Added All Settings**")
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
 
     elif query.data == "srt":
        await query.message.delete()
-       abt = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>ᴇxᴀᴍᴩʟᴇ; <code><b>'<blockquote>ʜᴇʟʟᴏ {mention}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{username}>{firstname}</a></blockquote>ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>'")
+       abt = await client.ask(query.message.chat.id, "<b>Nᴏᴡ Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>ᴇxᴀᴍᴩʟᴇ; <code><b>'<blockquote>ʜᴇʟʟᴏ {mention}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{username}>{firstname}</a></blockquote>ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>'")
        data = {
            'strtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully Added All Settings**")
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
 
     elif query.data == "pic":
        await query.message.delete()
-       link = []
-       await query.message.reply("<b>Now Send Me Your Update Channel Links One by One. Type /end when you are finished.</b>")
-       while True:
-           response = await client.ask(query.message.chat.id, "<b>Send a link or type /end to finish:</b>")
-           if response.text == "/end":
-               break
-           if not response.text.startswith(('https://', 'http://')):
-               await response.reply("**Invalid Link. Please send a valid link starting with 'http://' or 'https://'.**")
-               continue
-           links.append(response.text)
-       tgsyd = ' '.join(links)
+       collected_links = await collect_links(query.message.chat.id)
+       if not collected_links:
+           await query.message.reply("**Process ended. No links collected.**")
+           return
+       tgsyd = ' '.join(collected_links)
        data = {
            'pics': tgsyd
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully Added All Settings**")
-
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+    
     elif query.data == "update":
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
@@ -854,7 +848,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'btnlink1': url.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully  Settings**")
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
 
     elif query.data == "btn2":
        await query.message.delete()
@@ -868,7 +862,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'btnlink2': url.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully  Settings**")
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
 
     elif query.data == "group":
        await query.message.delete()
@@ -880,7 +874,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'group_link': link.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Successfully  Settings**")
+       await message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
         
     elif query.data == "fsub":
        await query.message.delete()
@@ -892,7 +886,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'fsub': fsub.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully  Settings**")
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
         
     if query.data.startswith("file"):
         clicked = query.from_user.id
