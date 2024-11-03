@@ -387,12 +387,12 @@ def main_buttons():
        InlineKeyboardButton('ꜰ-ꜱᴜʙ',
                     callback_data='fsub')
        ],[
-       InlineKeyboardButton('ꜰ-ꜱᴜʙ',
+       InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ',
                     callback_data='pic')
        ],[
-       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+       InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ',
                     callback_data='srt'),
-       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+       InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ',
                     callback_data='atb')
        ],[
        InlineKeyboardButton('⚙️ Extra Settings',
