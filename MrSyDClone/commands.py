@@ -64,10 +64,9 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAxkBAAEEK21nJjqtbM5o1sdHNsVKl80M2Swd5AACGxAAAo1nsFXxBJlwZupzwx4E") 
         await asyncio.sleep(1)
         await m.delete()
-        POC = cd.get("pics", "")
-        PIC = POC.split() if POC else []
-        await message.reply_photo(photo=random.choice(PIC or PICS))
-        syd = cd["strtsyd"]
+        #POC = cd.get("pics", "")
+        #PIC = POC.split() if POC else []
+      #  await message.reply_photo(photo=random.choice(PIC or PICS))
         try:
             syd = cd["strtsyd"]
             await message.reply_text(
