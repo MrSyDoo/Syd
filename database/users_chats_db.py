@@ -14,6 +14,18 @@ import datetime
 my_client = MongoClient(DATABASE_URI)
 mydb = my_client["referal_user"]
 
+async def collect_links(chat_id, max_links=16):
+    links = []  # Initialize the list to hold the links
+    for _ in range(max_links):
+        link_input = await client.ask(chat_id, "<b>Send a link or type /end to finish:</b>")
+        
+        if link_input.text.lower() == '/end':
+            break  # Exit the loop if the user types /end
+            
+        links.append(link_input.text)  # Add the link to the list
+
+    return links
+ 
 async def referal_add_user(user_id, ref_user_id):
     user_db = mydb[str(user_id)]
     user = {'_id': ref_user_id}
