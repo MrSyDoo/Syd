@@ -139,7 +139,7 @@ class Database:
             'btnlink1': None,
             'button2': None,
             'btnlink2': None,
-            'fsub': AUTH_CHANNEL,
+            'fsub': None,
             'pics': None,
             'strtsyd': script.CLONE_START_TXT,
             'abtsyd': script.CLONE_ABOUT_TXT
