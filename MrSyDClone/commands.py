@@ -68,12 +68,16 @@ async def start(client, message):
         PIC = POC.split() if POC else []
         await message.reply_photo(photo=random.choice(PIC or PICS))
         syd = cd["strtsyd"]
-        await message.reply_text(
-            text=syd,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-        return
+        try:
+            syd = cd["strtsyd"]
+            await message.reply_text(
+                text=syd,
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
+        except Exception as e:
+            print(f"Error sending message: {e}")
+
     SYD_CHANNEL = cd["fsub"]
     if SYD_CHANNEL and not await is_subscribed(client, message):
         try:
