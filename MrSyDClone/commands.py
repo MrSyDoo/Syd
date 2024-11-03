@@ -28,8 +28,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         syd = cd["strtsyd"]
         await message.reply(syd, reply_markup=reply_markup)
-        return 
-    await message.reply_text("1")
+        return
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
         await clonedb.add_user(me.id, message.from_user.id)
     if len(message.command) != 2:
@@ -61,9 +60,8 @@ async def start(client, message):
         if cd["update_channel_link"] != None:
             up = cd["update_channel_link"]
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
-        await message.reply_text("1")
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAxkBAAEEK39nJwRDO8e7n_vE1SMsZYyNPt27bwACBwkAAg7Q-FTSyopKXb2ASB4E") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEK4ZnJyga-PKAKyHXCjXm-dL5Uy-MEgACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         await asyncio.sleep(1)
         await m.delete()
         POC = cd.get("pics", "")
