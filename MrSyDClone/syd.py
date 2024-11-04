@@ -2,7 +2,7 @@ import logging
 logger = logging.getLogger(__name__)
 from pyrogram import enums
 from pyrogram.errors import *
-
+from MrSyDClone.database.clone_bot_userdb import JoinReqs
 
 
 
