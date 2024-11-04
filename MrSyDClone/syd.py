@@ -14,10 +14,12 @@ async def setup_join_db(bot_id, auth_channel):
     syd_db = JoinReqs(bot_id, auth_channel)
 
 async def syd_subscribed(bot, query):
-    me = await client.get_me()
-    cd = await db.get_bot(me.id)
-    AUTH_CHANNEL = cd["fsub"]
-    syd_db = await setup_join_db(bot_id=me.id, auth_channel=AUTH_CHANNEL)
+    if syd_db is None:
+        me = await bot.get_me()
+        cd = await db.get_bot(me.id)
+        AUTH_CHANNEL = cd["fsub"]
+        await setup_join_db(bot_id=me.id, auth_channel=AUTH_CHANNEL)
+
     if REQUEST_TO_JOIN_MODE and syd_db.isActive():
         try:
             user = await syd_db.get_user(query.from_user.id)
