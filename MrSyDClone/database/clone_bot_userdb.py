@@ -33,7 +33,7 @@ class JoinReqs:
         except:
             pass
 
-    async def get_user(self, user_id, bot_id=None):
+    async def get_user(self, user_id):
         return await self.col.find_one({"user_id": int(user_id), "bot_id": self.bot_id})
         
     async def get_all_users(self):
