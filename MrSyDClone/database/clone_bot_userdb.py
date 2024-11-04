@@ -22,7 +22,7 @@ class JoinReqs:
 
     async def add_user(self, user_id, first_name, username, date):
         try:
-            await self.col.insert_one({
+            result = await self.col.insert_one({
                 "_id": f"{self.bot_id}_{user_id}",  # Unique ID with bot_id
                 "bot_id": self.bot_id,
                 "user_id": int(user_id),
@@ -30,12 +30,22 @@ class JoinReqs:
                 "username": username,
                 "date": date
             })
-        except:
-            pass
+            logger.info("User added with ID %s", result.inserted_id)
+        except Exception as e:
+            logger.error("Failed to add user %s: %s", user_id, e)
 
     async def get_user(self, user_id):
-        return await self.col.find_one({"user_id": int(user_id), "bot_id": self.bot_id})
-        
+        try:
+            user = await self.col.find_one({"user_id": int(user_id), "bot_id": self.bot_id})
+            if user:
+                logger.info("User found: %s", user)
+            else:
+                logger.warning("User %s not found", user_id)
+            return user
+        except Exception as e:
+            logger.error("Error fetching user %s: %s", user_id, e)
+            return None
+            
     async def get_all_users(self):
         # Include bot_id in the filter
         return await self.col.find({"bot_id": self.bot_id}).to_list(None)
