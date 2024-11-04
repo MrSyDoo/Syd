@@ -48,6 +48,7 @@ class temp(object):
     IMDB_CAP = {}
 
 
+
 async def pub_is_subscribed(bot, query, channel):
     btn = []
     for id in channel:
