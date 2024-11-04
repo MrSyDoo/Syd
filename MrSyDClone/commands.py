@@ -84,15 +84,15 @@ async def start(client, message):
 
     me = await client.get_me()
     cd = await db.get_bot(me.id)
-    MR_SYD = cd["fsub"]  # Set AUTH_CHANNEL dynamically
+    AUTH_CHANNEL = cd["fsub"]  # Set AUTH_CHANNEL dynamically
 
-    if MR_SYD and not await syd_subscribed(client, message):
+    if AUTH_CHANNEL and not await syd_subscribed(client, message):
         try:
         # Create invite link based on join request mode
             if REQUEST_TO_JOIN_MODE:
-                invite_link = await client.create_chat_invite_link(chat_id=int(MR_SYD), creates_join_request=True)
+                invite_link = await client.create_chat_invite_link(chat_id=int(AUTH_CHANNEL), creates_join_request=True)
             else:
-                invite_link = await client.create_chat_invite_link(int(MR_SYD))
+                invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
