@@ -8,18 +8,21 @@ from pyrogram.errors import *
 
 syd_db = None  
 REQUEST_TO_JOIN_MODE = True
+AUTH_CHANNEL = None 
 
 async def setup_join_db(bot_id, auth_channel):
-    global syd_db
+    global syd_db, AUTH_CHANNEL
     syd_db = JoinReqs(bot_id, auth_channel)
+    AUTH_CHANNEL = auth_channel
 
 async def syd_subscribed(bot, query):
-    if syd_db is None:
+    global AUTH_CHANNEL
+    if syd_db is None or AUTH_CHANNEL is None:
         me = await bot.get_me()
         cd = await db.get_bot(me.id)
         AUTH_CHANNEL = cd["fsub"]
         await setup_join_db(bot_id=me.id, auth_channel=AUTH_CHANNEL)
-
+        
     if REQUEST_TO_JOIN_MODE and syd_db.isActive():
         try:
             user = await syd_db.get_user(query.from_user.id)
