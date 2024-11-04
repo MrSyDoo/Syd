@@ -1,7 +1,10 @@
 import motor.motor_asyncio
 from info import CLONE_DATABASE_URI, DATABASE_NAME
-import motor.motor_asyncio
 from info import AUTH_CHANNEL, DATABASE_URI
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 class JoinReqs:
     def __init__(self, bot_id, auth_channel):
