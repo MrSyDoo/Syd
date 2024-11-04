@@ -71,7 +71,16 @@ class Database:
     def __init__(self, uri, database_name):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
         self.db = self._client[database_name]
+        self.req = self.db.requests
 
+    async def find_join_req(self, id):
+        return bool(await self.req.find_one({'id': id}))
+        
+    async def add_join_req(self, id):
+        await self.req.insert_one({'id': id})
+    async def del_join_req(self):
+        await self.req.drop()
+        
     async def add_user(self, bot_id, user_id):
         user = {'user_id': int(user_id)}
         await self.db[str(bot_id)].insert_one(user)
