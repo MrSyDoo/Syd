@@ -1,8 +1,8 @@
 import logging
 logger = logging.getLogger(__name__)
-from pyrogram import enums
+from pyrogram import Client, enums
 from pyrogram.errors import *
-from MrSyDClone.database.clone_bot_userdb import JoinReqs
+from MrSyDClone.database.clone_bot_userdb import clonedb as syd
 from database.users_chats_db import db
 
 
@@ -11,7 +11,9 @@ REQUEST_TO_JOIN_MODE = True
 AUTH_CHANNEL = None 
 
 async def is_req_subscribed(bot, query):
-    if await db.find_join_req(query.from_user.id):
+    me = await client.get_me()
+    mssydtg = me.id + query.from_user.id
+    if await syd.find_join_req(mssydtg):
         return True
     try:
         user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
