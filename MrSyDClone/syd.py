@@ -16,7 +16,7 @@ async def syd_subscribed(bot, query):
     if await syd.find_join_req(mssydtg):
         return True
     try:
-        user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
+        user = await bot.get_chat_member(MR_SYD, query.from_user.id)
     except UserNotParticipant:
         pass
     except Exception as e:
