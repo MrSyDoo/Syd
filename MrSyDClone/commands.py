@@ -15,9 +15,6 @@ from .syd import syd_subscribed
 from shortzy import Shortzy
 from utils import get_size, temp, get_seconds, get_clone_shortlink
 logger = logging.getLogger(__name__)
-me = await client.get_me()
-cd = await db.get_bot(me.id)
-AUTH_CHANNEL = cd["fsub"]
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
@@ -282,10 +279,15 @@ async def start(client, message):
     await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
     return   
 
-@Client.on_chat_join_request(filters.chat(AUTH_CHANNEL))
+@Client.on_chat_join_request()
 async def join_reqs(client, message: ChatJoinRequest):
-  if not await db.find_join_req(message.from_user.id):
-    await db.add_join_req(message.from_user.id)
+    me = await client.get_me()
+    cd = await db.get_bot(me.id)
+    AUTH_CHANNEL = cd.get("fsub")
+    mrsssyd = me.id + message.from_user.id
+    if AUTH_CHANNEL and message.chat.id == int(AUTH_CHANNEL):
+        if not await db.find_join_req(mrsssyd):
+            await db.add_join_req(mrsssyd)
       
 @Client.on_message(filters.command("settings") & filters.private)
 async def settings(client, message):
