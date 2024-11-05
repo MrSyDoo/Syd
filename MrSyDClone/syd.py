@@ -9,7 +9,7 @@ from database.users_chats_db import db
 
 
 async def syd_subscribed(bot, query):
-    me = await client.get_me()
+    me = await bot.get_me()
     cd = await db.get_bot(me.id)
     MR_SYD = cd["fsub"]
     mssydtg = me.id + query.from_user.id
