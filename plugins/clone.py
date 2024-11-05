@@ -26,6 +26,12 @@ async def not_subscribed(_, __, message):
 async def clone_menu(client, message):
     if CLONE_MODE == False:
         return 
+
+    if await db.is_clone_exist(message.from_user.id):
+        return await message.reply("**ʏᴏᴜ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴏɴᴇᴅ ᴀ ʙᴏᴛ ᴅᴇʟᴇᴛᴇ ғɪʀsᴛ ɪᴛ ʙʏ /deleteclone**")
+    else:
+        pass
+
     not_joined_channels = []
     for channel in SYD_CHANNELS:
         try:
@@ -34,34 +40,27 @@ async def clone_menu(client, message):
                 not_joined_channels.append(channel)
         except UserNotParticipant:
             not_joined_channels.append(channel)
+            
+    if not_joined_channels:
+        buttons = [
+            [
+                InlineKeyboardButton(
+                    text=f"📢 Join {channel.capitalize()} 📢", url=f"https://t.me/{channel}"
+                )
+            ]
+            for channel in not_joined_channels
+        ]
+        buttons.append(
+            [
+                InlineKeyboardButton(
+                    text="✅ I am joined ✅", callback_data="check_subscription"
+                )
+            ]
+        )
 
-    if not not_joined_channels:
-        return
+        text = "**Sorry, you're not joined to all required channels 😐. Please join the update channels to continue**"
+        return await message.reply_text(text=text, reply_markup=InlineKeyboardMarkup(buttons))
         
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=f"📢 Join {channel.capitalize()} 📢", url=f"https://t.me/{channel}"
-            )
-        ]
-        for channel in not_joined_channels
-    ]
-    buttons.append(
-        [
-            InlineKeyboardButton(
-                text="✅ I am joined ✅", callback_data="check_subscription"
-            )
-        ]
-    )
-
-    text = "**Sorry, you're not joined to all required channels 😐. Please join the update channels to continue**"
-    await message.reply_text(text=text, reply_markup=InlineKeyboardMarkup(buttons))
-      
-
-    if await db.is_clone_exist(message.from_user.id):
-        return await message.reply("**ʏᴏᴜ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴏɴᴇᴅ ᴀ ʙᴏᴛ ᴅᴇʟᴇᴛᴇ ғɪʀsᴛ ɪᴛ ʙʏ /deleteclone**")
-    else:
-        pass
     techvj = await client.ask(message.chat.id, "<b>1) sᴇɴᴅ <code>/newbot</code> ᴛᴏ @BotFather\n2) ɢɪᴠᴇ ᴀ ɴᴀᴍᴇ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.\n3) ɢɪᴠᴇ ᴀ ᴜɴɪǫᴜᴇ ᴜsᴇʀɴᴀᴍᴇ.\n4) ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴀ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ.\n5) ꜰᴏʀᴡᴀʀᴅ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ.\n\n/cancel - ᴄᴀɴᴄᴇʟ ᴛʜɪs ᴘʀᴏᴄᴇss.</b>")
     if techvj.text == '/cancel':
         await techvj.delete()
