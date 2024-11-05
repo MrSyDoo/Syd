@@ -56,7 +56,7 @@ async def clone_menu(client, message):
 
     text = "**Sorry, you're not joined to all required channels 😐. Please join the update channels to continue**"
     await message.reply_text(text=text, reply_markup=InlineKeyboardMarkup(buttons))
-
+      
 
     if await db.is_clone_exist(message.from_user.id):
         return await message.reply("**ʏᴏᴜ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴏɴᴇᴅ ᴀ ʙᴏᴛ ᴅᴇʟᴇᴛᴇ ғɪʀsᴛ ɪᴛ ʙʏ /deleteclone**")
