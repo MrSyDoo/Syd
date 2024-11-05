@@ -10,7 +10,7 @@ syd_db = None
 REQUEST_TO_JOIN_MODE = True
 AUTH_CHANNEL = None 
 
-async def is_req_subscribed(bot, query):
+async def syd_subscribed(bot, query):
     me = await client.get_me()
     mssydtg = me.id + query.from_user.id
     if await syd.find_join_req(mssydtg):
