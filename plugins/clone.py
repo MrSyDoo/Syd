@@ -109,3 +109,45 @@ async def restart_bots():
         
 # Don't Remove Credit Tg - @SyD_XyZ
 # Ask Doubt on telegram @Syd_XyZ
+
+
+
+@Client.on_callback_query(filters.regex("check_subscription"))
+async def check_subscription(client, callback_query: CallbackQuery):
+    user_id = callback_query.from_user.id
+    not_joined_channels = []
+
+    for channel in SYD_CHANNELS:
+        try:
+            user = await client.get_chat_member(channel, user_id)
+            if user.status in {"kicked", "left"}:
+                not_joined_channels.append(channel)
+        except UserNotParticipant:
+            not_joined_channels.append(channel)
+
+    if not not_joined_channels:
+        await callback_query.message.edit_text(
+            "**You have joined all the required channels. Thank you! 😊 /start now**"
+        )
+    else:
+        buttons = [
+            [
+                InlineKeyboardButton(
+                    text=f"📢 Join {channel.capitalize()} 📢",
+                    url=f"https://t.me/{channel}",
+                )
+            ]
+            for channel in not_joined_channels
+        ]
+        buttons.append(
+            [
+                InlineKeyboardButton(
+                    text="✅ I am joined", callback_data="check_subscription"
+                )
+            ]
+        )
+
+        text = "**You haven't joined all the required channels. Please join them to continue. **"
+        await callback_query.message.edit_text(
+            text=text, reply_markup=InlineKeyboardMarkup(buttons)
+        )
