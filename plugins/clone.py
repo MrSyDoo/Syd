@@ -5,7 +5,7 @@
 
 from info import API_ID, API_HASH, CLONE_MODE, LOG_CHANNEL, SYD_CHANNELS
 from pyrogram import Client, filters, enums
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, BotCommand
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, BotCommand, CallbackQuery
 from database.users_chats_db import db
 import re, os
 from Script import script
