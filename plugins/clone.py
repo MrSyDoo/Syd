@@ -35,6 +35,9 @@ async def clone_menu(client, message):
         except UserNotParticipant:
             not_joined_channels.append(channel)
 
+    if not not_joined_channels:
+        return
+        
     buttons = [
         [
             InlineKeyboardButton(
