@@ -90,7 +90,7 @@ async def start(client, message):
     cd = await db.get_bot(me.id)
     AUTH_CHANNEL = cd["fsub"]  # Set AUTH_CHANNEL dynamically
 
-    if AUTH_CHANNEL and not await is_req_subscribed(client, message):
+    if AUTH_CHANNEL and not await syd_subscribed(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL), creates_join_request=True)
         except ChatAdminRequired:
