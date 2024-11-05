@@ -6,6 +6,7 @@ from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import *
+from pyrogram.types import ChatJoinRequest
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id, get_bad_files
 from database.users_chats_db import db
 from MrSyDClone.database.clone_bot_userdb import clonedb
@@ -14,6 +15,9 @@ from .syd import syd_subscribed
 from shortzy import Shortzy
 from utils import get_size, temp, get_seconds, get_clone_shortlink
 logger = logging.getLogger(__name__)
+me = await client.get_me()
+cd = await db.get_bot(me.id)
+AUTH_CHANNEL = cd["fsub"]
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
@@ -164,7 +168,7 @@ async def start(client, message):
             file_id = mg.file_id
             files_ = await get_file_details(vj_file_id)
             files1 = files_[0]
-            title = '@VJ_Botz  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
+            title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
             size=get_size(files1.file_size)
             f_caption=files1.caption
             if f_caption is None:
@@ -277,7 +281,12 @@ async def start(client, message):
     await msg.delete()
     await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
     return   
-  
+
+@Client.on_chat_join_request(filters.chat(AUTH_CHANNEL))
+async def join_reqs(client, message: ChatJoinRequest):
+  if not await db.find_join_req(message.from_user.id):
+    await db.add_join_req(message.from_user.id)
+      
 @Client.on_message(filters.command("settings") & filters.private)
 async def settings(client, message):
     me = await client.get_me()
