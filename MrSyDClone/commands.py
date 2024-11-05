@@ -169,7 +169,7 @@ async def start(client, message):
             size=get_size(files1.file_size)
             f_caption=files1.caption
             if f_caption is None:
-                f_caption = f"@VJ_Botz  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
+                f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
             if cd["update_channel_link"] != None:
                 up = cd["update_channel_link"]
                 button = [[
@@ -286,8 +286,8 @@ async def join_reqs(client, message: ChatJoinRequest):
     AUTH_CHANNEL = cd.get("fsub")
     mrsssyd = me.id + message.from_user.id
     if AUTH_CHANNEL and message.chat.id == int(AUTH_CHANNEL):
-        if not await db.find_join_req(mrsssyd):
-            await db.add_join_req(mrsssyd)
+        if not await clonedb.find_join_req(mrsssyd):
+            await clonedb.add_join_req(mrsssyd)
       
 @Client.on_message(filters.command("settings") & filters.private)
 async def settings(client, message):
