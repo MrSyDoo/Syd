@@ -85,11 +85,11 @@ async def start(client, message):
 
     me = await client.get_me()
     cd = await db.get_bot(me.id)
-    AUTH_CHANNEL = cd["fsub"]  # Set AUTH_CHANNEL dynamically
+    MR_SYD = cd["fsub"]  # Set AUTH_CHANNEL dynamically
 
-    if AUTH_CHANNEL and not await syd_subscribed(client, message):
+    if MR_SYD and not await syd_subscribed(client, message):
         try:
-            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL), creates_join_request=True)
+            invite_link = await client.create_chat_invite_link(int(MR_SYD), creates_join_request=True)
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
@@ -283,9 +283,9 @@ async def start(client, message):
 async def join_reqs(client, message: ChatJoinRequest):
     me = await client.get_me()
     cd = await db.get_bot(me.id)
-    AUTH_CHANNEL = cd.get("fsub")
+    MR_SYD = cd.get("fsub")
     mrsssyd = me.id + message.from_user.id
-    if AUTH_CHANNEL and message.chat.id == int(AUTH_CHANNEL):
+    if MR_SYD and message.chat.id == int(MR_SYD):
         if not await clonedb.find_join_req(mrsssyd):
             await clonedb.add_join_req(mrsssyd)
       
