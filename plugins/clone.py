@@ -3,17 +3,57 @@
 
 # Clone Code Credit : YT - @SyD_Xyz / TG - @GetTGLinks / GitHub - @Bot_Cracker 
 
-from info import API_ID, API_HASH, CLONE_MODE, LOG_CHANNEL
+from info import API_ID, API_HASH, CLONE_MODE, LOG_CHANNEL, SYD_CHANNELS
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, BotCommand
 from database.users_chats_db import db
-import re
+import re, os
 from Script import script
+
+async def not_subscribed(_, __, message):
+    for channel in SYD_CHANNELS:
+        try:
+            user = await message._client.get_chat_member(channel, message.from_user.id)
+            if user.status in {"kicked", "left"}:
+                return True
+        except UserNotParticipant:
+            return True
+    return False
+
 
 @Client.on_message(filters.command('clone'))
 async def clone_menu(client, message):
     if CLONE_MODE == False:
         return 
+    not_joined_channels = []
+    for channel in SYD_CHANNELS:
+        try:
+            user = await client.get_chat_member(channel, message.from_user.id)
+            if user.status in {"kicked", "left"}:
+                not_joined_channels.append(channel)
+        except UserNotParticipant:
+            not_joined_channels.append(channel)
+
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"📢 Join {channel.capitalize()} 📢", url=f"https://t.me/{channel}"
+            )
+        ]
+        for channel in not_joined_channels
+    ]
+    buttons.append(
+        [
+            InlineKeyboardButton(
+                text="✅ I am joined ✅", callback_data="check_subscription"
+            )
+        ]
+    )
+
+    text = "**Sorry, you're not joined to all required channels 😐. Please join the update channels to continue**"
+    await message.reply_text(text=text, reply_markup=InlineKeyboardMarkup(buttons))
+
+
     if await db.is_clone_exist(message.from_user.id):
         return await message.reply("**ʏᴏᴜ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴏɴᴇᴅ ᴀ ʙᴏᴛ ᴅᴇʟᴇᴛᴇ ғɪʀsᴛ ɪᴛ ʙʏ /deleteclone**")
     else:
