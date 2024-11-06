@@ -364,7 +364,7 @@ async def setting(client, message):
     if owner["user_id"] != message.from_user.id:
         return
     if not await db.has_premium_access(message.from_user.id):
-        if not await check_verification(client, message.from_user.id) and VERIFY == True:
+        if not await check_verification(client, message.from_user.id):
             btn = [[
                 InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
             ],[
