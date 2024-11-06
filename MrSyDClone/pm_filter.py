@@ -762,9 +762,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('🔍 ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
+        if cd["group_link"] != None:
+            sy = settings["group_link"]
+            buttons[1].insert(1, InlineKeyboardButton('⚡ Gʀᴏᴜᴩ ⚡', url=sy))
+
+        buttons[1] = [button for button in buttons[1] if button is not None]
+        
+        if settings["button1"] is not None and settings["btnlink1"] is not None:
+            button1 = InlineKeyboardButton(settings["button1"], url=settings["btnlink1"])
+        else:
+            button1 = None
+    
+        if settings["button2"] is not None and settings["btnlink2"] is not None:
+            button2 = InlineKeyboardButton(settings["button2"], url=settings["btnlink2"])
+        else:
+            button2 = None
+    
+        if button1 or button2:
+            buttons.append([button for button in [button1, button2] if button is not None])
+
         if settings["update_channel_link"] != None:
-            buttons.append([[InlineKeyboardButton('🍿 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🍿', url=f'{settings["update_channel_link"]}')]])
-        syd = cd["strtsyd"]
+            up = settings["update_channel_link"]
+            buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
+        syd = settings["strtsyd"]
         mdsyd = message.from_user.mention
         mrssyd = me.username
         mrssud = me.first_name
