@@ -788,7 +788,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
         await query.message.edit_text("●●●○")
         syd = settings["strtsyd"]
-        mdsyd = message.from_user.mention
+        mdsyd = query.from_user.mention
         mrssyd = me.username
         mrssud = me.first_name
         #syd = syd.replace("{mention}", mdsyd).replace("{username}", mrssyd).replace("{firstname}", mrssud)
