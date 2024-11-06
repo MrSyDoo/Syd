@@ -364,7 +364,7 @@ async def setting(client, message):
     owner = await db.get_bot(me.id)
     if owner["user_id"] != message.from_user.id:
         return
-    if not await check_verification(client, message.from_user.id) and SYDFY == True:
+    if await check_verification(client, message.from_user.id) and SYDFY == True:
         btn = [[
             InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
         ],[
