@@ -34,6 +34,7 @@ async def start(client, message):
     if not await clonedb.is_user_exist(me.id, message.from_user.id):
         await clonedb.add_user(me.id, message.from_user.id)
     if len(message.command) != 2:
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEK4ZnJyga-PKAKyHXCjXm-dL5Uy-MEgACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         buttons = [[
             InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{me.username}?startgroup=true')
         ],[
@@ -63,8 +64,6 @@ async def start(client, message):
             up = cd["update_channel_link"]
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAxkBAAEEK4ZnJyga-PKAKyHXCjXm-dL5Uy-MEgACKxEAAh6lEVXmKTGWbQABUOMeBA") 
-        await asyncio.sleep(1)
         await m.delete()
         POC = cd.get("pics", "")
         PIC = POC.split() if POC else []
