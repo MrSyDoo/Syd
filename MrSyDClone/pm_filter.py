@@ -756,18 +756,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(text = text, reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "start":
+        await query.message.edit_text("○○○○")
         buttons = [[
             InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{me.username}?startgroup=true')
         ],[
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('🔍 ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
+        await query.message.edit_text("●○○○")
         if cd["group_link"] != None:
             sy = settings["group_link"]
             buttons[1].insert(1, InlineKeyboardButton('⚡ Gʀᴏᴜᴩ ⚡', url=sy))
 
         buttons[1] = [button for button in buttons[1] if button is not None]
-        
+        await query.message.edit_text("●●○○")
         if settings["button1"] is not None and settings["btnlink1"] is not None:
             button1 = InlineKeyboardButton(settings["button1"], url=settings["btnlink1"])
         else:
@@ -784,20 +786,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if settings["update_channel_link"] != None:
             up = settings["update_channel_link"]
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
+        await query.message.edit_text("●●●○")
         syd = settings["strtsyd"]
         mdsyd = message.from_user.mention
         mrssyd = me.username
         mrssud = me.first_name
         #syd = syd.replace("{mention}", mdsyd).replace("{username}", mrssyd).replace("{firstname}", mrssud)
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text=syd.format(mention=query.from_user.mention, username=me.username, firstname=me.first_name), reply_markup=reply_markup)
+        await query.message.edit_text("●●●●")
+        await query.message.edit_text(text = syd.format(mention=query.from_user.mention, username=me.username, firstname=me.first_name), reply_markup = reply_markup)
 
     elif query.data == "about":
         btn = [[
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
         ]]
-        await query.message.edit_text(text = script.CLONE_ABOUT_TXT.format(me.mention, temp.U_NAME, temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
+        syd = settings["abtsyd"]
+        await query.message.edit_text(text = syd.format(me.mention, temp.U_NAME, temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "url":
        await query.message.delete()
