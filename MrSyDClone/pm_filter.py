@@ -764,7 +764,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔍 ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
         await query.message.edit_text("●○○○")
-        if cd["group_link"] != None:
+        if settings["group_link"] != None:
             sy = settings["group_link"]
             buttons[1].insert(1, InlineKeyboardButton('⚡ Gʀᴏᴜᴩ ⚡', url=sy))
 
