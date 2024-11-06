@@ -764,8 +764,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         if settings["update_channel_link"] != None:
             buttons.append([[InlineKeyboardButton('🍿 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🍿', url=f'{settings["update_channel_link"]}')]])
+        syd = cd["strtsyd"]
+        mdsyd = message.from_user.mention
+        mrssyd = me.username
+        mrssud = me.first_name
+        #syd = syd.replace("{mention}", mdsyd).replace("{username}", mrssyd).replace("{firstname}", mrssud)
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text=script.CLONE_START_TXT.format(query.from_user.mention, me.username, me.first_name), reply_markup=reply_markup)
+        await query.message.edit_text(text=syd.format(mention=query.from_user.mention, username=me.username, firstname=me.first_name), reply_markup=reply_markup)
 
     elif query.data == "about":
         btn = [[
