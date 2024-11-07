@@ -13,7 +13,7 @@ from MrSyDClone.database.clone_bot_userdb import clonedb
 from info import *
 from .syd import syd_subscribed
 from shortzy import Shortzy
-from utils import get_size, temp, get_seconds, get_clone_shortlink, get_syden, check_token, verify_user, check_verification
+from utils import get_size, temp, get_seconds, get_clone_shortlink, get_syden, check_token, verify_user, check_verification, check_sydfication
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.incoming)
@@ -361,13 +361,11 @@ async def stats(client, message):
 async def setting(client, message):
     me = await client.get_me()
     owner = await db.get_bot(me.id)
-    await message.reply_text("hi")
     if owner["user_id"] != message.from_user.id:
         return
     await message.reply_text("hi")
     if not await db.has_premium_access(message.from_user.id):
-        await message.reply_text("oo")
-        if not await check_verification(client, message.from_user.id):
+        if not await check_sydfication(client, message.from_user.id):
             await message.reply_text("o")
             try:
                 btn = [
