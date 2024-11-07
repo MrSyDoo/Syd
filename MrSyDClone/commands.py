@@ -368,11 +368,13 @@ async def setting(client, message):
     if not await db.has_premium_access(message.from_user.id):
         await message.reply_text("oo")
         if not await check_verification(client, message.from_user.id):
+            await message.reply_text("o")
             btn = [[
                 InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/mrsyd?start="))
             ],[
                 InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
             ]]
+            await message.reply_text("1o")
             await message.reply_text(
                 text="<b>You are not verified !\nKindly verify to continue !</b>",
                 protect_content=True,
