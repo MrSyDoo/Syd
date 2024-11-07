@@ -596,6 +596,24 @@ async def check_verification(bot, userid):
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
         await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(user.id, user.mention))
+    tz = pytz.timezone('Asia/Kolkata')
+    today = date.today()
+    if user.id in VERIFIED.keys():
+        EXP = VERIFIED[user.id]
+        years, month, day = EXP.split('-')
+        comp = date(int(years), int(month), int(day))
+        if comp<today:
+            return False
+        else:
+            return True
+    else:
+        return False  
+        
+async def check_sydfication(bot, userid):
+    user = await bot.get_users(userid)
+    if not await db.is_user_exist(user.id):
+        await db.add_user(user.id, user.first_name)
+        await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(user.id, user.mention))
         expiry_date = date.today() + timedelta(days=4)
         VERIFIED[user.id] = expiry_date.strftime("%Y-%m-%d")  # Store as a string in "YYYY-MM-DD" format
     tz = pytz.timezone('Asia/Kolkata')
