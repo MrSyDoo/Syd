@@ -599,7 +599,6 @@ async def verify_user(bot, userid, token):
     user = await bot.get_users(userid)
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
-        await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(user.id, user.mention))
         expiry_date = date.today() + timedelta(days=4)
         VERIFIED[user.id] = expiry_date.strftime("%Y-%m-%d") 
     TOKENS[user.id] = {token: True}
