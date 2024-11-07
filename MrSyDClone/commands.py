@@ -13,7 +13,7 @@ from MrSyDClone.database.clone_bot_userdb import clonedb
 from info import *
 from .syd import syd_subscribed
 from shortzy import Shortzy
-from utils import get_size, temp, get_seconds, get_clone_shortlink, get_token, check_token, verify_user, check_verification
+from utils import get_size, temp, get_seconds, get_clone_shortlink, get_syden, check_token, verify_user, check_verification
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.incoming)
