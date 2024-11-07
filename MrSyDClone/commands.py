@@ -363,24 +363,21 @@ async def setting(client, message):
         return
     if not await db.has_premium_access(message.from_user.id):
         if not await check_sydfication(client, message.from_user.id):
-            try:
-                btn = [
-                    [
-                        InlineKeyboardButton("Verify", url=await get_syden(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
-                    ],
-                    [
-                        InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
-                    ]
+            
+            btn = [
+                [
+                    InlineKeyboardButton("Verify", url=await get_syden(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
+                ],
+                [
+                    InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
                 ]
-                await message.reply_text(
-                    text="<b>You are not verified !\nKindly verify to continue !</b>",
-                    protect_content=True,
-                    reply_markup=InlineKeyboardMarkup(btn)
-                )
-                return
-            except Exception as e:
-                await message.reply_text(f"Error: {str(e)}")  # To catch any potential errors
-                
+                ]
+            await message.reply_text(
+                text="<b>You are not verified !\nKindly verify to continue !</b>",
+                protect_content=True,
+                reply_markup=InlineKeyboardMarkup(btn)
+            )
+            return # To catch u
     text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
     await message.reply_text(
         text=text,
