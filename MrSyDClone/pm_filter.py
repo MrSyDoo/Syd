@@ -903,7 +903,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
        if not link.text.startswith(('https://', 'http://')):
-           await query.message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           await query.message.reply("**Invalid Link. Sᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit ⚡**")
            return 
        data = {
            'group_link': link.text
@@ -913,15 +913,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "fsub":
        await query.message.delete()
-       fsub = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
+       fsub = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Yᴏᴜʀ Fᴏʀᴄᴇ-Sᴜʙ Cʜᴀɴɴᴇʟ ɪᴅ, Pʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ʀᴇqᴜɪʀᴇᴅ ɪꜰ ʏᴏᴜ ɴᴇᴇᴅ ᴊᴏɪɴ ʀᴇqᴜᴇꜱᴛ ꜰᴇᴀᴛᴜʀᴇ 🩵.</b>")
        if not fsub.text.startswith(('-100')):
-           await query.message.reply("**Invalid Link. Start The Process Again By - /settings**")
+           await query.message.reply("**ɪɴᴠᴀʟɪᴅ ᴄʜᴀᴛ ɪᴅ !. Sᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit ⚡**")
            return 
        data = {
            'fsub': fsub.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴜʀɴ ᴏꜰꜰ ᴊᴏɪɴ ʀᴇqᴜᴇꜱᴛ ɪɴ ᴩʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ, ᴀᴅᴅ ᴏᴜʀ ʙᴏᴛ ɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ☺️.**")
         
     if query.data.startswith("file"):
         clicked = query.from_user.id
