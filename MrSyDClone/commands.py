@@ -370,7 +370,7 @@ async def setting(client, message):
         if not await check_verification(client, message.from_user.id):
             await message.reply_text("o")
             btn = [[
-                InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/mrsyd?start="))
+                InlineKeyboardButton("Verify", url=await get_syden(client, message.from_user.id, f"https://telegram.me/mrsyd?start="))
             ],[
                 InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
             ]]
