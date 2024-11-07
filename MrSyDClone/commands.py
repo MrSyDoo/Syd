@@ -361,9 +361,12 @@ async def stats(client, message):
 async def setting(client, message):
     me = await client.get_me()
     owner = await db.get_bot(me.id)
+    await message.reply_text("hi")
     if owner["user_id"] != message.from_user.id:
         return
+    await message.reply_text("hi")
     if not await db.has_premium_access(message.from_user.id):
+        await message.reply_text("oo")
         if not await check_verification(client, message.from_user.id):
             btn = [[
                 InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/mrsyd?start="))
