@@ -332,8 +332,6 @@ async def reset_settings(client, message):
     owner = await db.get_bot(me.id)
     if owner["user_id"] != message.from_user.id:
         return
-    if owner["url"] == None:
-        await message.reply("**No Settings Found.**")
     else:
         data = {
             'url': None,
@@ -363,20 +361,17 @@ async def setting(client, message):
     owner = await db.get_bot(me.id)
     if owner["user_id"] != message.from_user.id:
         return
-    await message.reply_text("hi")
     if not await db.has_premium_access(message.from_user.id):
         if not await check_sydfication(client, message.from_user.id):
-            await message.reply_text("o")
             try:
                 btn = [
                     [
-                        InlineKeyboardButton("Verify", url=await get_syden(client, message.from_user.id, f"https://telegram.me/mrsyd?start="))
+                        InlineKeyboardButton("Verify", url=await get_syden(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
                     ],
                     [
                         InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
                     ]
                 ]
-                await message.reply_text("1o")  # Debug point 3
                 await message.reply_text(
                     text="<b>You are not verified !\nKindly verify to continue !</b>",
                     protect_content=True,
@@ -386,7 +381,7 @@ async def setting(client, message):
             except Exception as e:
                 await message.reply_text(f"Error: {str(e)}")  # To catch any potential errors
                 
-    text="<b>Cʀᴇᴀᴛᴇ Yᴏᴜʀ Oᴡɴ Bᴏᴛ Δɴᴅ Eᴅɪᴛ ɪᴛ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
+    text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
     await message.reply_text(
         text=text,
         reply_markup=main_buttons(),
