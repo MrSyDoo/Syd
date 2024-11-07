@@ -756,7 +756,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(text = text, reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "start":
-        await query.message.edit_text("○○○○")
         buttons = [[
             InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{me.username}?startgroup=true')
         ],[
