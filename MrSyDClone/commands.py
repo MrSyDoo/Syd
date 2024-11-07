@@ -26,7 +26,7 @@ async def start(client, message):
         ]]
         if cd["update_channel_link"] != None:
             up = cd["update_channel_link"]
-            buttons.append([InlineKeyboardButton('🍿 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🍿', url=up)])
+            buttons.append([InlineKeyboardButton('🍿 Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🍿', url=up)])
         reply_markup = InlineKeyboardMarkup(buttons)
         syd = cd["strtsyd"]
         await message.reply(syd, reply_markup=reply_markup)
