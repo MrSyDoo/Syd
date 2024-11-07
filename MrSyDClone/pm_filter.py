@@ -788,9 +788,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons.append([InlineKeyboardButton('🕯️ Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇL 🕯️', url=up)])
         await query.message.edit_text("●●●○")
         syd = settings["strtsyd"]
-        mdsyd = query.from_user.mention
-        mrssyd = me.username
-        mrssud = me.first_name
         #syd = syd.replace("{mention}", mdsyd).replace("{username}", mrssyd).replace("{firstname}", mrssud)
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text("●●●●")
@@ -844,10 +841,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pic":
         await query.message.delete()
         links = []  # Initialize the list to hold the links
-        max_links = 5  # Set the maximum number of links to collect
+        max_links = 8  # Set the maximum number of links to collect
 
         for _ in range(max_links):
-            # Ask the user for a link
             link_input = await client.ask(query.message.chat.id, "<b>Send a link or type /end to finish:</b>")
             
             # Check if the user wants to end the process
