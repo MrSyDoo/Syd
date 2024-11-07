@@ -628,8 +628,8 @@ async def check_sydfication(bot, userid):
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
         await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(user.id, user.mention))
-        expiry_date = date.today() + timedelta(days=4)
-        VERIFIED[user.id] = expiry_date.strftime("%Y-%m-%d")  # Store as a string in "YYYY-MM-DD" format
+        #expiry_date = date.today() + timedelta(days=4)
+      #  VERIFIED[user.id] = expiry_date.strftime("%Y-%m-%d")  # Store as a string in "YYYY-MM-DD" format
     tz = pytz.timezone('Asia/Kolkata')
     today = date.today()
     if user.id in VERIFIED.keys():
