@@ -246,11 +246,11 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
     ])
     if offset != "":
         btn.append(
-            [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton("Pᵃɢє", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="𝐍𝐎 𝐌𝐎𝐑𝐄 𝐏𝐀𝐆𝐄𝐒 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄",callback_data="pages")]
+            [InlineKeyboardButton(text="Nσ Mσʀє Pᵃɢᴇꜱ Δ∇ΔILΔBLE",callback_data="pages")]
         )
     
     try:
@@ -840,11 +840,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "pic":
         await query.message.delete()
-        links = []  # Initialize the list to hold the links
+        links = []  #  Syd_XyZ
         max_links = 8  # Set the maximum number of links to collect
 
         for _ in range(max_links):
-            link_input = await client.ask(query.message.chat.id, "<b>Send a link or type /end to finish:</b>")
+            link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ Lɪɴᴋ ᴏʀ ꜱᴇɴᴅ /end ᴛᴏ Fɪɴɪꜱʜ ; \n\n Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b>")
             
             # Check if the user wants to end the process
             if link_input.text.lower() == '/end':
