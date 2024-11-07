@@ -799,7 +799,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
         ]]
         syd = settings["abtsyd"]
-        await query.message.edit_text(text = syd.format(me.mention, temp.U_NAME, temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
+        await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "url":
        await query.message.delete()
