@@ -599,7 +599,7 @@ async def verify_user(bot, userid, token):
     user = await bot.get_users(userid)
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
-        expiry_date = date.today() + timedelta(days=4)
+        expiry_date = date.today()
         VERIFIED[user.id] = expiry_date.strftime("%Y-%m-%d") 
     TOKENS[user.id] = {token: True}
     tz = pytz.timezone('Asia/Kolkata')
