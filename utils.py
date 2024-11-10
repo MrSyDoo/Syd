@@ -778,8 +778,8 @@ async def update_sydfy_status(userid, date_temp, time_temp):
     temp.VERIFY[userid] = status
     await db.update_verification(userid, date_temp, time_temp)
 
-async def sydfy_user(bot, userid, token):
-    user = await bot.get_users(int(userid))
+async def sydfy_user(client, userid, token):
+    user = await client.get_users(int(userid))
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
     TOKENS[user.id] = {token: True}
@@ -789,8 +789,8 @@ async def sydfy_user(bot, userid, token):
     date_var, time_var = str(date_var).split(" ")
     await update_verify_status(user.id, date_var, temp_time)
 
-async def check_sydfication(bot, userid):
-    user = await bot.get_users(int(userid))
+async def check_sydfication(client, userid):
+    user = await client.get_users(int(userid))
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
     tz = pytz.timezone('Asia/Kolkata')
@@ -817,8 +817,8 @@ async def check_sydfication(bot, userid):
         else:
             return True
 
-async def check_sydtoken(bot, userid, token):
-    user = await bot.get_users(userid)
+async def check_sydtoken(client, userid, token):
+    user = await client.get_users(userid)
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
     if user.id in TOKENS.keys():
@@ -832,8 +832,8 @@ async def check_sydtoken(bot, userid, token):
     else:
         return False
 
-async def syd_token(bot, userid, link):
-    user = await bot.get_users(userid)
+async def syd_token(client, userid, link):
+    user = await client.get_users(userid)
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
     token = ''.join(random.choices(string.ascii_letters + string.digits, k=7))
