@@ -362,21 +362,28 @@ async def setting(client, message):
     if owner["user_id"] != message.from_user.id:
         return
     if not await check_sydfication(client, message.from_user.id):
+        try:
             
-        btn = [
-            [
-                InlineKeyboardButton("Verify", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
-            ],
-            [
-                InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
-            ]
-            ]
-        await message.reply_text(
-            text="<b>You are not verified !\nKindly verify to continue !</b>",
-            protect_content=True,
-            reply_markup=InlineKeyboardMarkup(btn)
-        )
-        return # To catch u
+            btn = [
+                [
+                    InlineKeyboardButton("Verify", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
+                ],
+                [
+                    InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
+                ]
+                ]
+            await message.reply_text(
+                text="<b>You are not verified !\nKindly verify to continue !</b>",
+                protect_content=True,
+                reply_markup=InlineKeyboardMarkup(btn)
+            )
+            return # To catch u
+        except Exception as e:
+            logging.error(f"Error generating verification token URL for user {message.from_user.id}: {e}")
+            await message.reply_text(
+            text="<b>Verification failed due to a server error. Please try again later.</b>",
+            protect_content=True
+            )
     text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
     await message.reply_text(
         text=text,
