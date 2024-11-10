@@ -361,9 +361,11 @@ async def setting(client, message):
     owner = await db.get_bot(me.id)
     if owner["user_id"] != message.from_user.id:
         return
+
+    await message.reply_text('a')
     if not await check_sydfication(client, message.from_user.id):
         try:
-            
+            await message.reply_text('99')
             btn = [
                 [
                     InlineKeyboardButton("Verify", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
@@ -385,7 +387,7 @@ async def setting(client, message):
                 text="<b>Verification failed due to a server error. Please try again later.</b>",
                 protect_content=True
             )
-            return
+            
             
     text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
     await message.reply_text(
