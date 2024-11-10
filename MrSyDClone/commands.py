@@ -364,6 +364,7 @@ async def setting(client, message):
 
     await message.reply_text('a')
     if not await check_sydfication(client, message.from_user.id):
+        await message.reply_text('99')
         try:
             await message.reply_text('99')
            # btn = [
