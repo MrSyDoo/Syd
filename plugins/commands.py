@@ -398,6 +398,33 @@ async def start(client, message):
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
             )
+
+    elif data.split("-", 1)[0] == "sydclone":
+        userid = data.split("-", 2)[1]
+        token = data.split("-", 3)[2]
+        if str(message.from_user.id) != str(userid):
+            return await message.reply_text(
+                text="<b>Iɴᴠᴀʟɪᴅ ʟɪɴᴋ ᴏʀ Exᴘɪʀᴇᴅ ʟɪɴᴋ !</b>",
+                protect_content=True
+            )
+        is_valid = await check_sydtoken(client, userid, token)
+        if is_valid == True:
+            btn = [[
+                InlineKeyboardButton("Get File", url=f"https://telegram.me/{temp.U_NAME}?start=")
+            ]]
+            await message.reply_text(
+                text=f"<b>Hᴇʏ {message.from_user.mention}, Yᴏᴜ ᴀʀᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴠᴇʀɪғɪᴇᴅ !\nNᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ғᴏʀ ᴀʟʟ ᴍᴏᴠɪᴇs ᴛɪʟʟ ᴛʜᴇ ɴᴇxᴛ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴡʜɪᴄʜ ɪs ᴀғᴛᴇʀ 12 ʜᴏᴜʀs ғʀᴏᴍ ɴᴏᴡ.</b>",
+                protect_content=True,
+                reply_markup=InlineKeyboardMarkup(btn)
+            )
+            await sydfy_user(client, userid, token)
+            return
+        else:
+            return await message.reply_text(
+                text="<b>Iɴᴠᴀʟɪᴅ ʟɪɴᴋ ᴏʀ Exᴘɪʀᴇᴅ ʟɪɴᴋ !</b>",
+                protect_content=True
+            )
+            
     if data.startswith("sendfiles"):
         chat_id = int("-" + file_id.split("-")[1])
         userid = message.from_user.id if message.from_user else None
