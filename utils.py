@@ -622,25 +622,7 @@ async def check_verification(bot, userid):
     else:
         return False  
         
-async def check_sydfication(bot, userid):
-    user = await bot.get_users(userid)
-    if not await db.is_user_exist(user.id):
-        await db.add_user(user.id, user.first_name)
-        #expiry_date = date.today() + timedelta(days=4)
-      #  VERIFIED[user.id] = expiry_date.strftime("%Y-%m-%d")  # Store as a string in "YYYY-MM-DD" format
-    tz = pytz.timezone('Asia/Kolkata')
-    today = date.today()
-    if user.id in VERIFIED.keys():
-        EXP = VERIFIED[user.id]
-        years, month, day = EXP.split('-')
-        comp = date(int(years), int(month), int(day))
-        if comp<today:
-            return False
-        else:
-            return True
-    else:
-        return False  
-    
+
 async def send_all(bot, userid, files, ident, chat_id, user_name, query):
     settings = await get_settings(chat_id)
     if 'is_shortlink' in settings.keys():
@@ -779,3 +761,57 @@ async def get_seconds(time_string):
         return value * 86400 * 365
     else:
         return 0
+
+
+async def get_sydfy_status(userid):
+    status = temp.VERIFY.get(userid)
+    if not status:
+        status = await db.get_verified(userid)
+        temp.VERIFY[userid] = status
+    return status
+    
+async def update_sydfy_status(userid, date_temp, time_temp):
+    status = await get_sydfy_status(userid)
+    status["date"] = date_temp
+    status["time"] = time_temp
+    temp.VERIFY[userid] = status
+    await db.update_verification(userid, date_temp, time_temp)
+
+async def sydfy_user(bot, userid, token):
+    user = await bot.get_users(int(userid))
+    if not await db.is_user_exist(user.id):
+        await db.add_user(user.id, user.first_name)
+    TOKENS[user.id] = {token: True}
+    tz = pytz.timezone('Asia/Kolkata')
+    date_var = datetime.now(tz)+timedelta(hours=24)
+    temp_time = date_var.strftime("%H:%M:%S")
+    date_var, time_var = str(date_var).split(" ")
+    await update_verify_status(user.id, date_var, temp_time)
+
+async def check_sydfication(bot, userid):
+    user = await bot.get_users(int(userid))
+    if not await db.is_user_exist(user.id):
+        await db.add_user(user.id, user.first_name)
+    tz = pytz.timezone('Asia/Kolkata')
+    today = date.today()
+    now = datetime.now(tz)
+    curr_time = now.strftime("%H:%M:%S")
+    hour1, minute1, second1 = curr_time.split(":")
+    curr_time = time(int(hour1), int(minute1), int(second1))
+    status = await get_verify_status(user.id)
+    date_var = status["date"]
+    time_var = status["time"]
+    years, month, day = date_var.split('-')
+    comp_date = date(int(years), int(month), int(day))
+    hour, minute, second = time_var.split(":")
+    comp_time = time(int(hour), int(minute), int(second))
+    if comp_date<today:
+        return False
+    else:
+        if comp_date == today:
+            if comp_time<curr_time:
+                return False
+            else:
+                return True
+        else:
+            return True
