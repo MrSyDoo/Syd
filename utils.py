@@ -44,6 +44,7 @@ class temp(object):
     B_NAME = None
     GETALL = {}
     SHORT = {}
+    VERIFY = {}
     SETTINGS = {}
     IMDB_CAP = {}
 
