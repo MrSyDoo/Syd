@@ -817,7 +817,7 @@ async def check_sydfication(bot, userid):
         else:
             return True
 
-async def check_token(bot, userid, token):
+async def check_sydtoken(bot, userid, token):
     user = await bot.get_users(userid)
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
@@ -832,7 +832,7 @@ async def check_token(bot, userid, token):
     else:
         return False
 
-async def get_token(bot, userid, link, fileid):
+async def syd_token(bot, userid, link, fileid):
     user = await bot.get_users(userid)
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
