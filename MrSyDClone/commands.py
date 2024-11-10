@@ -378,12 +378,15 @@ async def setting(client, message):
                 reply_markup=InlineKeyboardMarkup(btn)
             )
             return # To catch u
+            
         except Exception as e:
             logging.error(f"Error generating verification token URL for user {message.from_user.id}: {e}")
             await message.reply_text(
-            text="<b>Verification failed due to a server error. Please try again later.</b>",
-            protect_content=True
+                text="<b>Verification failed due to a server error. Please try again later.</b>",
+                protect_content=True
             )
+            return
+            
     text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
     await message.reply_text(
         text=text,
