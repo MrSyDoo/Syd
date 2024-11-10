@@ -799,7 +799,7 @@ async def check_sydfication(bot, userid):
     curr_time = now.strftime("%H:%M:%S")
     hour1, minute1, second1 = curr_time.split(":")
     curr_time = time(int(hour1), int(minute1), int(second1))
-    status = await get_verify_status(user.id)
+    status = await get_sydfy_status(user.id)
     date_var = status["date"]
     time_var = status["time"]
     years, month, day = date_var.split('-')
@@ -832,14 +832,14 @@ async def check_sydtoken(bot, userid, token):
     else:
         return False
 
-async def syd_token(bot, userid, link, fileid):
+async def syd_token(bot, userid, link):
     user = await bot.get_users(userid)
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, user.first_name)
     token = ''.join(random.choices(string.ascii_letters + string.digits, k=7))
     TOKENS[user.id] = {token: False}
-    url = f"{link}sydclone-{user.id}-{token}-{fileid}"
-    status = await get_verify_status(user.id)
+    url = f"{link}sydclone-{user.id}-{token}"
+    status = await get_sydfy_status(user.id)
     date_var = status["date"]
     time_var = status["time"]
     hour, minute, second = time_var.split(":")
@@ -851,5 +851,5 @@ async def syd_token(bot, userid, link, fileid):
         vr_num = 2
     else:
         vr_num = 1
-    shortened_verify_url = await get_verify_shorted_link(vr_num, url)
+    shortened_verify_url = await get_sydfy_shorted_link(vr_num, url)
     return str(shortened_verify_url)
