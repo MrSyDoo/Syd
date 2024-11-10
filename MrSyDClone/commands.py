@@ -13,7 +13,7 @@ from MrSyDClone.database.clone_bot_userdb import clonedb
 from info import *
 from .syd import syd_subscribed
 from shortzy import Shortzy
-from utils import get_size, temp, get_seconds, get_clone_shortlink, get_syden, check_token, verify_user, check_verification, check_sydfication
+from utils import get_size, temp, get_seconds, get_clone_shortlink, syd_token, check_token, verify_user, check_verification, check_sydfication
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.incoming)
@@ -361,23 +361,22 @@ async def setting(client, message):
     owner = await db.get_bot(me.id)
     if owner["user_id"] != message.from_user.id:
         return
-    if not await db.has_premium_access(message.from_user.id):
-        if not await check_sydfication(client, message.from_user.id):
+    if not await check_sydfication(client, message.from_user.id):
             
-            btn = [
-                [
-                    InlineKeyboardButton("Verify", url=await get_syden(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
-                ],
-                [
-                    InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
-                ]
-                ]
-            await message.reply_text(
-                text="<b>You are not verified !\nKindly verify to continue !</b>",
-                protect_content=True,
-                reply_markup=InlineKeyboardMarkup(btn)
-            )
-            return # To catch u
+        btn = [
+            [
+                InlineKeyboardButton("Verify", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
+            ],
+            [
+                InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
+            ]
+            ]
+        await message.reply_text(
+            text="<b>You are not verified !\nKindly verify to continue !</b>",
+            protect_content=True,
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+        return # To catch u
     text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
     await message.reply_text(
         text=text,
