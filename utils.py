@@ -9,8 +9,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import enums
 from pyrogram.errors import *
 from typing import Union
-from Script import scriptscript
-import pytz
+from Script import script
 from datetime import datetime, date, time
 from typing import List
 from database.users_chats_db import db
