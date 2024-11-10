@@ -897,5 +897,5 @@ async def syd_token(client, userid, link):
         vr_num = 2
     else:
         vr_num = 1
-    shortened_verify_url = await get_sydfy_shorted_link(vr_num, url)
+    shortened_verify_url = await get_sydfy_shorted_link(url)
     return str(shortened_verify_url)
