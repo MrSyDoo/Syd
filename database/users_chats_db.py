@@ -334,6 +334,23 @@ class Database:
     async def get_save(self, id):
         user = await self.col.find_one({'id': int(id)})
         return user.get('save', False) 
-    
+        
+    async def get_verified(self, id):
+        default = {
+            'date': "1999-12-31",
+            'time': "23:59:59"
+        }
+        user = await self.col.find_one({'id': int(id)})
+        if user:
+            return user.get("verification_status", default)
+        return default
+
+    async def update_verification(self, id, date, time):
+        status = {
+            'date': str(date),
+            'time': str(time)
+        }
+        await self.col.update_one({'id': int(id)}, {'$set': {'verification_status': status}})
+
 
 db = Database(DATABASE_URI, DATABASE_NAME)
