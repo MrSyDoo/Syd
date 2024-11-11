@@ -1,6 +1,6 @@
 # Don't Remove Credit @SyD_XyZ
 
-import os, string, logging, random, asyncio, time, datetime, re, sys, json, base64
+import os, string, logging, random, asyncio, time, datetime, re, sys, json, base64, timedelta, pytz
 from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
@@ -409,7 +409,8 @@ async def start(client, message):
             )
         is_valid = await check_sydtoken(client, userid, token)
         if is_valid == True:
-            syd = await get_sydfy_status(userid)
+            tz = pytz.timezone('Asia/Kolkata')
+            syd = datetime.now(tz)+timedelta(hours=384)
             btn = [[
                 InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}?start=")
             ]]
