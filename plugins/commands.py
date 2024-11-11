@@ -21,8 +21,8 @@ join_db = JoinReqs
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
-    PI = "😀 ⚡ 👍 ❤️ 🔥 👀 👏 🕊️ 😘 🆒 🍓 🏆 💯 ❤️‍🔥"
-    PIS = PI.split()
+   # PI = "😀 ⚡ 👍 ❤️ 🔥 👀 👏 🕊️ 😘 🆒 🍓 🏆 💯 ❤️‍🔥"
+   # PIS = PI.split()
    # await message.react(emoji=random.choice(PIS))
     await message.react(emoji=random.choice(SYD))
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
