@@ -830,7 +830,7 @@ async def sydfy_user(client, userid, token):
         await db.add_user(user.id, user.first_name)
     TOKENS[user.id] = {token: True}
     tz = pytz.timezone('Asia/Kolkata')
-    date_var = datetime.now(tz)+timedelta(hours=12)
+    date_var = datetime.now(tz)+timedelta(hours=384)
     temp_time = date_var.strftime("%H:%M:%S")
     date_var, time_var = str(date_var).split(" ")
     await update_sydfy_status(user.id, date_var, temp_time)
