@@ -53,6 +53,14 @@ async def clone_menu(client, message):
         buttons.append(
             [
                 InlineKeyboardButton(
+                    text="✧ Jᴏɪɴ Back-up ✧", url="https://t.me/+0Zi1FC4ulo8zYzVl"
+
+                )
+            ]
+        )
+        buttons.append(
+            [
+                InlineKeyboardButton(
                     text="✔ ɪ ᴀᴍ ᴊᴏɪɴᴇᴅ ✔", callback_data="check_subscription"
                 )
             ]
@@ -142,6 +150,15 @@ async def check_subscription(client, callback_query: CallbackQuery):
             ]
             for channel in not_joined_channels
         ]
+        buttons.append(
+            [
+                InlineKeyboardButton(
+                    text="✧ Jᴏɪɴ Back-up ✧", url="https://t.me/+0Zi1FC4ulo8zYzVl"
+
+                )
+            ]
+        )
+
         buttons.append(
             [
                 InlineKeyboardButton(
