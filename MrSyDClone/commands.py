@@ -373,7 +373,7 @@ async def setting(client, message):
             ]
             await message.reply_text(
               #  text=text,
-                text="<b>Yᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴠᴇʀɪꜰɪᴇᴅ !\nKɪɴᴅʟʏ ᴠᴇʀɪꜰʏ ᴛᴏ ᴇxᴩᴇʀɪᴇɴᴄᴇ ꜱᴜᴩᴇʀʙ ꜰᴇᴀᴛᴜʀᴇ 🩵!</b><blockquote> Oɴᴄᴇ Vᴇʀɪꜰɪᴇᴅ, Yᴏᴜ Cᴀɴ Eᴅɪᴛ Mᴇ Fᴏʀ 16ᴅᴀʏꜱ⚡ Fᴏʀ Fʀᴇᴇ😇</blockquote>",
+                text="<b>Yᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴠᴇʀɪꜰɪᴇᴅ !\nKɪɴᴅʟʏ ᴠᴇʀɪꜰʏ ᴛᴏ ᴇxᴩᴇʀɪᴇɴᴄᴇ ꜱᴜᴩᴇʀʙ ꜰᴇᴀᴛᴜʀᴇ 🩵!</b><blockquote><b>Oɴᴄᴇ Vᴇʀɪꜰɪᴇᴅ, Yᴏᴜ Cᴀɴ Eᴅɪᴛ Mᴇ Fᴏʀ 16ᴅᴀʏꜱ⚡ Fᴏʀ Fʀᴇᴇ😇</b></blockquote>",
                 protect_content=True,
                 reply_markup=InlineKeyboardMarkup(btn)
             )
