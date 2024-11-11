@@ -363,19 +363,17 @@ async def setting(client, message):
         return
     if not await check_sydfication(client, message.from_user.id):
         try:
-            await message.reply_text('99')
             btn = [
                 [
-                    InlineKeyboardButton("Verify", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
-                ],
-                [
-                    InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
+                    InlineKeyboardButton("➻ ᴠᴇʀɪꜰʏ", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
                 ]
-                ]
-           # text = await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start=")
+              #  [
+               #     InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
+               # ]
+            ]
             await message.reply_text(
               #  text=text,
-                text="<b>You are not verified !\nKindly verify to continue !</b>",
+                text="<b>You are not verified !\nKindly verify to continue !</b><blockquote> 🩵🩵</blockquote>",
                 protect_content=True,
                 reply_markup=InlineKeyboardMarkup(btn)
             )
