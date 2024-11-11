@@ -120,9 +120,7 @@ my features Stay here new features coming soon...
  ./info  - <code>ɢᴇᴛ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜꜱᴇʀ.</code> 
   
  ./song - Download any song [<code>example /song vaa vaathi song</code>] 
-  
- ./telegraph - <code>Telegraph generator sen under 5MB video or photo I give telegraph link</code> 
-  
+ 
  ./tts - <code>This command usage text to voice converter</code> 
   
  ./video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/Aiue8PMuD-k</code>]
@@ -168,11 +166,10 @@ Aᴅᴅᴇᴅ Bʏ - {}"""
 ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
     
-    LOG_TEXT_P = """#NewBot
+    LOG_BOT = """#NewBot
 Uꜱᴇʀ ɪᴅ- <code>{}</code>
 Uꜱᴇʀ Nᴀᴍᴇ - {}
-Bᴏᴛ ᴜꜱᴇʀ ɴᴀᴍᴇ - @{}
-Bᴏᴛ ᴛᴏᴋᴇɴ - <code>{}</code>"""  #keep private
+Bᴏᴛ ᴜꜱᴇʀ ɴᴀᴍᴇ - @{} """  
 
     ALRT_TXT = """ʜᴇʟʟᴏ {},
 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,
