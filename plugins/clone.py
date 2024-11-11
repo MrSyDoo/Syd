@@ -45,7 +45,7 @@ async def clone_menu(client, message):
         buttons = [
             [
                 InlineKeyboardButton(
-                    text=f"📢 Join {channel.capitalize()} 📢", url=f"https://t.me/{channel}"
+                    text=f"✧ Jᴏɪɴ {channel.capitalize()} ✧", url=f"https://t.me/{channel}"
                 )
             ]
             for channel in not_joined_channels
@@ -53,15 +53,15 @@ async def clone_menu(client, message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text="✅ I am joined ✅", callback_data="check_subscription"
+                    text="✔ ɪ ᴀᴍ ᴊᴏɪɴᴇᴅ ✔", callback_data="check_subscription"
                 )
             ]
         )
 
-        text = "**Sorry, you're not joined to all required channels 😐. Please join the update channels to continue**"
+        text = "**Sᴏʀʀʏ, ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴊᴏɪɴ ɪɴ ᴏᴜʀ ʀᴇqᴜɪʀᴇᴅ ᴄʜᴀɴɴᴇʟꜱ, ᴩʟᴇᴀꜱᴇ ᴅᴏ ꜱᴏ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ,,... ⚡ .**"
         return await message.reply_text(text=text, reply_markup=InlineKeyboardMarkup(buttons))
         
-    techvj = await client.ask(message.chat.id, "<b>1) sᴇɴᴅ <code>/newbot</code> ᴛᴏ @BotFather\n2) ɢɪᴠᴇ ᴀ ɴᴀᴍᴇ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.\n3) ɢɪᴠᴇ ᴀ ᴜɴɪǫᴜᴇ ᴜsᴇʀɴᴀᴍᴇ.\n4) ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴀ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ.\n5) ꜰᴏʀᴡᴀʀᴅ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ.\n\n/cancel - ᴄᴀɴᴄᴇʟ ᴛʜɪs ᴘʀᴏᴄᴇss.</b>")
+    techvj = await client.ask(message.chat.id, "<b>1) Sᴇɴᴅ <code>/newbot</code> ᴛᴏ @BotFather\n2) Gɪᴠᴇ ᴀ ɴᴀᴍᴇ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.\n3) Gɪᴠᴇ ᴀ ᴜɴɪǫᴜᴇ ᴜsᴇʀɴᴀᴍᴇ.\n4) Tʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴀ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ.\n5) Fᴏʀᴡᴀʀᴅ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ.\n\n/cancel - ᴄᴀɴᴄᴇʟ ᴛʜɪs ᴘʀᴏᴄᴇss.</b>")
     if techvj.text == '/cancel':
         await techvj.delete()
         return await message.reply('<b>Cᴀɴᴄᴇʟᴇᴅ ᴛʜɪs ᴘʀᴏᴄᴇss 🚫</b>')
@@ -73,7 +73,7 @@ async def clone_menu(client, message):
     else:
         return await message.reply('<b>Nᴏᴛ ꜰᴏʀᴡᴀʀᴅᴇᴅ ꜰʀᴏᴍ @BotFather 😑</b>')
     user_id = message.from_user.id
-    msg = await message.reply_text("**Wᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ,**")
+    msg = await message.reply_text('<b><blockqoute>Wᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ,</blockqoute>\n <u>⚠️ɴᴏᴛᴇ: ʙʏ ᴄʟᴏɴɪɴɢ ʏᴏᴜ ᴀʀᴇ ᴀᴄᴄᴇᴩᴛɪɴɢ ᴛᴏ ᴏᴜʀ ᴩᴏʟɪᴄɪᴇꜱ!</u></b>')
     try:
         vj = Client(
             f"{bot_token}", API_ID, API_HASH,
@@ -83,7 +83,7 @@ async def clone_menu(client, message):
         await vj.start()
         bot = await vj.get_me()
         await db.add_clone_bot(bot.id, user_id, bot_token)
-        await msg.edit_text(f"<b>SᴜᴄᴄᴇssғᴜʟʟY Cʟᴏɴᴇᴅ Yᴏᴜʀ Bᴏᴛ: @{bot.username}.\n\nYᴏᴜ ᴄᴀɴ ᴄᴜsᴛᴏᴍɪsᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ \n/settings ᴀɴᴅ /edit \nCᴏᴍᴍᴀɴᴅ ɪɴ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ</b>\n\n<blockqoute>Nᴇᴠᴇʀ Fᴏʀɢᴇᴛ ᴛᴏ ᴇxᴩᴇʀɪᴇɴᴄᴇ ᴛʜᴇ ꜱᴜᴩᴇʀʙ ꜱᴇʀᴠɪᴄᴇᴇʜ⚡")
+        await msg.edit_text(f"<b>SᴜᴄᴄᴇssғᴜʟʟY Cʟᴏɴᴇᴅ Yᴏᴜʀ Bᴏᴛ: @{bot.username}.\n\nYᴏᴜ ᴄᴀɴ ᴄᴜsᴛᴏᴍɪsᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ \n/settings ᴀɴᴅ /edit \nCᴏᴍᴍᴀɴᴅ ɪɴ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ</b>\n\n<blockqoute>Nᴇᴠᴇʀ Fᴏʀɢᴇᴛ ᴛᴏ ᴇxᴩᴇʀɪᴇɴᴄᴇ ᴛʜᴇ ꜱᴜᴩᴇʀʙ ꜱᴇʀᴠɪᴄᴇᴇʜ⚡</blockqoute>")
     except BaseException as e:
         await msg.edit_text(f"⚠️ <b>Bᴏᴛ Eʀʀᴏʀ:</b>\n\n<code>{e}</code>\n\n**Tʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ ⚡ ᴏʀ Kɪɴᴅʟʏ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ @SyD_XyZ ᴛᴏ ɢᴇᴛ ᴀꜱꜱɪꜱᴛᴀɴᴄᴇ.**")
 
@@ -91,9 +91,9 @@ async def clone_menu(client, message):
 async def delete_clone_menu(client, message):
     if await db.is_clone_exist(message.from_user.id):
         await db.delete_clone(message.from_user.id)
-        await message.reply("**sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ ᴄʀᴇᴀᴛᴇ ᴀɢᴀɪɴ ʙʏ /clone**")
+        await message.reply("**Sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ ᴄʀᴇᴀᴛᴇ ᴀɢᴀɪɴ ʙʏ /clone**")
     else:
-        await message.reply("**ɴᴏ ᴄʟᴏɴᴇ ʙᴏᴛ ғᴏᴜɴᴅ**")
+        await message.reply("**Nᴏ ᴄʟᴏɴᴇ ʙᴏᴛ ғᴏᴜɴᴅ ✖**")
 
 async def restart_bots():
     bots_cursor = await db.get_all_bots()
@@ -136,7 +136,7 @@ async def check_subscription(client, callback_query: CallbackQuery):
         buttons = [
             [
                 InlineKeyboardButton(
-                    text=f"📢 Join {channel.capitalize()} 📢",
+                    text=f"✧ Jᴏɪɴ {channel.capitalize()} ✧",
                     url=f"https://t.me/{channel}",
                 )
             ]
@@ -145,12 +145,12 @@ async def check_subscription(client, callback_query: CallbackQuery):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text="✅ I am joined", callback_data="check_subscription"
+                    text="✔ ɪ ᴀᴍ ᴊᴏɪɴᴇᴅ ✔", callback_data="check_subscription"
                 )
             ]
         )
 
-        text = "**You haven't joined all the required channels. Please join them to continue. **"
+        text = "**Sᴛɪʟʟ 🥲, ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴊᴏɪɴ ɪɴ ᴏᴜʀ ᴀʟʟ ʀᴇqᴜɪʀᴇᴅ ᴄʜᴀɴɴᴇʟꜱ, ᴩʟᴇᴀꜱᴇ ᴅᴏ ꜱᴏ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ,,... ⚡ .**"
         await callback_query.message.edit_text(
             text=text, reply_markup=InlineKeyboardMarkup(buttons)
         )
