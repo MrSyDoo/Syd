@@ -25,7 +25,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
 SYD = (environ.get('SYD', '😀 ⚡ 👍 ❤️ 🔥 👀 👏 🕊️ 😘 🆒 🍓 🏆 💯 ❤️‍🔥')).split() #REACT @SyD_XyZ
-SYD_CHANNELS = (environ.get('PICS', 'bot_cracker,mod_moviez_X')).split(',')
+SYD_CHANNELS = (environ.get('SYD_CHANNELS', 'bot_cracker,mod_moviez_X,Movies_clone_bot')).split(',')
 PICS = (environ.get('PICS', 'https://graph.org/file/f33b4b707841609127ccd.jpg https://graph.org/file/07e38128ad1c20b6f2287.jpg')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/b69af2db776e4e85d21ec.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://t.me/How_To_Open_Linkl")
