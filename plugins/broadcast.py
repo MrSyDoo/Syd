@@ -15,6 +15,14 @@ async def pm_broadcast(bot, message):
     syd12 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
     syd1 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
     syd2 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message") 
+    if syd11 == "/skip":
+        aa = None
+    else:
+        aa = syd11      
+    if syd1 == "/skip":
+        ab = None
+    else:
+        aa = syd11
     try:
         users = await db.get_all_users()
         sts = await message.reply_text('Broadcasting your messages...')
