@@ -833,7 +833,7 @@ async def sydfy_user(client, userid, token):
     date_var = datetime.now(tz)+timedelta(hours=12)
     temp_time = date_var.strftime("%H:%M:%S")
     date_var, time_var = str(date_var).split(" ")
-    await update_verify_status(user.id, date_var, temp_time)
+    await update_sydfy_status(user.id, date_var, temp_time)
 
 async def check_sydfication(client, userid):
     user = await client.get_users(int(userid))
