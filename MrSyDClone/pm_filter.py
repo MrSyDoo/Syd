@@ -847,13 +847,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         for _ in range(max_links):
             link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ Lɪɴᴋ ᴏʀ ꜱᴇɴᴅ /end ᴛᴏ Fɪɴɪꜱʜ ; \n\n <blockqoute>Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b></blockqoute>")
+            if link_input.text.lower() == '/end':
+                break
             if not link_input.text.startswith(('https://', 'http://')):
                 await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
                 return 
             
             # Check if the user wants to end the process
-            if link_input.text.lower() == '/end':
-                break
             links.append(link_input.text)
         if links:
             # Join the collected links into a single string
