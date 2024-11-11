@@ -11,6 +11,10 @@ from utils import broadcast_messages, broadcast_messages_group
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS))
 async def pm_broadcast(bot, message):
     b_msg = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
+    syd11 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
+    syd12 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
+    syd1 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
+    syd2 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message") 
     try:
         users = await db.get_all_users()
         sts = await message.reply_text('Broadcasting your messages...')
