@@ -74,7 +74,7 @@ async def start(client, message):
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('🤖 Cʀᴇᴀᴛᴇ Yᴏᴜʀ Oᴡɴ Cʟᴏɴᴇ Bᴏᴛ 🤖', callback_data='clone')])
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAxkBAAEEKyxnJX6PInLPoClWuYRYGkQbgzyvAgACKxEAAh6lEVXmKTGWbQABUOMeBA") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEELoRnMdY9Cjhme4dI1ex_MF4KwoIc4AACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
@@ -164,7 +164,7 @@ async def start(client, message):
         )
         return
     data = message.command[1]
-    if data.split("-", 1)[0] == "VJ":
+    if data.split("-", 1)[0] == "SyD":
         user_id = int(data.split("-", 1)[1])
         vj = await referal_add_user(user_id, message.from_user.id)
         if vj and PREMIUM_AND_REFERAL_MODE == True:
@@ -409,12 +409,13 @@ async def start(client, message):
             )
         is_valid = await check_sydtoken(client, userid, token)
         if is_valid == True:
+            syd = await get_sydfy_status(userid)
             btn = [[
-                InlineKeyboardButton("Get File", url=f"https://telegram.me/{temp.U_NAME}?start=")
+                InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}?start=")
             ]]
             await sydfy_user(client, userid, token)
             await message.reply_text(
-                text=f"<b>Hᴇʏ {message.from_user.mention}, Yᴏᴜ ᴀʀᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴠᴇʀɪғɪᴇᴅ !\nNᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ғᴏʀ ᴀʟʟ ᴍᴏᴠɪᴇs ᴛɪʟʟ ᴛʜᴇ ɴᴇxᴛ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴡʜɪᴄʜ ɪs ᴀғᴛᴇʀ 12 ʜᴏᴜʀs ғʀᴏᴍ ɴᴏᴡ.</b>",
+                text=f"<b>Hᴇʏ {message.from_user.mention}, Yᴏᴜ ᴀʀᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴠᴇʀɪғɪᴇᴅ !\n<blockqoute>Nᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ 16ᴅᴀʏꜱ [ {syd} ], Eɴᴊᴏʏ ᴡɪᴛʜ ᴛʜᴇ ʙᴏᴛ ⚡</blockqoute></b>",
                 protect_content=True,
                 reply_markup=InlineKeyboardMarkup(btn)
             )
