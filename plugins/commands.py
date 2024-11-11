@@ -22,8 +22,8 @@ join_db = JoinReqs
 async def start(client, message):
     PI = "😀 ⚡ 👍 ❤️ 🔥 👀 👏 🕊️ 😘 🆒 🍓 🏆 💯 ❤️‍🔥"
     PIS = PI.split()
-    await message.react(emoji=random.choice(PIS))
-    #await message.react(emoji=random.choice(SYD))
+   # await message.react(emoji=random.choice(PIS))
+    await message.react(emoji=random.choice(SYD))
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
             InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
