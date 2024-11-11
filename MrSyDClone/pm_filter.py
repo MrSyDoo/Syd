@@ -792,6 +792,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text("●●●●")
         await query.message.edit_text(text = syd.format(mention=query.from_user.mention, username=me.username, firstname=me.first_name), reply_markup = reply_markup)
 
+    elif query.data == "edit":
+        text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
+        await query.message.edit_text(
+            text=text,
+            reply_markup=main_buttons(),
+            quote=True
+        )
+    
     elif query.data == "about":
         btn = [[
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
@@ -1218,3 +1226,37 @@ async def advantage_spell_chok(client, name, msg, reply_msg, vj_search):
         )
         await asyncio.sleep(600)
         await spell_check_del.delete()
+
+
+def main_buttons():
+  buttons = [[
+       InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
+                    callback_data='url')
+       ],[
+       InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ',
+                    callback_data='update'),
+       InlineKeyboardButton('Gʀᴏᴜᴩ',
+                    callback_data='group')
+       ],[
+       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+                    callback_data='btn1'),
+       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
+                    callback_data='btn2')
+       ],[
+       InlineKeyboardButton('ꜰ-ꜱᴜʙ',
+                    callback_data='fsub')
+       ],[
+       InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ',
+                    callback_data='pic')
+       ],[
+       InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ',
+                    callback_data='srt'),
+       InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ',
+                    callback_data='atb')
+       ],[
+       InlineKeyboardButton('⚙️ Extra Settings',
+                    callback_data='settings#nextfilters')
+       ],[      
+       InlineKeyboardButton('🔙 Back', callback_data='settings#syd')
+       ]]
+  return InlineKeyboardMarkup(buttons)
