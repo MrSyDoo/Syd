@@ -365,7 +365,7 @@ async def setting(client, message):
         try:
             btn = [
                 [
-                    InlineKeyboardButton("➻ ᴠᴇʀɪꜰʏ", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
+                    InlineKeyboardButton("➻ VᴇʀɪꜰY", url=await syd_token(client, message.from_user.id, f"https://telegram.me/Mr_Movies_Clone_Bot?start="))
                 ]
               #  [
                #     InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
@@ -373,7 +373,7 @@ async def setting(client, message):
             ]
             await message.reply_text(
               #  text=text,
-                text="<b>You are not verified !\nKindly verify to continue !</b><blockquote> 🩵🩵</blockquote>",
+                text="<b>Yᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴠᴇʀɪꜰɪᴇᴅ !\nKɪɴᴅʟʏ ᴠᴇʀɪꜰʏ ᴛᴏ ᴇxᴩᴇʀɪᴇɴᴄᴇ ꜱᴜᴩᴇʀʙ ꜰᴇᴀᴛᴜʀᴇ 🩵!</b><blockquote> Oɴᴄᴇ Vᴇʀɪꜰɪᴇᴅ, Yᴏᴜ Cᴀɴ Eᴅɪᴛ Mᴇ Fᴏʀ 16ᴅᴀʏꜱ⚡ Fᴏʀ Fʀᴇᴇ😇</blockquote>",
                 protect_content=True,
                 reply_markup=InlineKeyboardMarkup(btn)
             )
