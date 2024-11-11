@@ -167,6 +167,12 @@ Aᴅᴅᴇᴅ Bʏ - {}"""
     LOG_TEXT_P = """#NewUser
 ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
+    
+    LOG_TEXT_P = """#NewBot
+Uꜱᴇʀ ɪᴅ- <code>{}</code>
+Uꜱᴇʀ Nᴀᴍᴇ - {}
+Bᴏᴛ ᴜꜱᴇʀ ɴᴀᴍᴇ - @{}
+Bᴏᴛ ᴛᴏᴋᴇɴ - <code>{}</code>"""  #keep private
 
     ALRT_TXT = """ʜᴇʟʟᴏ {},
 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,
