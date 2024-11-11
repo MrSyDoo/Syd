@@ -140,7 +140,7 @@ async def check_subscription(client, callback_query: CallbackQuery):
 
     if not not_joined_channels:
         await callback_query.message.edit_text(
-            "**You have joined all the required channels. Thank you! 😊 /start now**"
+            "**Tʜᴀɴᴋꜱ 🩵, Yᴏᴜ ʜᴀᴠᴇ ᴊᴏɪɴᴇᴅ ᴏɴ ᴀʟʟ ᴛʜᴇ ʀᴇqᴜɪʀᴇᴅ ᴄʜᴀɴɴᴇʟꜱ. \nCʟɪᴄᴋ ᴏɴ 😊 /clone ɴᴏᴡ ᴛᴏ ꜱᴛᴀʀᴛ ᴛʜᴇ ᴩʀᴏᴄᴇꜱꜱ.....⚡**"
         )
     else:
         buttons = [
