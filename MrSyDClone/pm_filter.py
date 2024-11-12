@@ -827,7 +827,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
           'api': api.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
+       await query.message.reply(text="<blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute>", reply_markup=InlineKeyboardMarkup(btn))
 
 
     elif query.data == "atb":
@@ -846,7 +849,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'strtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
+       await query.message.reply(text="<blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute>", reply_markup=InlineKeyboardMarkup(btn))
 
     elif query.data == "pic":
         await query.message.delete()
