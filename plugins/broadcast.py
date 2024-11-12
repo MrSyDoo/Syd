@@ -15,14 +15,11 @@ async def pm_broadcast(bot, message):
     syd12 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
     syd1 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
     syd2 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message") 
-    if syd11 == "/skip":
-        aa = None
-    else:
-        aa = syd11      
-    if syd1 == "/skip":
-        ab = None
-    else:
-        aa = syd11
+    buttons = []
+    if syd11 != "/skip":
+        buttons.append([InlineKeyboardButton(symsg, url=syd12)])
+    if syd1 != "/skip":
+        buttons.append([InlineKeyboardButton(syd11 ,url=syd12)])
     try:
         users = await db.get_all_users()
         sts = await message.reply_text('Broadcasting your messages...')
@@ -35,7 +32,8 @@ async def pm_broadcast(bot, message):
         success = 0
         async for user in users:
             if 'id' in user:
-                pti, sh = await broadcast_messages(int(user['id']), b_msg)
+                buttons = btn
+                pti, sh = await broadcast_messages(int(user['id']), b_msg, btn)
                 if pti:
                     success += 1
                 elif pti == False:
