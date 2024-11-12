@@ -812,7 +812,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text=text,
             reply_markup=InlineKeyboardMarkup(buttons),
-            quote=True
+            parse_mode=enums.ParseMode.HTML
         )
     
     elif query.data == "about":
@@ -843,9 +843,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
        ]]
-       await query.message.reply(text="<blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "atb":
@@ -855,7 +855,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'abtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+
 
     elif query.data == "srt":
        await query.message.delete()
@@ -865,7 +869,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
        ]]
        await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
@@ -889,7 +893,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             tgsyd = ' '.join(links)
             data = {'pics': tgsyd}
             await db.update_bot(me.id, data)
-            await query.message.reply("**Sᴜᴄᴄᴇꜱꜱғᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+            btn = [[
+                InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+            ]]
+            await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
         else:
             await query.message.reply("**No Lɪɴᴋꜱ Δᴅᴅᴇᴅ 🥲.**")
 
@@ -903,7 +910,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'update_channel_link': link.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Successfully Added All Settings**")
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+       ]]
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "btn1":
        await query.message.delete()
@@ -917,7 +927,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'btnlink1': url.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+       ]]
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "btn2":
        await query.message.delete()
@@ -931,7 +944,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'btnlink2': url.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+       ]]
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "group":
        await query.message.delete()
@@ -955,8 +971,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'fsub': fsub.text
        }
        await db.update_bot(me.id, data)
-       await query.message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴜʀɴ ᴏꜰꜰ ᴊᴏɪɴ ʀᴇqᴜᴇꜱᴛ ɪɴ ᴩʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ, ᴀᴅᴅ ᴏᴜʀ ʙᴏᴛ ɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ☺️.**")
-        
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+       ]]
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+
     if query.data.startswith("file"):
         clicked = query.from_user.id
         try:
