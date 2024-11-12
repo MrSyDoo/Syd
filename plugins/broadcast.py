@@ -21,6 +21,7 @@ async def pm_broadcast(bot, message):
             buttons.append([InlineKeyboardButton(syd11.text, url=syd12.text)])
         if syd1.text and syd1.text != "/skip" and url_pattern.match(syd2.text):
             buttons.append([InlineKeyboardButton(syd1.text, url=syd2.text)])
+        btn = buttons if buttons else None
     except Exception as e:
         logging.error(f"Error creating buttons: {e}")
 
@@ -36,7 +37,7 @@ async def pm_broadcast(bot, message):
         success = 0
         async for user in users:
             if 'id' in user:
-                pti, sh = await broadcast_messages(int(user['id']), b_msg, buttons)
+                pti, sh = await broadcast_messages(int(user['id']), b_msg, btn)
                 if pti:
                     success += 1
                 elif pti == False:
