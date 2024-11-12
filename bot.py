@@ -62,7 +62,7 @@ async def start():
     temp.BANNED_USERS = b_users
     temp.BANNED_CHATS = b_chats
     await Media.ensure_indexes()
-    #await Media2.ensure_indexes()
+    await Media2.ensure_indexes()
     me = await TechVJBot.get_me()
     temp.BOT = TechVJBot
     temp.ME = me.id
