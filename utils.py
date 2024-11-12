@@ -176,13 +176,17 @@ async def get_poster(query, bulk=False, id=False, file=None):
         'url':f'https://www.imdb.com/title/tt{movieid}'
     }
 
-async def broadcast_messages(user_id, message):
+async def broadcast_messages(user_id, message, btn):
     try:
-        await message.copy(chat_id=user_id)
+        if btn is not None:
+            reply_markup=InlineKeyboardMarkup(btn)
+            await message.copy(chat_id=user_id, reply_markup=reply_markup)
+        else:
+            await message.copy(chat_id=user_id)
         return True, "Success"
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        return await broadcast_messages(user_id, message)
+        return await broadcast_messages(user_id, message, btn)
     except InputUserDeactivated:
         await db.delete_user(int(user_id))
         logging.info(f"{user_id}-Removed from Database, since deleted account.")
