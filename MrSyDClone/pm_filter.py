@@ -845,7 +845,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute>", reply_markup=InlineKeyboardMarkup(btn))
+       await query.message.reply(text="<blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "atb":
@@ -867,7 +867,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute>", reply_markup=InlineKeyboardMarkup(btn))
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "pic":
         await query.message.delete()
