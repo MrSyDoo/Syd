@@ -59,10 +59,10 @@ async def save_file(media):
     file_id, file_ref = unpack_new_file_id(media.file_id)
     file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
     data_size = (await db.command("dbstats"))['dataSize']
-    if data_size > 503316480:
-        SyDMedia = Media2
-    else:
-        SyDMedia = Media
+  #  if data_size > 503316480:
+    #    SyDMedia = Media2
+  #  else:
+    SyDMedia = Media
     try:
         file = SyDMedia(
             file_id=file_id,
