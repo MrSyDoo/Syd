@@ -6,12 +6,12 @@ import re
 from pymongo.errors import DuplicateKeyError
 import motor.motor_asyncio
 from pymongo import MongoClient
-from info import AUTH_CHANNEL, DATABASE_NAME, DATABASE_URI, CUSTOM_FILE_CAPTION, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, PICS, IS_TUTORIAL
+from info import AUTH_CHANNEL, DATABASE_NAME, USER_DB_URI, OTHER_DB_URI, CUSTOM_FILE_CAPTION, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, PICS, IS_TUTORIAL
 import time
 from Script import script
 import datetime
 
-my_client = MongoClient(DATABASE_URI)
+my_client = MongoClient(OTHER_DB_URI)
 mydb = my_client["referal_user"]
 
 async def collect_links(chat_id, max_links=16):
@@ -353,4 +353,4 @@ class Database:
         await self.col.update_one({'id': int(id)}, {'$set': {'verification_status': status}})
 
 
-db = Database(DATABASE_URI, DATABASE_NAME)
+db = Database(USER_DB_URI, DATABASE_NAME)
