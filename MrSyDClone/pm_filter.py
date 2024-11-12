@@ -843,7 +843,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
        await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
@@ -869,7 +869,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
        await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
@@ -894,7 +894,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             data = {'pics': tgsyd}
             await db.update_bot(me.id, data)
             btn = [[
-                InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+                InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
             ]]
             await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
         else:
@@ -911,7 +911,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
        await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
@@ -928,7 +928,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
        await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
@@ -945,7 +945,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
        await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
@@ -972,7 +972,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        }
        await db.update_bot(me.id, data)
        btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data=edit)
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
        await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
