@@ -794,7 +794,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "edit":
         buttons = [[
-            InlineKeyboardButton('ꜰ-ꜱᴜʙ', callback_data='fsub')
+            InlineKeyboardButton('ꜰᴏʀᴄᴇ-ꜱᴜʙ[ᴊᴏɪɴ ʀᴇqᴜᴇꜱᴛ]', callback_data='fsub')
         ],[
             InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ', callback_data='update'),
             InlineKeyboardButton('Gʀᴏᴜᴩ', callback_data='group')
@@ -808,13 +808,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
             
             
-        text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
+        text="<blockqoute><b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b></blockqoute>"
         await query.message.edit_text(
             text=text,
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    
+        
+    elif query.data == "bttn":
+        btn = [[
+            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[]', callback_data='btn1'),
+            InlineKeyboardButton("Bᴜᴛᴛᴏɴ 2[]", callback_data="btn2")
+        ],[
+            InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit")
+        ]]
+        await query.message.edit_text(text = script.SYDBTN.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
+
     elif query.data == "about":
         btn = [[
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
