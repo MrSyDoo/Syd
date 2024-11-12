@@ -11,16 +11,8 @@ from utils import broadcast_messages, broadcast_messages_group
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS))
 async def pm_broadcast(bot, message):
     b_msg = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
-    syd11 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
-    syd12 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
-    syd1 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
-    syd2 = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message") 
     buttons = []
     try:
-        if syd11.text and syd11.text != "/skip" and url_pattern.match(syd12.text):
-            buttons.append([InlineKeyboardButton(syd11.text, url=syd12.text)])
-        if syd1.text and syd1.text != "/skip" and url_pattern.match(syd2.text):
-            buttons.append([InlineKeyboardButton(syd1.text, url=syd2.text)])
         btn = buttons if buttons else None
     except Exception as e:
         logging.error(f"Error creating buttons: {e}")
