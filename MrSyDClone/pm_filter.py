@@ -793,10 +793,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(text = syd.format(mention=query.from_user.mention, username=me.username, firstname=me.first_name), reply_markup = reply_markup)
 
     elif query.data == "edit":
+        buttons = [[
+            InlineKeyboardButton('ꜰ-ꜱᴜʙ', callback_data='fsub')
+        ], [
+            InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ',
+                    callback_data='update'),
+       InlineKeyboardButton('Gʀᴏᴜᴩ',
+                    callback_data='group')
+            
         text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
         await query.message.edit_text(
             text=text,
-            reply_markup=main_buttons(),
+            reply_markup=InlineKeyboardMarkup(buttons),
             quote=True
         )
     
@@ -1239,18 +1247,14 @@ def main_buttons():
        InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
                     callback_data='url')
        ],[
-       InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ',
-                    callback_data='update'),
-       InlineKeyboardButton('Gʀᴏᴜᴩ',
-                    callback_data='group')
+       
        ],[
        InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
                     callback_data='btn1'),
        InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
                     callback_data='btn2')
        ],[
-       InlineKeyboardButton('ꜰ-ꜱᴜʙ',
-                    callback_data='fsub')
+       
        ],[
        InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ',
                     callback_data='pic')
