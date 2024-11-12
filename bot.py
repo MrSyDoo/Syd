@@ -19,7 +19,7 @@ logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
 from pyrogram import Client, idle 
 from pyromod import listen
-from database.ia_filterdb import Media
+from database.ia_filterdb import Media, Media2
 from database.users_chats_db import db
 from info import *
 from utils import temp
