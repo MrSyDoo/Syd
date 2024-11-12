@@ -795,11 +795,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "edit":
         buttons = [[
             InlineKeyboardButton('ꜰ-ꜱᴜʙ', callback_data='fsub')
-        ], [
-            InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ',
-                    callback_data='update'),
-       InlineKeyboardButton('Gʀᴏᴜᴩ',
-                    callback_data='group')
+        ],[
+            InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ', callback_data='update'),
+            InlineKeyboardButton('Gʀᴏᴜᴩ', callback_data='group')
+        ],[
+            InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ', callback_data='pic')
+        ],[
+            InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ', callback_data='srt'),
+            InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ', callback_data='atb')
+        ],[
+            InlineKeyboardButton('Vᴀʀɪᴏᴜꜱ Bᴜᴛᴛᴏɴꜱ', callback_data='bttn')
+        ]]
+            
             
         text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
         await query.message.edit_text(
@@ -1256,13 +1263,9 @@ def main_buttons():
        ],[
        
        ],[
-       InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ',
-                    callback_data='pic')
+       
        ],[
-       InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ',
-                    callback_data='srt'),
-       InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ',
-                    callback_data='atb')
+       
        ],[
        InlineKeyboardButton('⚙️ Extra Settings',
                     callback_data='settings#nextfilters')
