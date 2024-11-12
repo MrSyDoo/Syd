@@ -4,16 +4,19 @@
 
 import pymongo
 
-from info import DATABASE_URI, DATABASE_NAME
+from info import OTHER_DB_URI, DATABASE_NAME
 
 import logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
-myclient = pymongo.MongoClient(DATABASE_URI)
+myclient = pymongo.MongoClient(OTHER_DB_URI)
 mydb = myclient[DATABASE_NAME]
-mycol = mydb['CONNECTION']   
+mycol = mydb['CONNECTION'] 
 
+async def get_other_db_size():
+    data_size = (await mydb.command("dbstats"))['dataSize']
+    return data_size
 
 async def add_connection(group_id, user_id):
     query = mycol.find_one(
