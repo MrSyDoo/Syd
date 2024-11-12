@@ -14,16 +14,16 @@ class script(object):
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
-    ABOUT_TXT = """<b><blockquote>⍟───[ MY ᴅᴇᴛᴀɪʟꜱ ]───⍟</blockquote>
+    ABOUT_TXT = """<b><blockquote>⍟───[ ʙᴏᴛ ᴅᴇᴛᴀɪʟꜱ ]───⍟</blockquote>
     
 <blockquote>‣ ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/{}>{}</a></blockquote>
-<blockquote>‣ ᴍʏ ʙᴇsᴛ ғʀɪᴇɴᴅ : <a href='tg://settings'>ᴛʜɪs ᴘᴇʀsᴏɴ</a> </blockquote>
-<blockquote>‣ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/kingvj01'>ᴛᴇᴄʜ ᴠᴊ</a> </blockquote>
-<blockquote>‣ ʟɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a> </blockquote>
-<blockquote>‣ ʟᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 3</a> </blockquote>
-<blockquote>‣ ᴅᴀᴛᴀ ʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏ ᴅʙ</a> </blockquote>
-<blockquote>‣ ʙᴏᴛ sᴇʀᴠᴇʀ : <a href='https://heroku.com'>ʜᴇʀᴏᴋᴜ</a> </blockquote>
-<blockquote>‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ2.7.1 [sᴛᴀʙʟᴇ]></b></blockquote>"""
+<blockquote>‣ ᴛʜᴀɴᴋꜱ ᴛᴏ : ≛{}≛ </blockquote>
+<blockquote>‣ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/syd_xyz'> ≛ ᴍ𝖗𓆩SꌩD𓆪ꪾ ≛</a> </blockquote>
+<blockquote>‣ ʟɪʙʀᴀʀʏ : <a href='https://t.me/+3-nuV_9INIg0MDY1'>ᴛɢ</a> 
+‣ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ 3 </blockquote>
+‣ ᴅᴀᴛᴀ ʙᴀsᴇ : <a href='https://t.me/+3-nuV_9INIg0MDY1'>ᴅʙ</a>
+‣ ʙᴏᴛ sᴇʀᴠᴇʀ : <a href='https://t.me/mod_moviez_x'>Mᴏᴅ Mᴏᴠɪᴇᴢ X 〰️</a> </blockquote>
+<blockquote>‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ1.0.0 [sᴛᴀʙʟᴇ]></b></blockquote>"""
 
     CLONE_ABOUT_TXT = """<b><blockquote>⍟───[ ᴍʏ ᴀʙᴏᴜᴛ ]───⍟</blockquote>
     
