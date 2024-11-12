@@ -822,7 +822,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit")
         ]]
-        await query.message.edit_text(text = script.SYDBTN.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
+        await query.message.edit_text(text = script.SYDBTN, reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "about":
         btn = [[
