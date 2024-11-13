@@ -867,12 +867,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "srt":
        await query.message.delete()
-       abt = await client.ask(query.message.chat.id, "<b>Nᴏᴡ Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>ᴇxᴀᴍᴩʟᴇ; <code><b>'<blockquote>ʜᴇʟʟᴏ {mention}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{username}>{firstname}</a></blockquote>ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>'")
+       abt = await client.ask(query.message.chat.id, "<b>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ \n <u>Kᴇʏꜱ; </u>Link Which Is Shown In Your Start Button And Below File Button.</b>ᴇxᴀᴍᴩʟᴇ; <code><b><blockquote>ʜᴇʟʟᴏ {mention}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{username}>{firstname}</a></blockquote>ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>")
        data = {
            'strtsyd': abt.text
        }
@@ -880,7 +880,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply("<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "pic":
         await query.message.delete()
