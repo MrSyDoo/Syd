@@ -1314,27 +1314,5 @@ async def advantage_spell_chok(client, name, msg, reply_msg, vj_search):
         await spell_check_del.delete()
 
 
-def main_buttons():
-  buttons = [[
-       InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
+InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
                     callback_data='url')
-       ],[
-       
-       ],[
-       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
-                    callback_data='btn1'),
-       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
-                    callback_data='btn2')
-       ],[
-       
-       ],[
-       
-       ],[
-       
-       ],[
-       InlineKeyboardButton('⚙️ Extra Settings',
-                    callback_data='settings#nextfilters')
-       ],[      
-       InlineKeyboardButton('🔙 Back', callback_data='settings#syd')
-       ]]
-  return InlineKeyboardMarkup(buttons)
