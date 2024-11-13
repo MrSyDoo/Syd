@@ -829,9 +829,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "about":
         btn = [[
+            InlineKeyboardButton('ᴄʟᴏɴᴇ', callback_data='help')
+        ],[
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
         ]]
+        if settings["abtn"] != None:
+            sy = settings["abtn"]
+            buttons[1].insert(1, InlineKeyboardButton('⚡ Gʀᴏᴜᴩ ⚡', url=sy))
+
+        buttons[1] = [button for button in buttons[1] if button is not None]
         syd = settings["abtsyd"]
         await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
 
