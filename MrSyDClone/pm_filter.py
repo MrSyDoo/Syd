@@ -857,13 +857,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "atb":
        await query.message.delete()
        mrsyd = settings["abtsyd"]
-       abt = await client.ask(query.message.chat.id, f"<b>Now Sᴇɴᴅ Me Tʜᴇ Δʙᴏᴜᴛ Tᴇxᴛ.</b> \n<i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code>{mrsyd}</code>")
+       abt = await client.ask(query.message.chat.id, f"<b>Now Sᴇɴᴅ Me Tʜᴇ Δʙᴏᴜᴛ Tᴇxᴛ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code>{mrsyd}</code></blockquote>")
        data = {
            'abtsyd': abt.text
        }
@@ -871,13 +871,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<b><blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "srt":
        await query.message.delete()
        mrsyd = settings["abtsyd"]
-       abt = await client.ask(query.message.chat.id, "<b><blockqoute>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockqoute>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code>{mrsyd}</code>")
+       abt = await client.ask(query.message.chat.id, "<b><blockquote>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockquote>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code>{mrsyd}</code></blockquote>")
        data = {
            'strtsyd': abt.text
        }
@@ -885,7 +885,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply("<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply("<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "pic":
         await query.message.delete()
@@ -893,7 +893,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         max_links = 8  # Set the maximum number of links to collect
 
         for _ in range(max_links):
-            link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ Lɪɴᴋ ᴏʀ ꜱᴇɴᴅ /end ᴛᴏ Fɪɴɪꜱʜ ; \n\n <blockqoute>Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b></blockqoute>")
+            link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ Lɪɴᴋ ᴏʀ ꜱᴇɴᴅ /end ᴛᴏ Fɪɴɪꜱʜ ; \n\n<blockquote>Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b></blockquote>")
             if link_input.text.lower() == '/end':
                 break
             if not link_input.text.startswith(('https://', 'http://')):
@@ -927,7 +927,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "btn1":
        await query.message.delete()
@@ -961,7 +961,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "abtn":
        await query.message.delete()
@@ -995,7 +995,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "group":
        await query.message.delete()
