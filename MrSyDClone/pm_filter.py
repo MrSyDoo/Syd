@@ -801,13 +801,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ', callback_data='pic')
         ],[
+            InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ', callback_data='url')
+        ], [
             InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ', callback_data='srt'),
             InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ', callback_data='atb')
         ],[
             InlineKeyboardButton('Vᴀʀɪᴏᴜꜱ Bᴜᴛᴛᴏɴꜱ', callback_data='bttn')
         ]]
-            
-            
         text="<blockqoute><b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b></blockqoute>"
         await query.message.edit_text(
             text=text,
@@ -1276,7 +1276,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, vj_search):
     SPELL_CHECK[mv_id] = movielist
     if vj_search == True:
         vj_search_new = False
-        vj_ai_msg = await reply_msg.edit_text("<b><i>Advance Ai Of Tech VJ Try To Find Your Movie With Your Wrong Spelling.</i></b>")
+        vj_ai_msg = await reply_msg.edit_text("<b><i>Aᴅᴠᴀɴᴄᴇ >Aɪ< ; Tʀʏɪɴɢ To Fɪɴᴅ Yᴏᴜʀ Mᴏᴠɪᴇ Wɪᴛʜ Yoᴜʀ Wʀᴏɴɢ[ꜱᴏᴍᴇᴛɪᴍᴇ¿] Sᴩᴇʟʟɪɴɢ.</i></b>")
         movienamelist = []
         movienamelist += [movie.get('title') for movie in movies]
         for techvj in movienamelist:
@@ -1312,7 +1312,3 @@ async def advantage_spell_chok(client, name, msg, reply_msg, vj_search):
         )
         await asyncio.sleep(600)
         await spell_check_del.delete()
-
-
-InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
-                    callback_data='url')
