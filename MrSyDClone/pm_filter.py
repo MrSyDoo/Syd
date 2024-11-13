@@ -294,7 +294,7 @@ async def episodes_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴇᴘɪsᴏᴅᴇ", callback_data="ident"
+                text="Sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴇᴘɪsᴏᴅE", callback_data="ident"
             )
         ],
     )
