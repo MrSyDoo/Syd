@@ -820,6 +820,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[]', callback_data='btn1'),
             InlineKeyboardButton("Bᴜᴛᴛᴏɴ 2[]", callback_data="btn2")
         ],[
+            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[]', callback_data='abtn'),
+            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[]', callback_data='hbtn')
+        ],[     
             InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit")
         ]]
         await query.message.edit_text(text = script.SYDBTN, reply_markup = InlineKeyboardMarkup(btn))
@@ -934,6 +937,40 @@ async def cb_handler(client: Client, query: CallbackQuery):
        data = {
            'button1': nam.text,
            'btnlink1': url.text
+       }
+       await db.update_bot(me.id, data)
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+
+    elif query.data == "hbtn":
+       await query.message.delete()
+       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       if not url.text.startswith(('https://', 'http://', 't.me/')):
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+           return 
+       data = {
+           'hbutton': nam.text,
+           'hbtnlink': url.text
+       }
+       await db.update_bot(me.id, data)
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
+       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+
+    elif query.data == "abtn":
+       await query.message.delete()
+       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       if not url.text.startswith(('https://', 'http://', 't.me/')):
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+           return 
+       data = {
+           'abtbutton': nam.text,
+           'abtbtnlink': url.text
        }
        await db.update_bot(me.id, data)
        btn = [[
