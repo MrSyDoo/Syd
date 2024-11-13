@@ -817,11 +817,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "bttn":
         btn = [[
-            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[]', callback_data='btn1'),
-            InlineKeyboardButton("Bᴜᴛᴛᴏɴ 2[]", callback_data="btn2")
+            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[ꜱᴛᴀʀᴛ]', callback_data='btn1'),
+            InlineKeyboardButton("Bᴜᴛᴛᴏɴ 2[ꜱᴛᴀʀᴛ]", callback_data="btn2")
         ],[
-            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[]', callback_data='abtn'),
-            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[]', callback_data='hbtn')
+            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 3[ᴀʙᴏᴜᴛ]', callback_data='abtn'),
+            InlineKeyboardButton('Bᴜᴛᴛᴏɴ 4[ʜᴇʟᴩ]', callback_data='hbtn')
         ],[     
             InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit")
         ]]
