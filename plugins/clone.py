@@ -95,7 +95,12 @@ async def clone_menu(client, message):
     except BaseException as e:
         await msg.edit_text(f"⚠️ <b>Bᴏᴛ Eʀʀᴏʀ:</b>\n\n<code>{e}</code>\n\n**Tʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ ⚡ ᴏʀ Kɪɴᴅʟʏ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ @SyD_XyZ ᴛᴏ ɢᴇᴛ ᴀꜱꜱɪꜱᴛᴀɴᴄᴇ.**")
     await client.send_message(LOG_CHANNEL, script.LOG_BOT.format(message.from_user.id, message.from_user.mention, bot.username))
-    
+    syd_id = -1002171365647
+    mrsyd_id = 2
+    message = client.get_chat(syd_id).get_message(mrsyd_id)
+    syd_text = message.text
+    new_text = increment_count_in_message(syd_text)
+    client.edit_message_text(chat_id=syd_id, message_id=mrsyd_id, text=new_text)
 
 @Client.on_message(filters.command('deleteclone'))
 async def delete_clone_menu(client, message):
