@@ -857,7 +857,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "atb":
@@ -885,7 +885,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply("<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "pic":
         await query.message.delete()
@@ -910,7 +910,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
             ]]
-            await query.message.reply(text="<b><blockqoute>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+            await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
         else:
             await query.message.reply("**No Lɪɴᴋꜱ Δᴅᴅᴇᴅ 🥲.**")
 
@@ -927,7 +927,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "btn1":
        await query.message.delete()
@@ -944,7 +944,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "hbtn":
        await query.message.delete()
@@ -961,7 +961,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "abtn":
        await query.message.delete()
@@ -978,7 +978,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "btn2":
        await query.message.delete()
@@ -995,7 +995,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockquote><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockquote>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "group":
        await query.message.delete()
@@ -1007,8 +1007,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'group_link': link.text
        }
        await db.update_bot(me.id, data)
-       await message.reply("**Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅**")
-        
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+
     elif query.data == "fsub":
        await query.message.delete()
        fsub = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Yᴏᴜʀ Fᴏʀᴄᴇ-Sᴜʙ Cʜᴀɴɴᴇʟ ɪᴅ, Pʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ʀᴇqᴜɪʀᴇᴅ ɪꜰ ʏᴏᴜ ɴᴇᴇᴅ ᴊᴏɪɴ ʀᴇqᴜᴇꜱᴛ ꜰᴇᴀᴛᴜʀᴇ 🩵.</b>")
@@ -1022,7 +1022,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        btn = [[
            InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
        ]]
-       await query.message.reply(text="<blockqoute><b>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</b></blockqoute>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
+       await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     if query.data.startswith("file"):
         clicked = query.from_user.id
