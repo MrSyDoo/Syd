@@ -395,24 +395,23 @@ async def setting(client, message):
     )
 def main_buttons():
   buttons = [[
+       InlineKeyboardButton('ꜰᴏʀᴄᴇ-ꜱᴜʙ[ᴊᴏɪɴ ʀᴇqᴜᴇꜱᴛ]', callback_data='fsub')
+       ],[
+       InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ', callback_data='update'),
+       InlineKeyboardButton('Gʀᴏᴜᴩ', callback_data='group')
+       ],[
+       InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ', callback_data='pic')
+       ],[
        InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
                     callback_data='url')
        ],[
-       InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ',
-                    callback_data='update'),
-       InlineKeyboardButton('Gʀᴏᴜᴩ',
-                    callback_data='group')
-       ],[
+      
        InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
                     callback_data='btn1'),
        InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
                     callback_data='btn2')
        ],[
-       InlineKeyboardButton('ꜰ-ꜱᴜʙ',
-                    callback_data='fsub')
-       ],[
-       InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ',
-                    callback_data='pic')
+       
        ],[
        InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ',
                     callback_data='srt'),
