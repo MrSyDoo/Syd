@@ -107,10 +107,16 @@ async def clone_menu(client, message):
     await client.send_message(LOG_CHANNEL, script.LOG_BOT.format(message.from_user.id, message.from_user.mention, bot.username))
     syd_id = -1002171365647
     mrsyd_id = 2
-    chat_message = await client.get_message(syd_id, mrsyd_id)
-    syd_text = chat_message.text
-    new_text = increment_count_in_message(syd_text)
-    await client.edit_message_text(chat_id=syd_id, message_id=mrsyd_id, text=new_text)
+    try:
+        chat_message = await client.get_message(syd_id, mrsyd_id)
+        syd_text = chat_message.text
+        new_text = increment_count_in_message(syd_text)
+        await client.edit_message_text(chat_id=syd_id, message_id=mrsyd_id, text=new_text)
+        print("Message updated successfully.")
+    except ValueError as ve:
+        print(f"ValueError: {ve}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 @Client.on_message(filters.command('deleteclone'))
 async def delete_clone_menu(client, message):
