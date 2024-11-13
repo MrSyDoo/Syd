@@ -862,7 +862,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "atb":
        await query.message.delete()
-       abt = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>")
+       mrsyd = settings["abtsyd"]
+       abt = await client.ask(query.message.chat.id, f"<b>Now Sᴇɴᴅ Me Tʜᴇ Δʙᴏᴜᴛ Tᴇxᴛ.</b> \n<i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code>{mrsyd}</code>")
        data = {
            'abtsyd': abt.text
        }
@@ -875,7 +876,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "srt":
        await query.message.delete()
-       abt = await client.ask(query.message.chat.id, "<b>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ \n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b>ᴇxᴀᴍᴩʟᴇ; <code><b><blockquote>ʜᴇʟʟᴏ {mention}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{username}>{firstname}</a></blockquote>ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>")
+       mrsyd = settings["abtsyd"]
+       abt = await client.ask(query.message.chat.id, "<b><blockqoute>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockqoute>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code>{mrsyd}</code>")
        data = {
            'strtsyd': abt.text
        }
