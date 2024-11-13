@@ -11,6 +11,16 @@ from pyrogram.errors import UserNotParticipant
 import re, os
 from Script import script
 
+def increment_count_in_message(text):
+    # Use regex to find the current count in the format "Current count <number>"
+    match = re.search(r"Current No. Of Bots (\d+)", text)
+    if match:
+        current_count = int(match.group(1))
+        new_count = current_count + 1 
+        new_text = re.sub(r"Current count \d+", f"Current count {new_count}", text)
+        return new_text
+    else:
+        return "Current count <1>"
 async def not_subscribed(_, __, message):
     for channel in SYD_CHANNELS:
         try:
