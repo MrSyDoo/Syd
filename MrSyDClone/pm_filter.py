@@ -875,7 +875,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "srt":
        await query.message.delete()
-       abt = await client.ask(query.message.chat.id, "<b>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ \n <u>Kᴇʏꜱ; \n {mention} - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n {username} - </u>Link Which Is Shown In Your Start Button And Below File Button.</b>ᴇxᴀᴍᴩʟᴇ; <code><b><blockquote>ʜᴇʟʟᴏ {mention}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{username}>{firstname}</a></blockquote>ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>")
+       abt = await client.ask(query.message.chat.id, "<b>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ \n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b>ᴇxᴀᴍᴩʟᴇ; <code><b><blockquote>ʜᴇʟʟᴏ {mention}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{username}>{firstname}</a></blockquote>ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>")
        data = {
            'strtsyd': abt.text
        }
