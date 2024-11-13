@@ -59,6 +59,7 @@ async def save_file(media):
     file_id, file_ref = unpack_new_file_id(media.file_id)
     file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
     data_size = (await db.command("dbstats"))['dataSize']
+    print(f"{datasize} •")
   #  if data_size > 503316480:
     #    SyDMedia = Media2
   #  else:
@@ -76,22 +77,22 @@ async def save_file(media):
     except ValidationError:
         logger.exception('Error occurred while saving file in database')
         return False, 2
-    else:
-        if SyDMedia == Media2:
-            found = {'file_id': file_id}
-            check = Media.find_one(found)
-            if check:
-                print(f"{file_name} is already saved.")
-                return False, 0
+   # else:
+      #  if SyDMedia == Media2:
+        #    found = {'file_id': file_id}
+          #  check = Media.find_one(found)
+           # if check:
+              #  print(f"{file_name} is already saved.")
+               # return False, 0
                 
-        try:
-            await file.commit()
-        except DuplicateKeyError:      
-            print(f"{file_name} is already saved.")
-            return False, 0
-        else:
-            print(f"{file_name} is saved to database.")
-            return True, 1
+       # try:
+          #  await file.commit()
+       # except DuplicateKeyError:      
+          #  print(f"{file_name} is already saved.")
+            #return False, 0
+      #  else:
+          #  print(f"{file_name} is saved to database.")
+          #  return True, 1
 
 async def get_file_db_size():
     data_size = (await db.command("dbstats"))['dataSize']
