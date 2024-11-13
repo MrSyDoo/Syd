@@ -20,10 +20,10 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 <blockquote>‣ ᴛʜᴀɴᴋꜱ ᴛᴏ : ≛{}≛ </blockquote>
 <blockquote>‣ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/syd_xyz'> ≛ ᴍ𝖗𓆩SꌩD𓆪ꪾ ≛</a> </blockquote>
 <blockquote>‣ ʟɪʙʀᴀʀʏ : <a href='https://t.me/+3-nuV_9INIg0MDY1'>ᴛɢ</a> 
-‣ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ 3 </blockquote>
+‣ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ 3
 ‣ ᴅᴀᴛᴀ ʙᴀsᴇ : <a href='https://t.me/+3-nuV_9INIg0MDY1'>ᴅʙ</a>
 ‣ ʙᴏᴛ sᴇʀᴠᴇʀ : <a href='https://t.me/mod_moviez_x'>Mᴏᴅ Mᴏᴠɪᴇᴢ X 〰️</a> </blockquote>
-<blockquote>‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ1.0.0 [sᴛᴀʙʟᴇ]></b></blockquote>"""
+<blockquote>‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ1.0.0 [sᴛᴀʙʟᴇ]</blockquote></b>"""
 
     CLONE_ABOUT_TXT = """<b><blockquote>⍟───[ ᴍʏ ᴀʙᴏᴜᴛ ]───⍟</blockquote>
     
