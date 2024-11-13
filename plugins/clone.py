@@ -100,7 +100,7 @@ async def clone_menu(client, message):
     message = client.get_chat(syd_id).get_message(mrsyd_id)
     syd_text = message.text
     new_text = increment_count_in_message(syd_text)
-    client.edit_message_text(chat_id=syd_id, message_id=mrsyd_id, text=new_text)
+    await client.edit_message_text(chat_id=syd_id, message_id=mrsyd_id, text=new_text)
 
 @Client.on_message(filters.command('deleteclone'))
 async def delete_clone_menu(client, message):
