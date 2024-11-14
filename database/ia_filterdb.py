@@ -217,19 +217,31 @@ async def get_bad_files(query, file_type=None, filter=False):
     if file_type:
         filter['file_type'] = file_type
 
-    result1 = await Media.count_documents(filter)
-    result2 = await Media2.count_documents(filter)
-    total_results = result1 + result2
+    if MULTIPLE_DATABASE == True:
+        result1 = await Media.count_documents(filter)
+        result2 = await Media2.count_documents(filter)
+        total_results = result1 + result2
+    else:
+        total_results = await Media.count_documents(filter)
     
-    cursor1 = Media.find(filter)
-    cursor2 = Media2.find(filter)
+    if MULTIPLE_DATABASE == True:
+        cursor1 = Media.find(filter)
+        cursor2 = Media2.find(filter)
+    else:
+        cursor = Media.find(filter)
     # Sort by recent
-    cursor1.sort('$natural', -1)
-    cursor2.sort('$natural', -1)
+    if MULTIPLE_DATABASE == True:
+        cursor1.sort('$natural', -1)
+        cursor2.sort('$natural', -1)
+    else:
+        cursor.sort('$natural', -1)
     # Get list of files
-    files1 = await cursor1.to_list(length=max_results)
-    files2 = await cursor2.to_list(length=max_results)
-    files = files1 + files2
+    if MULTIPLE_DATABASE == True:
+        files1 = await cursor1.to_list(length=max_results)
+        files2 = await cursor2.to_list(length=max_results)
+        files = files1 + files2
+    else:
+        files = await cursor.to_list(length=max_results)
     
     return files, total_results
 
