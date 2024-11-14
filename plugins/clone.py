@@ -113,7 +113,7 @@ async def clone_menu(client, message):
     syd_id = -1002171365647
     mrsyd_id = 2
     try:
-        chat_message = await client.get_message(syd_id, mrsyd_id)
+        chat_message = await client.get_messages(syd_id, mrsyd_id)
         syd_text = chat_message.text
         new_text = increment_count_in_message(syd_text)
         await client.edit_message_text(chat_id=syd_id, message_id=mrsyd_id, text=new_text)
