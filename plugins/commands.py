@@ -407,9 +407,11 @@ async def start(client, message):
         is_valid = await check_sydtoken(client, userid, token)
         if is_valid == True:
             tz = pytz.timezone('Asia/Kolkata')
+            mr_syd = await db.get_bot(userid)
+            mr_sy = mr_syd["bot_name"]
             syd = datetime.now(tz)+timedelta(hours=384)
             btn = [[
-                InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}?start=")
+                InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/{mr_sy}")
             ]]
             await sydfy_user(client, userid, token)
             await message.reply_text(
