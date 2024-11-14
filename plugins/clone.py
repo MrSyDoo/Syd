@@ -15,11 +15,11 @@ def increment_count_in_message(text):
     match = re.search(r"Current No. Of Bots (\d+)", text)
     if match:
         current_count = int(match.group(1))
-        new_count = current_count + 1 
-        new_text = re.sub(r"Current count \d+", f"Current count {new_count}", text)
+        new_count = current_count + 1
+        new_text = re.sub(r"Current No. Of Bots \d+", f"Current No. Of Bots {new_count}", text)
         return new_text
     else:
-        return "Current count <1>"
+        return "Current No. Of Bots <1>"
      
 async def not_subscribed(_, __, message):
     for channel in SYD_CHANNELS:
