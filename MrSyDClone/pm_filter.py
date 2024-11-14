@@ -891,7 +891,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "srt":
        await query.message.delete()
        mr_syd = settings["strtsyd"]
-       abt = await client.ask(query.message.chat.id, "<b><blockquote>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockquote>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code> {mr_syd} </code></blockquote>").format  # Format and insert mr
+       abt = await client.ask(query.message.chat.id, "<b><blockquote>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockquote>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code> {mr_syd} </code></blockquote>")  # mr
        data = {
            'strtsyd': abt.text
        }
@@ -913,8 +913,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             if not link_input.text.startswith(('https://', 'http://')):
                 await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
                 return 
-            
-            # Check if the user wants to end the process
             links.append(link_input.text)
         if links:
             # Join the collected links into a single string
