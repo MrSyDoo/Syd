@@ -2329,7 +2329,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
-    
+
+    elif query.data == "disclaimer":
+            btn = [[
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="about")
+            ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await client.edit_message_media(
+                query.message.chat.id, 
+                query.message.id, 
+                InputMediaPhoto(random.choice(PICS))
+            )
+            await query.message.edit_text(
+                text=script.DISCLAIMER_TXT,
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML 
+            )
     elif query.data == "ytdl":
         buttons = [[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help')
@@ -2354,7 +2369,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.YTDL_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-)
+         
+        )
+        
     elif query.data == "share":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help"),
