@@ -38,7 +38,7 @@ async def clone_menu(client, message):
         return 
 
     if await db.is_clone_exist(message.from_user.id):
-        return await message.reply("**Yᴏᴜ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴏɴᴇᴅ ᴀ ʙᴏᴛ ᴅᴇʟᴇᴛᴇ ғɪʀsᴛ ɪᴛ ʙʏ /deleteclone \n\nWᴇ 'ʟʟ ᴛʜɪɴᴋ ᴀʙᴏᴜᴛ ɪᴛ, ᴛᴏ ᴍᴀᴋᴇ ᴍᴏʀᴇ ᴛʜᴀɴ ᴏɴᴇ ʙᴏᴛ, ᴄᴜʀʀᴇɴᴛʟʏ ᴜꜱᴇ ᴀɴᴏᴛʜᴇʀ ᴀᴄᴄᴏᴜɴᴛ. \n\n Fᴏʀ ꜱᴜᴩᴩᴏʀᴛ 🌴; @Bot_Cracker ⚡**")
+        return await message.reply("**Yᴏᴜ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴏɴᴇᴅ ᴀ ʙᴏᴛ ᴅᴇʟᴇᴛᴇ ғɪʀsᴛ ɪᴛ ʙʏ /deleteclone \n\n<blockquote>Wᴇ 'ʟʟ ᴛʜɪɴᴋ ᴀʙᴏᴜᴛ ɪᴛ, ᴛᴏ ᴍᴀᴋᴇ ᴍᴏʀᴇ ᴛʜᴀɴ ᴏɴᴇ ʙᴏᴛ, ᴄᴜʀʀᴇɴᴛʟʏ ᴜꜱᴇ ᴀɴᴏᴛʜᴇʀ ᴀᴄᴄᴏᴜɴᴛ. </blockquote>\n\nFᴏʀ ꜱᴜᴩᴩᴏʀᴛ 🌴; @Bot_Cracker ⚡**")
     else:
         pass
 
@@ -91,7 +91,7 @@ async def clone_menu(client, message):
     else:
         return await message.reply('<b>Nᴏᴛ ꜰᴏʀᴡᴀʀᴅᴇᴅ ꜰʀᴏᴍ @BotFather 😑</b>')
     user_id = message.from_user.id
-    msg = await message.reply_text('<b><blockqoute>Wᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ,</blockqoute>\n \n<u>⚠️ɴᴏᴛᴇ: ʙʏ ᴄʟᴏɴɪɴɢ ʏᴏᴜ ᴀʀᴇ ᴀᴄᴄᴇᴩᴛɪɴɢ ᴛᴏ ᴏᴜʀ ᴩᴏʟɪᴄɪᴇꜱ!</u></b>')
+    msg = await message.reply_text('<b><blockquote>Wᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ,</blockquote>\n \n<u>⚠️ɴᴏᴛᴇ: ʙʏ ᴄʟᴏɴɪɴɢ ʏᴏᴜ ᴀʀᴇ ᴀᴄᴄᴇᴩᴛɪɴɢ ᴛᴏ ᴏᴜʀ ᴩᴏʟɪᴄɪᴇꜱ!</u></b>')
     sy = await message.reply_text('◘◘◘◘')
     await sy.edit_text('◙◘◘◘')
     try:
@@ -100,13 +100,13 @@ async def clone_menu(client, message):
             bot_token=bot_token,
             plugins={"root": "MrSyDClone"}
         )
-        await vj.start()
         await sy.edit_text('◙◙◘◘')
+        await vj.start()
         bot = await vj.get_me()
-        await db.add_clone_bot(bot.id, user_id, bot_token)
         await sy.edit_text('◙◙◙◙')
-        await msg.edit_text(f"<b>SᴜᴄᴄᴇssғᴜʟʟY Cʟᴏɴᴇᴅ Yᴏᴜʀ Bᴏᴛ: @{bot.username}.\n\nYᴏᴜ ᴄᴀɴ ᴄᴜsᴛᴏᴍɪsᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ \n/settings ᴀɴᴅ /edit \nCᴏᴍᴍᴀɴᴅ ɪɴ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ</b>\n\n<blockquote>Nᴇᴠᴇʀ Fᴏʀɢᴇᴛ ᴛᴏ ᴇxᴩᴇʀɪᴇɴᴄᴇ ᴛʜᴇ ꜱᴜᴩᴇʀʙ ꜱᴇʀᴠɪᴄᴇᴇʜ⚡</blockquote>")
+        await db.add_clone_bot(bot.id, user_id, bot_token, bot.username)
         await sy.delete()
+        await msg.edit_text(f"<b>SᴜᴄᴄᴇssғᴜʟʟY Cʟᴏɴᴇᴅ Yᴏᴜʀ Bᴏᴛ: @{bot.username}.\n\nYᴏᴜ ᴄᴀɴ ᴄᴜsᴛᴏᴍɪsᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ \n/settings ᴀɴᴅ /edit \nCᴏᴍᴍᴀɴᴅ ɪɴ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ</b>\n\n<blockquote>Nᴇᴠᴇʀ Fᴏʀɢᴇᴛ ᴛᴏ ᴇxᴩᴇʀɪᴇɴᴄᴇ ᴛʜᴇ ꜱᴜᴩᴇʀʙ ꜱᴇʀᴠɪᴄᴇᴇʜ⚡</blockquote>")
     except BaseException as e:
         await msg.edit_text(f"⚠️ <b>Bᴏᴛ Eʀʀᴏʀ:</b>\n\n<code>{e}</code>\n\n**Tʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ ⚡ ᴏʀ Kɪɴᴅʟʏ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ @SyD_XyZ ᴛᴏ ɢᴇᴛ ᴀꜱꜱɪꜱᴛᴀɴᴄᴇ.**")
     await client.send_message(LOG_CHANNEL, script.LOG_BOT.format(message.from_user.id, message.from_user.mention, bot.username))
