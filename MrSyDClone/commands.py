@@ -387,7 +387,7 @@ async def setting(client, message):
             )
             
             
-    text="<b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b>"
+    text="<blockquote><b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b></blockquote>"
     await message.reply_text(
         text=text,
         reply_markup=main_buttons(),
