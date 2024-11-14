@@ -58,8 +58,9 @@ async def save_file(media):
     # TODO: Find better way to get same file_id for same media to avoid duplicates
     file_id, file_ref = unpack_new_file_id(media.file_id)
     file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
-    data_size = (await db.command("dbstats"))['dataSize']
-    print(f"{data_size} •")
+    result = await db.command("dbstats")
+    data_size = result['dataSize']
+    print(f"{data_size} • 503316480")
   #  if data_size > 503316480:
     #    SyDMedia = Media2
   #  else:
