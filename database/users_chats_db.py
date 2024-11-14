@@ -125,11 +125,12 @@ class Database:
         count = await self.col.count_documents({})
         return count
 
-    async def add_clone_bot(self, bot_id, user_id, bot_token):
+    async def add_clone_bot(self, bot_id, user_id, bot_token, bot_name):
         settings = {
             'bot_id': bot_id,
             'bot_token': bot_token,
             'user_id': user_id,
+            'bot_name': bot_name,
             'url': None,
             'api': None,
             'tutorial': None,
