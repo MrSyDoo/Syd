@@ -1926,8 +1926,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             button = [[
                 InlineKeyboardButton("🚀 Fᴀꜱᴛ Dᴏᴡʟᴏᴀᴅ 🚀", url=download),
                 InlineKeyboardButton('🖥️ Wᴀᴛᴄʜ Oɴʟɪɴᴇ 🖥️', url=stream)
-            ],[
-                InlineKeyboardButton("• Wᴀᴛᴄʜ ɪɴ ᴡᴇʙ ᴀᴘP •", web_app=WebAppInfo(url=stream))
             ]]
             await query.message.reply_text(
                 text="•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ☠︎⚔",
