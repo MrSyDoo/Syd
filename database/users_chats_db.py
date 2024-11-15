@@ -158,9 +158,9 @@ class Database:
     async def delete_clone(self, user_id):
         await self.bot.delete_many({'user_id': int(user_id)})
 
-    async def get_clone(self, user_id):
-        clone_data = await self.bot.find_one({"user_id": user_id})
-        return clone_data
+    async def get_syd(self, user_id):
+        bot_data = await self.bot.find_one({"user_id": user_id})
+        return bot_data
             
     async def update_clone(self, user_id, user_data):
         await self.bot.update_one({"user_id": user_id}, {"$set": user_data}, upsert=True)
