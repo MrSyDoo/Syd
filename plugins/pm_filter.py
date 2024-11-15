@@ -1995,7 +1995,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start')
         ]]
         if await db.is_clone_exist(message.from_user.id):
-            syd = await db.get_clone(query.message.chat.id)
+            syd = await db.get_syd(query.message.chat.id)
             name = syd["bot_name"]
             print('{name}')
             mr_syd = '\n\n<blockquote>Yᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ⚡ : @{name}</blockquote>'
