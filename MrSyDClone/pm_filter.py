@@ -922,11 +922,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         max_links = 8  # Set the maximum number of links to collect
 
         for _ in range(max_links):
-            link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ Lɪɴᴋ Oꜰ Pʜᴏᴛᴏ ᴏʀ Sᴇɴᴅ /end Tᴏ Fɪɴɪꜱʜ ; \n\n<blockquote>Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b></blockquote>")
+            link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ <u>Lɪɴᴋ Oꜰ Pʜᴏᴛᴏ</u> ᴏʀ Sᴇɴᴅ /end Tᴏ Fɪɴɪꜱʜ ; \n\n<blockquote>Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b></blockquote>")
             if link_input.text.lower() == '/end':
                 break
             if not link_input.text.startswith(('https://', 'http://')):
-                await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+                await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
                 return 
             links.append(link_input.text)
         if links:
@@ -948,7 +948,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            await link.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
        if not link.text.startswith(('https://', 'http://')):
-           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
        data = {
            'update_channel_link': link.text
@@ -961,7 +961,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "btn1":
        await query.message.delete()
-       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
+       nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Tᴇxᴛ Shortlink Site Domain Or Url Without https://</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
