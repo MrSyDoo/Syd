@@ -867,7 +867,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            link = 'https://t.me/+-VpGTWWWTldhZWNl'
            await shortzy.convert(link)
        except Exception as e:
-           await message.reply(f"**Eʀʀᴏʀ Iɴ Cᴏɴᴠᴇʀᴛɪɴɢ Lɪɴᴋ**\n\n<code>{e}</code>\n\n**Sᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ By - /settings** \nIꜰ Pʀᴏʙʟᴇᴍ Cᴏɴᴛɪɴᴜᴇꜱ Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Oᴡɴᴇʀ @SYD_XYZ", reply_markup=InlineKeyboardMarkup(btn))
+           await message.reply(f"**Eʀʀᴏʀ Iɴ Cᴏɴᴠᴇʀᴛɪɴɢ Lɪɴᴋ**\n\n<code>{e}</code>\n\n**Sᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ** \n<blockquote>Iꜰ Pʀᴏʙʟᴇᴍ Cᴏɴᴛɪɴᴜᴇꜱ Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Oᴡɴᴇʀ @SYD_XYZ</blockquote>", reply_markup=InlineKeyboardMarkup(btn))
            return
        data = {
           'url': url.text,
@@ -900,6 +900,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "srt":
        await query.message.delete()
        mr_syd = settings["strtsyd"]
+       mention = "{mention}"
+       username = "{username}"
+       firstname = "{firstname}"
        abt = await client.ask(query.message.chat.id, "<b><blockquote>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockquote>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code> {mr_syd} </code></blockquote>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")  # mr
        if abt.text == '/cancel':
            await abt.delete()
@@ -919,7 +922,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         max_links = 8  # Set the maximum number of links to collect
 
         for _ in range(max_links):
-            link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ Lɪɴᴋ ᴏʀ ꜱᴇɴᴅ /end ᴛᴏ Fɪɴɪꜱʜ ; \n\n<blockquote>Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b></blockquote>")
+            link_input = await client.ask(query.message.chat.id, "<b>Sᴇɴᴛ Tʜᴇ Lɪɴᴋ Oꜰ Pʜᴏᴛᴏ ᴏʀ Sᴇɴᴅ /end Tᴏ Fɪɴɪꜱʜ ; \n\n<blockquote>Iꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 8 ᴩɪᴄꜱ, ꜱᴇɴᴅ ᴀʟʟ ᴛʜᴇ ʟɪɴᴋꜱ ᴀᴛ ᴏɴᴄᴇ ᴡɪᴛʜ ᴇᴀᴄʜ ʟɪɴᴋ ꜱᴇᴩᴇʀᴀᴛᴇᴅ ʙʏ ᴀ ꜱɪɴɢʟᴇ ꜱᴩᴀᴄᴇ, ⚡</b></blockquote>")
             if link_input.text.lower() == '/end':
                 break
             if not link_input.text.startswith(('https://', 'http://')):
