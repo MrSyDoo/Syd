@@ -759,7 +759,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn[0].insert(0, InlineKeyboardButton(sy_d, url=sy))
 
         btn[0] = [button for button in btn[0] if button is not None]
-        await query.message.edit_text(text = text, reply_markup = InlineKeyboardMarkup(btn))
+        await query.message.edit_text(text = text, disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "start":
         buttons = [[
@@ -847,7 +847,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         btn[0] = [button for button in btn[0] if button is not None]
         syd = settings["abtsyd"]
-        await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), reply_markup = InlineKeyboardMarkup(btn))
+        await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "url":
        await query.message.delete()
