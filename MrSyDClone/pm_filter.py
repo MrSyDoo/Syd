@@ -961,13 +961,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "btn1":
        await query.message.delete()
-       nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Tᴇxᴛ Shortlink Site Domain Or Url Without https://</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
+       nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
-       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if not url.text.startswith(('https://', 'http://', 't.me/')):
-           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
        data = {
            'button1': nam.text,
@@ -981,16 +981,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "hbtn":
        await query.message.delete()
-       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
+       nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Hᴇʟᴩ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
-       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if url.text == '/cancel':
            await url.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
        if not url.text.startswith(('https://', 'http://', 't.me/')):
-           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
        data = {
            'hbutton': nam.text,
@@ -1004,16 +1004,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "abtn":
        await query.message.delete()
-       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
+       nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Aʙᴏᴜᴛ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡ </b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
-       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if url.text == '/cancel':
            await url.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
        if not url.text.startswith(('https://', 'http://', 't.me/')):
-           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
        data = {
            'abtbutton': nam.text,
@@ -1027,13 +1027,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "btn2":
        await query.message.delete()
-       nam = await client.ask(query.message.chat.id, "<b>Now Send Me Your Shortlink Site Domain Or Url Without https://</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
+       nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
-       url = await client.ask(query.message.chat.id, "<b>Now Send Your Api</b>")
+       url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if not url.text.startswith(('https://', 'http://', 't.me/')):
-           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
        data = {
            'button2': nam.text,
@@ -1052,7 +1052,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
            await link.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
        if not link.text.startswith(('https://', 'http://')):
-           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit ⚡**")
+           await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit ⚡**")
            return 
        data = {
            'group_link': link.text
