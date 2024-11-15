@@ -1994,6 +1994,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start')
         ]]
+        await db.get_clone(query.message.chat.id)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
