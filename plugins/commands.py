@@ -69,7 +69,7 @@ async def start(client, message):
                 InlineKeyboardButton('Mᴏᴠɪᴇ Gʀᴏᴜᴘ', url=GRP_LNK)
             ]]
         if CLONE_MODE == True:
-            buttons.append([InlineKeyboardButton('🤖 Cʀᴇᴀᴛᴇ Yᴏᴜʀ Cʟᴏɴᴇ Bᴏᴛ 🤖', callback_data='clone')])
+            buttons.append([InlineKeyboardButton('Cʀᴇᴀᴛᴇ Yᴏᴜʀ Cʟᴏɴᴇ Bᴏᴛ ', callback_data='clone')])
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAEELoRnMdY9Cjhme4dI1ex_MF4KwoIc4AACKxEAAh6lEVXmKTGWbQABUOMeBA") 
         await asyncio.sleep(1)
