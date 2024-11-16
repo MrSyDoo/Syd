@@ -2006,11 +2006,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))  # Ensure this is valid
         )
-        
         await query.message.edit_text(
             text=script.CLONE_TXT.format(mr_syd=mr_syd),  # Ensure `CLONE_TXT` has placeholders
             reply_markup=reply_markup,
-            parse_mode=ParseMode.HTML  # Ensure ParseMode is imported
+            parse_mode=enums.ParseMode.HTML  # Ensure ParseMode is imported
         )
 
         
