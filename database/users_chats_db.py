@@ -159,7 +159,7 @@ class Database:
         await self.bot.delete_many({'user_id': int(user_id)})
 
     async def get_syd(self, user_id):
-        bot_data = await self.bot.find_one({"user_id": user_id})
+        bot_data = await self.bot.find_one({"user_id": int(user_id)})
         return bot_data
             
     async def update_clone(self, user_id, user_data):
