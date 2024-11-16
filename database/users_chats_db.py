@@ -84,7 +84,6 @@ class Database:
         self.col = self.db.users
         self.grp = self.db.groups
         self.users = self.db.uersz
-        self.syd = self.db.syd
         self.bot = self.db.clone_bots
 
 
@@ -159,15 +158,9 @@ class Database:
     async def delete_clone(self, user_id):
         await self.bot.delete_many({'user_id': int(user_id)})
 
-    async def add_syd(self, user_id, bot_nam):
-        settins = {
-            'user_id': user_id,
-            'bot_nam': bot_nam
-        }
-        await self.syd.insert_one(settins)
-            
+    
     async def get_syd(self, user_id):
-        syd_data = await self.syd.find_one({"user_id": user_id})
+        syd_data = await self.bot.find_one({"user_id": user_id})
         return syd_data
             
     async def update_clone(self, user_id, user_data):
