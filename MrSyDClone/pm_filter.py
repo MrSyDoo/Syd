@@ -843,11 +843,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if settings.get("abtbutton") is not None and settings.get("abtbtnlink") is not None:
             sy_d = settings["abtbutton"]
             sy = settings["abtbtnlink"]
-            buttons[0].insert(0, InlineKeyboardButton(sy_d, url=sy))
+            buttons[0].insert(1, InlineKeyboardButton(sy_d, url=sy))
         
         buttons[0] = [button for button in buttons[0] if button is not None]
         syd = settings["abtsyd"]
-        await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(btn))
+        await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(buttons))
 
     elif query.data == "url":
        await query.message.delete()
