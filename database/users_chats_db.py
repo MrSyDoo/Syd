@@ -84,7 +84,7 @@ class Database:
         self.col = self.db.users
         self.grp = self.db.groups
         self.users = self.db.uersz
-        self.syd = self.db.name
+        self.syd = self.db.syd
         self.bot = self.db.clone_bots
 
 
