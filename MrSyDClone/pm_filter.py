@@ -840,10 +840,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
         ]]
+        await query.message.edit_text("●○○○")
         if settings.get("abtbutton") is not None and settings.get("abtbtnlink") is not None:
             sy_d = settings["abtbutton"]
             sy = settings["abtbtnlink"]
-            buttons[0].insert(1, InlineKeyboardButton(sy_d, url=sy))
+            buttons[0].insert(0, InlineKeyboardButton(sy_d, url=sy))
         
         buttons[0] = [button for button in buttons[0] if button is not None]
         syd = settings["abtsyd"]
