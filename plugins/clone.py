@@ -91,7 +91,12 @@ async def clone_menu(client, message):
     else:
         return await message.reply('<b>Nᴏᴛ ꜰᴏʀᴡᴀʀᴅᴇᴅ ꜰʀᴏᴍ @BotFather 😑</b>')
     user_id = message.from_user.id
-    msg = await message.reply_text('<b><blockquote>Wᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ,</blockquote>\n \n<u>⚠️ɴᴏᴛᴇ: ʙʏ ᴄʟᴏɴɪɴɢ ʏᴏᴜ ᴀʀᴇ ᴀᴄᴄᴇᴩᴛɪɴɢ ᴏᴜʀ <a href='http://t.me/Mr_Movies_Clone_Bot?start=disclaimer'>ᴛᴇʀᴍꜱ ᴀɴᴅ ᴄᴏɴᴅɪᴛɪᴏɴꜱ!</a></u></b>')
+    msg = await message.reply_text(
+     """<b><blockquote>Wᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ</blockquote>
+     <u>⚠️ɴᴏᴛᴇ: ʙʏ ᴄʟᴏɴɪɴɢ ʏᴏᴜ ᴀʀᴇ ᴀᴄᴄᴇᴩᴛɪɴɢ ᴏᴜʀ <a href='http://t.me/Mr_Movies_Clone_Bot?start=disclaimer'>ᴛᴇʀᴍꜱ ᴀɴᴅ ᴄᴏɴᴅɪᴛɪᴏɴꜱ!</a></u></b>
+     """,
+     disable_web_page_preview=True
+     )
     sy = await message.reply_text('◘◘◘◘')
     await sy.edit_text('◙◘◘◘')
     try:
