@@ -1994,8 +1994,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start')
         ]]
-        if await db.is_clone_exist(message.from_user.id):
-            syd = await db.get_syd(query.message.chat.id)
+        reply_markup = InlineKeyboardMarkup(buttons)
+        if await db.is_clone_exist(query.from_user.id):
+            syd = await db.get_syd(query.from_user.id)
             name = syd["bot_name"]
             print('{name}')
             mr_syd = '\n\n<blockquote>Yᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ⚡ : @{name}</blockquote>'
@@ -2007,7 +2008,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
         )
-        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.CLONE_TXT.format(mr_syd),
             reply_markup=reply_markup,
