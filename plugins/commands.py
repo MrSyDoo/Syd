@@ -65,7 +65,7 @@ async def start(client, message):
                 InlineKeyboardButton('   Hᴇʟᴘ', callback_data='help'),
                 InlineKeyboardButton('Aʙᴏᴜᴛ   ', callback_data='about')
             ],[
-                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs   ', url=CHNL_LNK),
+                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs ', url=CHNL_LNK),
                 InlineKeyboardButton('Mᴏᴠɪᴇ Gʀᴏᴜᴘ', url=GRP_LNK)
             ]]
         if CLONE_MODE == True:
@@ -279,8 +279,8 @@ async def start(client, message):
                     ],[
                         InlineKeyboardButton('Bᴏᴛ Oᴡɴᴇʀ', url="https://t.me/SyD_XyZ")
                     ],[
-                        InlineKeyboardButton("🚀 Fast Download 🚀", url=download),  # we download Link
-                        InlineKeyboardButton('🖥️ Watch online 🖥️', url=stream)
+                        InlineKeyboardButton("〄 Fᴀꜱᴛ Dᴏᴡɴʟᴏᴀᴅ", url=download),  # we download Link
+                        InlineKeyboardButton('Wᴀᴛᴄʜ Oɴʟɪɴᴇ 〄', url=stream)
                     ]]
                 else:
                     button = [[
@@ -530,7 +530,7 @@ Wᴇ  ᴅᴏɴᴛ ꜱᴜᴩᴩᴏʀᴛ ᴩɪʀᴀᴄʏ, ɪꜰ ᴀɴʏ ᴏꜰ ᴄ
                 ],[
                     InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/SyD_XyZ")
                 ],[
-                    InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @KingVJ01
+                    InlineKeyboardButton('〄 Fᴀꜱᴛ Dᴏᴡɴʟᴏᴀᴅ / Wᴀᴛᴄʜ Oɴʟɪɴᴇ 〄', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @KingVJ01
                 ]]
             else:
                 button = [[
@@ -603,7 +603,7 @@ Wᴇ  ᴅᴏɴᴛ ꜱᴜᴩᴩᴏʀᴛ ᴩɪʀᴀᴄʏ, ɪꜰ ᴀɴʏ ᴏꜰ ᴄ
                 ],[
                     InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/Syd_Xyz")
                 ],[
-                    InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @KingVJ01
+                    InlineKeyboardButton('〄 Fᴀꜱᴛ Dᴏᴡɴʟᴏᴀᴅ / Wᴀᴛᴄʜ Oɴʟɪɴᴇ 〄', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @KingVJ01
                 ]]
             else:
                 button = [[
@@ -675,7 +675,7 @@ Wᴇ  ᴅᴏɴᴛ ꜱᴜᴩᴩᴏʀᴛ ᴩɪʀᴀᴄʏ, ɪꜰ ᴀɴʏ ᴏꜰ ᴄ
         ],[
             InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/SyD_XyZ")
         ],[
-            InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @KingVJ01
+            InlineKeyboardButton('〄 Fᴀꜱᴛ Dᴏᴡɴʟᴏᴀᴅ / Wᴀᴛᴄʜ Oɴʟɪɴᴇ 〄', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @KingVJ01
         ]]
     else:
         button = [[
@@ -692,7 +692,7 @@ Wᴇ  ᴅᴏɴᴛ ꜱᴜᴩᴩᴏʀᴛ ᴩɪʀᴀᴄʏ, ɪꜰ ᴀɴʏ ᴏꜰ ᴄ
         reply_markup=InlineKeyboardMarkup(button)
     )
     btn = [[
-        InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
+        InlineKeyboardButton("! Gᴇᴛ Fɪʟᴇ Aɢᴀɪɴ !", callback_data=f'delfile#{file_id}')
     ]]
     k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
     await asyncio.sleep(600)
