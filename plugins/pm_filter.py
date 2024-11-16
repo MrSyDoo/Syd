@@ -1998,8 +1998,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if await db.is_clone_exist(query.from_user.id):
             syd = await db.get_syd(query.from_user.id)
             name = syd["bot_name"]
-            print('{name}')
-            mr_syd = '\n\n<blockquote>Yᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ⚡ : @{name}</blockquote>'
+            print(' {name} ')
+            mr_syd = '\n\n<blockquote>Yᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ⚡ : @{name}</blockquote>\n\n'
         else:
             mr_syd = ' '
             
