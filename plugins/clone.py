@@ -108,7 +108,7 @@ async def clone_menu(client, message):
         await sy.edit_text('◙◙◘◘')
         await vj.start()
         bot = await vj.get_me()
-        await db.add_syd(user_id, bot.username)
+        #await db.add_syd(user_id, bot.username)
         await sy.edit_text('◙◙◙◙')
         await db.add_clone_bot(bot.id, user_id, bot_token, bot.username)
         await sy.delete()
