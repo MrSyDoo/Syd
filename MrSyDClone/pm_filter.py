@@ -845,9 +845,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             sy_d = settings["abtbutton"]
             sy = settings["abtbtnlink"]
             buttons[0].insert(0, InlineKeyboardButton(sy_d, url=sy))
-        
+        await query.message.edit_text("●○○")
         buttons[0] = [button for button in buttons[0] if button is not None]
         syd = settings["abtsyd"]
+        await query.message.edit_text("●")
         await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(buttons))
 
     elif query.data == "url":
