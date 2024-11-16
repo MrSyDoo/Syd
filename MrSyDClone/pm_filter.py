@@ -741,6 +741,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
 async def cb_handler(client: Client, query: CallbackQuery):
     me = await client.get_me()
     settings = await db.get_bot(me.id)
+    mr_syyd = settings["bot_name"]
     if query.data == "close_data":
         await query.message.delete()
 
@@ -840,16 +841,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
         ]]
-        await query.message.edit_text("●○○○")
         if settings.get("abtbutton") is not None and settings.get("abtbtnlink") is not None:
             sy_d = settings["abtbutton"]
             sy = settings["abtbtnlink"]
             buttons[0].insert(0, InlineKeyboardButton(sy_d, url=sy))
-        await query.message.edit_text("●○○")
         buttons[0] = [button for button in buttons[0] if button is not None]
         syd = settings["abtsyd"]
-        await query.message.edit_text("●")
-        await query.message.edit_text(text = syd.format(mention=me.mention, username=temp.U_NAME, name=temp.B_NAME), disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(buttons))
+        await query.message.edit_text(text = syd.format(mention=me.mention, username=mr_syyd, name=mr_syyd), disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(buttons))
 
     elif query.data == "url":
        await query.message.delete()
