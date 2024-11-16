@@ -253,7 +253,7 @@ async def start(client, message):
     size=get_size(files.file_size)
     f_caption=files.caption
     if f_caption is None:
-        f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
+        f_caption = f"{' '.join(filter(lambda x: not x.startswith('channel') and not x.startswith('update') and not x.startswith('Movie') and not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if cd["update_channel_link"] != None:
         up = cd["update_channel_link"]
         button = [[
