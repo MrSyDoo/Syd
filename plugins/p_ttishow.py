@@ -106,6 +106,11 @@ async def leave_a_chat(bot, message):
     except Exception as e:
         await message.reply(f'Error - {e}')
 
+@Client.on_message(filters.command('edit'))
+async def mituk(bot, message):
+    await message.reply('<b>Nᴏ ɴᴇᴇᴅ ᴛᴏ ꜱᴇɴᴅ ʜᴇʀᴇ! \nꜱᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏ ᴇᴅɪᴛ ⚡ </b>
+
+    
 @Client.on_message(filters.command('disable') & filters.user(ADMINS))
 async def disable_chat(bot, message):
     if len(message.command) == 1:
