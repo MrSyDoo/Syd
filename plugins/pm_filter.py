@@ -1993,14 +1993,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text("••")
         if await db.is_clone_exist(query.from_user.id):
             syd = await db.get_syd(query.from_user.id)
             name = syd["bot_name"]
-            mr_syd = f'\n\n<blockquote>Yᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ⚡ : @{name}</blockquote>\n\n'
+            mr_syd = f'\n\n<blockquote>Yᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ⚡ : @{name}</blockquote>\n'
         else:
             mr_syd = ' '
-        await query.message.edit_text("•••")
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
