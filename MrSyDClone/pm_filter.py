@@ -749,10 +749,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
 
     elif query.data == "help":
-        text = "<b>👨‍💻 How To Use Bot :-\n\n🔻 /start - check bot is working or not.\n\n🔻 /stats - check bot files and users.\n\n🔻 /settings - configure clone bot settings ( owner only ).\n\n🔻 /reset - reset all settings to default or none ( owner only ).\n\n🔻 /broadcast - broadcast a message to your bot users ( owner only ).</b>"
+        text = "<b><blockquote>To Uꜱᴇ Mᴇ Jᴜꜱᴛ Tʏᴩᴇ Aɴᴅ Tʜᴇ Mᴏᴠɪᴇ/Sᴇʀɪᴇꜱ Nᴀᴍᴇ Iʟʟ Gɪᴠᴇ ɪᴛ ᴛᴏ ʏᴏᴜ </blockquote></b>"
         btn = [[
-            InlineKeyboardButton("🔍 ᴀʙᴏᴜᴛ", callback_data="about"),
-            InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
+            InlineKeyboardButton("台 ʜᴏᴍᴇ", callback_data="start"),
+            InlineKeyboardButton("Δʙᴏᴜᴛ ᯓᡣ𐭩", callback_data="about")
         ]]
         if settings["hbutton"] != None:
             sy_d = settings["hbutton"]
@@ -766,8 +766,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⤬ Δᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜP ⤬', url=f'http://t.me/{me.username}?startgroup=true')
         ],[
-            InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('🔍 ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('ּ ֶָ֢. Hᴇʟᴩ', callback_data='help'),
+            InlineKeyboardButton('Δʙᴏᴜᴛ ᯓᡣ𐭩', callback_data='about')
         ]]
         await query.message.edit_text("●○○○")
         if settings["group_link"] != None:
@@ -847,7 +847,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons[0].insert(0, InlineKeyboardButton(sy_d, url=sy))
         buttons[0] = [button for button in buttons[0] if button is not None]
         syd = settings["abtsyd"]
-        await query.message.edit_text(text = syd.format(mention=me.mention, username=mr_syyd, name=mr_syyd), disable_web_page_preview = True, reply_markup = InlineKeyboardMarkup(buttons))
+        await query.message.edit_text(text = syd.format(mention=me.mention, username=mr_syyd, name=mr_syyd), reply_markup = InlineKeyboardMarkup(buttons))
 
     elif query.data == "url":
        await query.message.delete()
