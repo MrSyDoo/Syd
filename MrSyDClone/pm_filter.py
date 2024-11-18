@@ -836,7 +836,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         await query.message.edit_text(text = script.SYDBTN, reply_markup = InlineKeyboardMarkup(btn))
 
-    elif query.data == "about":
+    elif query.data == "admin":
+        tg_syd = settings["user_id"]
+        if query.from_user.id != tg_syd:
+            return await query.answer("Oɴʟʏ ꜰᴏʀ ᴏᴡɴᴇʀꜱ🥲",show_alert=True)
         text="<b>Yᴏᴜʀ ᴄᴏᴍᴍᴀᴍᴅꜱ ⚡; \n\n<blockquote>/stats - Tᴏ ɢᴇᴛ ꜱᴛᴀᴛᴜꜱ ᴏꜰ ᴍᴇ </blockquote>\n\n<blockquote>/edit - Tᴏ ᴄʜᴀɴɢᴇ ʙᴏᴛ ꜱᴇᴛᴛɪɴɢꜱ [ᴛᴏ ᴇᴅɪᴛ ᴛʜᴇ ʙᴏᴛ] </blockquote>\n\n<blockquote>/reset - Tᴏ ʀᴇꜱᴇᴛ ᴛʜᴇ ʙᴏᴛ</blockquote>\n\n<blockquote>/broadcast - Tᴏ ᴍᴇꜱꜱᴀɢᴇ ᴀʟʟ ᴛʜᴇ ᴜꜱᴇʀꜱ 🩵</blockquote></b>"
         buttons = [[
             InlineKeyboardButton('台 ʜᴏᴍᴇ', callback_data='start'),
