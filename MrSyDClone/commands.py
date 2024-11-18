@@ -81,6 +81,7 @@ async def start(client, message):
             await message.reply_text(
                 text=syd,
                 reply_markup=reply_markup,
+                disable_web_page_preview=True,
                 parse_mode=enums.ParseMode.HTML
             )
         except Exception as e:
