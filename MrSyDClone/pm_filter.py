@@ -1066,7 +1066,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "group":
        await query.message.delete()
-       link = await client.ask(query.message.chat.id, "<b>Now Send Me Your Update Channel Link Which Is Shown In Your Start Button And Below File Button.</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
+       link = await client.ask(query.message.chat.id, "<b>NNow Sᴇɴᴅ Mᴇ Tʜᴇ Gʀᴏᴜᴩ Lɪɴᴋ Tᴏ Bᴇ Sʜᴏᴡɴ Iɴ Sᴛᴀʀᴛ Mᴇꜱꜱᴀɢᴇ.</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if link.text == '/cancel':
            await link.delete()
            return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
