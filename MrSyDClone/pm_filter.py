@@ -798,7 +798,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         #syd = syd.replace("{mention}", mdsyd).replace("{username}", mrssyd).replace("{firstname}", mrssud)
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text("●●●●")
-        await query.message.edit_text(text = syd.format(mention=query.from_user.mention, username=me.username, firstname=me.first_name), reply_markup = reply_markup)
+        await query.message.edit_text(text = syd.format(mention=query.from_user.mention, username=me.username, firstname=me.first_name), reply_markup = reply_markup, disable_web_page_preview = True)
 
     elif query.data == "edit":
         buttons = [[
