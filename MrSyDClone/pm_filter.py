@@ -865,7 +865,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         syd = settings["abtsyd"]
         await query.message.edit_text(
             text=syd.format(mention=me.mention, username=mr_syyd, name=mr_syyd),
-            reply_markup=InlineKeyboardMarkup(buttons)
+            reply_markup=InlineKeyboardMarkup(buttons),
+            disable_web_page_preview=True
         )
 
     elif query.data == "url":
