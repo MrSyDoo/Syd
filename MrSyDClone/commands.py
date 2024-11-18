@@ -407,25 +407,11 @@ def main_buttons():
        ],[
        InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ', callback_data='pic')
        ],[
-       InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ',
-                    callback_data='url')
+       InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ', callback_data='url')
        ],[
-      
-       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
-                    callback_data='btn1'),
-       InlineKeyboardButton('Exᴛʀᴀ ʙᴜᴛᴛᴏɴ',
-                    callback_data='btn2')
+       InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ', callback_data='srt'),
+       InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ', callback_data='atb')
        ],[
-       
-       ],[
-       InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ',
-                    callback_data='srt'),
-       InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ',
-                    callback_data='atb')
-       ],[
-       InlineKeyboardButton('⚙️ Extra Settings',
-                    callback_data='settings#nextfilters')
-       ],[      
-       InlineKeyboardButton('🔙 Back', callback_data='settings#syd')
+       InlineKeyboardButton('Vᴀʀɪᴏᴜꜱ Bᴜᴛᴛᴏɴꜱ', callback_data='bttn')
        ]]
   return InlineKeyboardMarkup(buttons)
