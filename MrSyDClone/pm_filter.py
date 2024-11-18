@@ -751,6 +751,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "help":
         text = "<b><blockquote>To Uꜱᴇ Mᴇ Jᴜꜱᴛ Tʏᴩᴇ Aɴᴅ Tʜᴇ Mᴏᴠɪᴇ/Sᴇʀɪᴇꜱ Nᴀᴍᴇ Iʟʟ Gɪᴠᴇ ɪᴛ ᴛᴏ ʏᴏᴜ </blockquote></b>"
         btn = [[
+            InlineKeyboardButton("۶ৎ Δᴅᴍɪɴ ۶ৎ", callback_data="admin")
+        ],[
             InlineKeyboardButton("台 ʜᴏᴍᴇ", callback_data="start"),
             InlineKeyboardButton("Δʙᴏᴜᴛ ᯓᡣ𐭩", callback_data="about")
         ]]
@@ -835,11 +837,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(text = script.SYDBTN, reply_markup = InlineKeyboardMarkup(btn))
 
     elif query.data == "about":
+        text="<b>Yᴏᴜʀ ᴄᴏᴍᴍᴀᴍᴅꜱ ⚡; \n\n<blockquote>/stats - Tᴏ ɢᴇᴛ ꜱᴛᴀᴛᴜꜱ ᴏꜰ ᴍᴇ </blockquote>\n\n<blockquote>/edit - Tᴏ ᴄʜᴀɴɢᴇ ʙᴏᴛ ꜱᴇᴛᴛɪɴɢꜱ [ᴛᴏ ᴇᴅɪᴛ ᴛʜᴇ ʙᴏᴛ] </blockquote>\n\n<blockquote>/reset - Tᴏ ʀᴇꜱᴇᴛ ᴛʜᴇ ʙᴏᴛ</blockquote>\n\n<blockquote>/broadcast - Tᴏ ᴍᴇꜱꜱᴀɢᴇ ᴀʟʟ ᴛʜᴇ ᴜꜱᴇʀꜱ 🩵</blockquote></b>"
+        buttons = [[
+            InlineKeyboardButton('台 ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('ּ ֶָ֢. Hᴇʟᴩ', callback_data='help')
+        ]]
+        await query.message.edit_text(
+            text=text,
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "about":
         buttons = [[
             InlineKeyboardButton('ᴄʟᴏɴᴇ', url='https://t.me/Mr_Movies_Clone_Bot')
         ],[
-            InlineKeyboardButton('🕵️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton("🏡 ʜᴏᴍᴇ", callback_data="start")
+            InlineKeyboardButton('台 ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('ּ ֶָ֢. Hᴇʟᴩ', callback_data='help')
         ]]
         if settings.get("abtbutton") is not None and settings.get("abtbtnlink") is not None:
             sy_d = settings["abtbutton"]
