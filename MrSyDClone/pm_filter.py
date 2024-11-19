@@ -767,7 +767,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⤬ Δᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜP ⤬', url=f'http://t.me/{me.username}?startgroup=true')
         ],[
-            InlineKeyboardButton('ּ ֶָ֢. Hᴇʟᴩ', callback_data='help'),
+            InlineKeyboardButton('ּ❆ Hᴇʟᴩ', callback_data='help'),
             InlineKeyboardButton('Δʙᴏᴜᴛ ᯓᡣ𐭩', callback_data='about')
         ]]
         await query.message.edit_text("●○○○")
@@ -807,14 +807,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ', callback_data='update'),
             InlineKeyboardButton('Gʀᴏᴜᴩ', callback_data='group')
         ],[
-            InlineKeyboardButton('ꜱᴛᴀʀᴛ ᴩɪᴄꜱ', callback_data='pic')
+            InlineKeyboardButton('Sᴛᴀʀᴛ Pɪᴄꜱ', callback_data='pic')
         ],[
-            InlineKeyboardButton('Sʜᴏʀᴛ-ᴜʀʟ', callback_data='url')
+            InlineKeyboardButton('Sʜᴏʀᴛ-Uʀʟ', callback_data='url')
         ], [
             InlineKeyboardButton('Sᴛᴀʀᴛ ᴛXᴛ', callback_data='srt'),
             InlineKeyboardButton('Aʙᴏᴜᴛ ᴛXᴛ', callback_data='atb')
         ],[
             InlineKeyboardButton('Vᴀʀɪᴏᴜꜱ Bᴜᴛᴛᴏɴꜱ', callback_data='bttn')
+        ],[
+            InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data'
         ]]
         text="<blockquote><b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b></blockquote>"
         await query.message.edit_text(
@@ -831,7 +833,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Bᴜᴛᴛᴏɴ 3[ᴀʙᴏᴜᴛ]', callback_data='abtn'),
             InlineKeyboardButton('Bᴜᴛᴛᴏɴ 4[ʜᴇʟᴩ]', callback_data='hbtn')
         ],[     
-            InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit")
+            InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit"),
+            InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data'
+        ]]
         ]]
         await query.message.edit_text(text = script.SYDBTN, reply_markup = InlineKeyboardMarkup(btn))
 
@@ -842,7 +846,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         text="<b>Yᴏᴜʀ ᴄᴏᴍᴍᴀᴍᴅꜱ ⚡; \n\n<blockquote>/stats - Tᴏ ɢᴇᴛ ꜱᴛᴀᴛᴜꜱ ᴏꜰ ᴍᴇ </blockquote>\n\n<blockquote>/edit - Tᴏ ᴄʜᴀɴɢᴇ ʙᴏᴛ ꜱᴇᴛᴛɪɴɢꜱ [ᴛᴏ ᴇᴅɪᴛ ᴛʜᴇ ʙᴏᴛ] </blockquote>\n\n<blockquote>/reset - Tᴏ ʀᴇꜱᴇᴛ ᴛʜᴇ ʙᴏᴛ</blockquote>\n\n<blockquote>/broadcast - Tᴏ ᴍᴇꜱꜱᴀɢᴇ ᴀʟʟ ᴛʜᴇ ᴜꜱᴇʀꜱ 🩵</blockquote></b>"
         buttons = [[
             InlineKeyboardButton('台 ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ּ ֶָ֢. Hᴇʟᴩ', callback_data='help')
+            InlineKeyboardButton('ּ❆ Hᴇʟᴩ', callback_data='help')
         ]]
         await query.message.edit_text(
             text=text,
@@ -851,10 +855,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('ᴄʟᴏɴᴇ', url='https://t.me/Mr_Movies_Clone_Bot')
+            InlineKeyboardButton('Cʟᴏɴᴇ', url='https://t.me/Mr_Movies_Clone_Bot')
         ],[
             InlineKeyboardButton('台 ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ּ ֶָ֢. Hᴇʟᴩ', callback_data='help')
+            InlineKeyboardButton('ּ❆ Hᴇʟᴩ', callback_data='help')
         ]]
         if settings.get("abtbutton") is not None and settings.get("abtbtnlink") is not None:
             sy_d = settings["abtbutton"]
@@ -870,18 +874,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
 
     elif query.data == "url":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
        await query.message.delete()
        url = await client.ask(query.message.chat.id, "<b>Nᴏᴡ Sᴇɴᴅ Mᴇ Yᴏᴜʀ Sʜᴏʀᴛʟɪɴᴋ Sɪᴛᴇ Dᴏᴍᴀɪɴ Oʀ Uʀʟ Wɪᴛʜᴏᴜᴛ https://</b> \n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if url.text == '/cancel':
            await url.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        if not url.text.startswith(('https://', 'http://')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /settings ᴏʀ /edit**")
            return 
        api = await client.ask(query.message.chat.id, "<b>Nᴏᴡ Sᴇɴᴅ Yᴏᴜʀ Aᴩɪ</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if api.text == '/cancel':
            await api.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        try:
            shortzy = Shortzy(api_key=api.text, base_site=url.text)
            link = 'https://t.me/+-VpGTWWWTldhZWNl'
@@ -894,46 +901,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
           'api': api.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "atb":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
        await query.message.delete()
        mrsyd = settings["abtsyd"]
        abt = await client.ask(query.message.chat.id, f"<b>Now Sᴇɴᴅ Me Tʜᴇ Δʙᴏᴜᴛ Tᴇxᴛ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code>{mrsyd}</code></blockquote>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if abt.text == '/cancel':
            await abt.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        data = {
            'abtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
 
     elif query.data == "srt":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
        await query.message.delete()
        mr_syd = settings["strtsyd"]
        mention = "{mention}"
        username = "{username}"
        firstname = "{firstname}"
-       abt = await client.ask(query.message.chat.id, "<b><blockquote>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockquote>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code> {mr_syd} </code></blockquote>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")  # mr
+       abt = await client.ask(query.message.chat.id, f'<b><blockquote>Nᴏᴡ ᴍᴇ ᴛʜᴇ ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛᴇxᴛ ᴛᴏ ʙᴇ ꜱʜᴏᴡɴ ɪɴ ᴛʜᴇ ꜱᴛᴀʀᴛ ᴍᴇꜱꜱᴀɢᴇ </blockquote>\n <u>Kᴇʏꜱ; </u>\n⦿ <code>{mention}</code> - Tᴏ ꜱᴩᴇᴄɪꜰʏ ᴛʜᴇ ᴜꜱᴇʀ \n⦿ <code>{username}</code> - Tʜᴇ ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴍɪɴᴇ ᴡɪᴛʜᴏᴜᴛ @ \n⦿ <code>{firstname}</code> - Mʏ ꜰɪʀꜱᴛ ɴᴀᴍᴇ.</b> \n<blockquote><i>Cᴜʀʀᴇɴᴛ ᴀʙᴏᴜᴛ;</i> \n<code> {mr_syd} </code></blockquote>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>')  # mr
        if abt.text == '/cancel':
            await abt.delete()
-           return await message.reply('<b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b>')
+           return await query.message.reply('<b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b>', reply_markup=InlineKeyboardMarkup(btn))
        data = {
            'strtsyd': abt.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "pic":
@@ -962,11 +966,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.reply("**No Lɪɴᴋꜱ Δᴅᴅᴇᴅ 🥲.**")
 
     elif query.data == "update":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='bttn')
+       ]]
        await query.message.delete()
        link = await client.ask(query.message.chat.id, "<b>Nᴏᴡ Sᴇɴᴅ Mᴇ Oᴜʀ Uᴩᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ Lɪɴᴋ Wʜɪᴄʜ Sʜᴏᴜʟᴅ Bᴇ Sʜᴏᴡɴ Iɴ Sᴛᴀʀᴛ Bᴜᴛᴛᴏɴ Aɴᴅ Iɴ Fɪʟᴇ Bᴜᴛᴛᴏɴ.</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if link.text == '/cancel':
            await link.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        if not link.text.startswith(('https://', 'http://')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
@@ -974,17 +981,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'update_channel_link': link.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "btn1":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='bttn')
+       ]]
        await query.message.delete()
        nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if not url.text.startswith(('https://', 'http://', 't.me/')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
@@ -994,21 +1001,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'btnlink1': url.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "hbtn":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='bttn')
+       ]]
        await query.message.delete()
        nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Hᴇʟᴩ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if url.text == '/cancel':
            await url.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        if not url.text.startswith(('https://', 'http://', 't.me/')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
@@ -1017,21 +1024,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'hbtnlink': url.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "abtn":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='bttn')
+       ]]
        await query.message.delete()
        nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Aʙᴏᴜᴛ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡ </b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if url.text == '/cancel':
            await url.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        if not url.text.startswith(('https://', 'http://', 't.me/')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
            return 
@@ -1040,17 +1047,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'abtbtnlink': url.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "btn2":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='bttn')
+       ]]
        await query.message.delete()
        nam = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Tᴇxᴛ ⚡</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if nam.text == '/cancel':
            await nam.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        url = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Bᴜᴛᴛᴏɴ Uʀʟ ⚡</b>")
        if not url.text.startswith(('https://', 'http://', 't.me/')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit**")
@@ -1060,17 +1067,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'btnlink2': url.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "group":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='bttn')
+       ]]
        await query.message.delete()
-       link = await client.ask(query.message.chat.id, "<b>NNow Sᴇɴᴅ Mᴇ Tʜᴇ Gʀᴏᴜᴩ Lɪɴᴋ Tᴏ Bᴇ Sʜᴏᴡɴ Iɴ Sᴛᴀʀᴛ Mᴇꜱꜱᴀɢᴇ.</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
+       link = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Tʜᴇ Gʀᴏᴜᴩ Lɪɴᴋ Tᴏ Bᴇ Sʜᴏᴡɴ Iɴ Sᴛᴀʀᴛ Mᴇꜱꜱᴀɢᴇ.</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if link.text == '/cancel':
            await link.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        if not link.text.startswith(('https://', 'http://')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ Lɪɴᴋ ! Rᴇꜱᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit ⚡**")
            return 
@@ -1081,11 +1088,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     elif query.data == "fsub":
+       btn = [[
+           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
+       ]]
        await query.message.delete()
        fsub = await client.ask(query.message.chat.id, "<b>Now Sᴇɴᴅ Mᴇ Yᴏᴜʀ Fᴏʀᴄᴇ-Sᴜʙ Cʜᴀɴɴᴇʟ ɪᴅ, Pʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ʀᴇqᴜɪʀᴇᴅ ɪꜰ ʏᴏᴜ ɴᴇᴇᴅ ᴊᴏɪɴ ʀᴇqᴜᴇꜱᴛ ꜰᴇᴀᴛᴜʀᴇ 🩵.</b>\n\n<blockquote><b><u>/cancel : Tᴏ Cᴀɴᴄᴇʟ Tʜɪꜱ Pʀᴏᴄᴇꜱs 😶‍🌫️ </u></b></blockquote>")
        if fsub.text == '/cancel':
            await fsub.delete()
-           return await message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>')
+           return await query.message.reply('<blockquote><b>Pʀᴏᴄᴄᴇꜱꜱ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ !!</b></blockquote>', reply_markup=InlineKeyboardMarkup(btn))
        if not fsub.text.startswith(('-100')):
            await query.message.reply("**Iɴᴠᴀʟɪᴅ ᴄʜᴀᴛ ɪᴅ !. Sᴛᴀʀᴛ Tʜᴇ Pʀᴏᴄᴇꜱꜱ Aɢᴀɪɴ Bʏ - /edit ⚡**")
            return 
@@ -1093,9 +1103,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
            'fsub': fsub.text
        }
        await db.update_bot(me.id, data)
-       btn = [[
-           InlineKeyboardButton('« ʙΔᴄᴋ', callback_data='edit')
-       ]]
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockquote></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
     if query.data.startswith("file"):
