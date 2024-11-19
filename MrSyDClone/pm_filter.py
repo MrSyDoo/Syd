@@ -816,7 +816,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('Vᴀʀɪᴏᴜꜱ Bᴜᴛᴛᴏɴꜱ', callback_data='bttn')
         ],[
-            InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data'
+            InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data')
         ]]
         text="<blockquote><b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b></blockquote>"
         await query.message.edit_text(
