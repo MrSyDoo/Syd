@@ -834,8 +834,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Bᴜᴛᴛᴏɴ 4[ʜᴇʟᴩ]', callback_data='hbtn')
         ],[     
             InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit"),
-            InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data'
-        ]]
+            InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data')
         ]]
         await query.message.edit_text(text = script.SYDBTN, reply_markup = InlineKeyboardMarkup(btn))
 
