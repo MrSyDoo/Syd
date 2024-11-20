@@ -12,7 +12,6 @@ CMD = ["/", "."]
 async def check_alive(_, message):
     await message.reply_text("**You are very lucky 🤞 I am alive ❤️ Press /start to use me**")
 
-
 @Client.on_message(filters.command("ping", CMD))
 async def ping(_, message):
     start_t = time.time()
