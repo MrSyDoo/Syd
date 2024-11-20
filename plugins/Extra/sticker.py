@@ -1,3 +1,4 @@
+# Don't Remove Credit @SyD_XyZ
 from pyrogram import Client, filters
 
 @Client.on_message(filters.command("stickerid") & filters.private)
