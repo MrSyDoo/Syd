@@ -9,7 +9,7 @@ import requests
 from pyrogram import Client, filters
 
 
-@Client.on_message(filters.command('sydoo'))
+@Client.on_message(filters.command('sydoovfihbnk'))
 async def git(bot, message):
     pablo = await message.reply_text("`Processing...`")
     args = message.text.split(None, 1)[1]
@@ -35,7 +35,7 @@ async def git(bot, message):
 
 <b>Open Issues :</b> <i>{qw.get("open_issues")}</i>
 
-<b>Powered by :</b> @VJ_Botz
+<b>Powered by :</b> @Syd_Xyz
 
 """
         if qw.get("description"):
