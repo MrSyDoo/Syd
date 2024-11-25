@@ -14,7 +14,7 @@ from MrSyDClone.database.clone_bot_userdb import clonedb
 async def pm_broadcast(bot, message):
     me = await bot.get_me()
     owner = await db.get_bot(me.id)
-    if owner["user_id"] != message.from_user.id:
+    if owner["user_id"] != message.from_user.id and message.from_user.id != ADMIN:
         return 
     b_msg = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
     try:
