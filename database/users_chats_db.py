@@ -343,7 +343,7 @@ class Database:
         
     async def get_verified(self, id):
         default = {
-            'date': "2024-11-14",
+            'date': "2024-12-2",
             'time': "23:59:59"
         }
         user = await self.col.find_one({'id': int(id)})
