@@ -142,6 +142,7 @@ async def restart_bots():
     bots = await bots_cursor.to_list(None)
     for bot in bots:
         bot_token = bot['bot_token']
+        owner = bot['user_id']
         try:
             vj = Client(
                 f"{bot_token}", API_ID, API_HASH,
@@ -151,6 +152,19 @@ async def restart_bots():
             await vj.start()
         except Exception as e:
             print(f"Error while restarting bot with token {bot_token}: {e}")
+        
+# Don't Remove Credit Tg - @SyD_XyZ
+# Ask Doubt on telegram @Syd_XyZ
+
+
+@Client.on_message(filters.command('deletebot') & filters.user(ADMINS))
+async def delete_clone_menu(client, message):
+    syd = message.command[1]
+    if await db.is_clone_exist(syd):
+        await db.delete_clone(syd)
+        await message.reply("**Sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ⚡**")
+    else:
+        await message.reply("**Nᴏ ᴄʟᴏɴᴇ ʙᴏᴛ ғᴏᴜɴᴅ ✖**")
         
 # Don't Remove Credit Tg - @SyD_XyZ
 # Ask Doubt on telegram @Syd_XyZ
