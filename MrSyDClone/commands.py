@@ -221,10 +221,13 @@ async def start(client, message):
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
+            syd = await message.reply("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◘◘◘◘</b>")
             k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=file_id)
             vj = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
+            await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◘◘</b>")
             mg = getattr(vj, vj.media.value)
             file_id = mg.file_id
+            await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◘</b>")
             if cd["update_channel_link"] != None:
                 up = cd["update_channel_link"]
                 button = [[
@@ -233,6 +236,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(button)
             else:
                 reply_markup=None
+            await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◙</b>")
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
@@ -260,6 +264,7 @@ async def start(client, message):
     title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
+    syd = await message.reply("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◘◘◘◘</b>")
     if f_caption is None:
         f_caption = f"{' '.join(filter(lambda x: not x.startswith('channel') and not x.startswith('update') and not x.startswith('Movie') and not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if cd["update_channel_link"] != None:
@@ -270,10 +275,14 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(button)
     else:
         reply_markup=None
+    await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◘◘◘</b>")
     k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=file_id)
     vj = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
+    await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◘◘</b>")
+    await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◘</b>")
     m = getattr(vj, vj.media.value)
     file_id = m.file_id
+    await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◙</b>")
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
