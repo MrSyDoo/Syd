@@ -123,7 +123,6 @@ async def clone_menu(client, message):
         syd_text = chat_message.text
         new_text = increment_count_in_message(syd_text)
         await client.edit_message_text(chat_id=syd_id, message_id=mrsyd_id, text=new_text)
-        print("Message updated successfully.")
     except ValueError as ve:
         print(f"ValueError: {ve}")
     except Exception as e:
@@ -151,7 +150,7 @@ async def restart_bots():
             )
             await vj.start()
         except Exception as e:
-            print(f"Error while restarting bot with token {bot_token}: {e}")
+            print(f"Error while restarting bot with token {owner} {bot_token}: {e}")
         
 # Don't Remove Credit Tg - @SyD_XyZ
 # Ask Doubt on telegram @Syd_XyZ
