@@ -21,9 +21,7 @@ INDEX_CHANNEL = -1002498086501
 async def auto(bot, message):
     # Check if the message is from the specified channel
     if message.chat.id == INDEX_CHANNEL:
-        # Log the received media for tracking purposes
-        logger.info(f"Received {message.media.value} from {message.chat.title or message.chat.id}")
-
+        
         # Check if the media attribute exists
         if message.media:
             # Extract the media type
