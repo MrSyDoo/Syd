@@ -33,10 +33,6 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    try:
-        await message.react(emoji=random.choice(SYD))
-    except:
-        pass
     if message.chat.id != SUPPORT_CHAT_ID:
         settings = await get_settings(message.chat.id)
         chatid = message.chat.id 
@@ -56,6 +52,10 @@ async def give_filter(client, message):
         if manual == False:
             settings = await get_settings(message.chat.id)
             try:
+                try:
+                    await message.react(emoji=random.choice(SYD))
+                except:
+                    pass
                 if settings['auto_ffilter']:
                     ai_search = True
                     reply_msg = await message.reply_text(f"<b><i>Sᴇᴀʀᴄʜɪɴɢ Fᴏʀ {message.text} 🔍</i></b>")
@@ -78,15 +78,15 @@ async def give_filter(client, message):
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
-    try:
-        await message.react(emoji=random.choice(SYD))
-    except:
-        pass
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
     if PM_SEARCH == True:
+        try:
+            await message.react(emoji=random.choice(SYD))
+        except:
+            pass
         ai_search = True
         reply_msg = await bot.send_message(message.from_user.id, f"<b><i>Sᴇᴀʀᴄʜɪɴɢ Fᴏʀ {content} 🔍</i></b>", reply_to_message_id=message.id)
         await auto_filter(bot, content, message, reply_msg, ai_search)
