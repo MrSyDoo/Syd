@@ -158,6 +158,7 @@ async def restart_bots():
 
 @Client.on_message(filters.command('deletebot') & filters.user(ADMINS))
 async def delete_clone_menu(client, message):
+    await message.reply("⚡")
     syd = message.command[1]
     if await db.is_clone_exist(syd):
         await db.delete_clone(syd)
