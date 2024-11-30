@@ -123,6 +123,7 @@ async def start(client, message):
             )
         return
     data = message.command[1]
+    syd = await message.reply("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◘◘◘◘</b>")
     try:
         pre, file_id = data.split('_', 1)
     except:
@@ -265,7 +266,7 @@ async def start(client, message):
     title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
-    syd = await message.reply("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◘◘◘◘</b>")
+    await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◘◘◘</b>")
     if f_caption is None:
         f_caption = f"{' '.join(filter(lambda x: not x.startswith('channel') and not x.startswith('update') and not x.startswith('Movie') and not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if cd["update_channel_link"] != None:
@@ -276,14 +277,14 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(button)
     else:
         reply_markup=None
-    await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◘◘◘</b>")
+    await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◘◘</b>")
     k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=file_id)
     vj = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
-    await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◘◘</b>")
     await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◘</b>")
     m = getattr(vj, vj.media.value)
     file_id = m.file_id
     await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◙</b>")
+    await syd.delete()
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
@@ -291,7 +292,6 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         reply_markup=reply_markup
     )
-    await syd.delete()
     k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
     await asyncio.sleep(600)
     await msg.delete()
