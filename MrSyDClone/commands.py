@@ -42,7 +42,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{me.username}?startgroup=true')
         ],[
-            InlineKeyboardButton('ּ ֶָ֢. Hᴇʟᴩ', callback_data='help'),
+            InlineKeyboardButton('ּ❆ Hᴇʟᴩ', callback_data='help'),
             InlineKeyboardButton('Δʙᴏᴜᴛ ᯓᡣ𐭩', callback_data='about')
         ]]
         if cd["group_link"] != None:
