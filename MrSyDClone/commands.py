@@ -167,6 +167,7 @@ async def start(client, message):
             return await message.reply('<b><i>No such file exist.</b></i>')
         filesarr = []
         for file in files:
+            await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◘◘</b>")
             vj_file_id = file.file_id
             k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=vj_file_id)
             vj = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
@@ -174,6 +175,7 @@ async def start(client, message):
             file_id = mg.file_id
             files_ = await get_file_details(vj_file_id)
             files1 = files_[0]
+            await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◘</b>")
             title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
             size=get_size(files1.file_size)
             f_caption=' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.caption.split()))
@@ -187,7 +189,9 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(button)
             else:
                 reply_markup=None
-       
+
+            await syd.edit_text("<b><blockquote>Fᴏʀᴡᴀʀᴅɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◙◙</b>")
+            await syd.delete()
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
@@ -222,7 +226,6 @@ async def start(client, message):
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
-            syd = await message.reply("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◘◘◘◘</b>")
             k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=file_id)
             vj = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
             await syd.edit_text("<b><blockquote>Fᴇᴛᴄʜɪɴɢ ꜰɪʟᴇ !</blockquote>◙◙◘◘</b>")
