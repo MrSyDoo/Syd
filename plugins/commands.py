@@ -439,10 +439,12 @@ Wᴇ  ᴅᴏɴᴛ ꜱᴜᴩᴩᴏʀᴛ ᴩɪʀᴀᴄʏ, ɪꜰ ᴀɴʏ ᴏꜰ ᴄ
             tz = pytz.timezone('Asia/Kolkata')
             mr_syd = await db.get_syd(userid)
             mr_sy = mr_syd["bot_name"]
+            await message.reply_text("&")
             syd = datetime.now(tz)+timedelta(hours=384)
             btn = [[
                 InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/{mr_sy}")
             ]]
+            await message.reply_text("&")
             await sydfy_user(client, userid, token)
             await message.reply_text(
                 text=f"<b>Hᴇʏ {message.from_user.mention}, Yᴏᴜ ᴀʀᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴠᴇʀɪғɪᴇᴅ !\n\n<blockquote>Nᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ <u>16ᴅᴀʏꜱ [ {syd} ]</u>, Eɴᴊᴏʏ ᴡɪᴛʜ ᴛʜᴇ ʙᴏᴛ ⚡</blockquote></b>",
