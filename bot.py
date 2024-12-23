@@ -28,8 +28,6 @@ from Script import script
 from datetime import date, datetime 
 from aiohttp import web
 from plugins import web_server
-from plugins.clone import restart_bots
-
 from MrSyD.bot import TechVJBot
 from MrSyD.util.keepalive import ping_server
 from MrSyD.bot.clients import initialize_clients
@@ -78,10 +76,6 @@ async def start():
         await TechVJBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
     except:
         pass
-    if CLONE_MODE == True:
-        print("Restarting All Clone Bots.......")
-        await restart_bots()
-        print("Restarted All Clone Bots.")
     app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
