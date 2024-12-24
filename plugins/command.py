@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceRepl
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     data = message.command[1]
-    elif data.split("-", 1)[0] == "sydclone":
+    if data.split("-", 1)[0] == "sydclone":
         userid = data.split("-", 2)[1]
         token = data.split("-", 3)[2]
         if str(message.from_user.id) != str(userid):
