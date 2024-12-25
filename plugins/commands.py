@@ -16,10 +16,14 @@ async def start(client, message):
                 text="<b>Iɴᴠᴀʟɪᴅ ʟɪɴᴋ ᴏʀ Exᴘɪʀᴇᴅ ʟɪɴᴋ !</b>",
                 protect_content=True
             )
+        await message.reply_text("🩵")
         is_valid = await check_sydtoken(client, userid, token)
         if is_valid == True:
+            await message.reply_text("🎉")
             tz = pytz.timezone('Asia/Kolkata')
+            await message.reply_text("🌟")
             mr_syd = await db.get_syd(userid)
+            await message.reply_text("🫥")
             mr_sy = mr_syd["bot_name"]
             await message.reply_text("⚡")
             syd = datetime.now(tz)+timedelta(hours=384)
