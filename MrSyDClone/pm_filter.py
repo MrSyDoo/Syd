@@ -824,6 +824,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('Vᴀʀɪᴏᴜꜱ Bᴜᴛᴛᴏɴꜱ', callback_data='bttn')
         ],[
+            InlineKeyboardButton('Fɪʟᴇ Δꜱꜱᴇꜱᴍᴇɴᴛ', callback_data='bttn')
+        ],[
             InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data')
         ]]
         text="<blockquote><b>Eᴅɪᴛ ᴍᴇ ᴀꜱ ʏᴏᴜʀ ᴡɪꜱʜ ᴍᴀʜɴ.....⚡</b></blockquote>"
@@ -947,6 +949,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await db.update_bot(me.id, data)
        await query.message.reply(text="<b><blockquote>Sᴜᴄᴄᴇꜱꜱᴇꜱꜰᴜʟʟʏ Uᴩᴅᴀᴛᴇᴅ ✅</blockqoute></b>", reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
 
+    elif query.data == "file_false":
+        data = {'file': False}
+        await db.update_bot(me.id, data)
+        
+    elif query.data == "file_true":
+        data = {'file': True}
+        await db.update_bot(me.id, data)
+    
     elif query.data == "pic":
         await query.message.delete()
         links = []  #  Syd_XyZ
