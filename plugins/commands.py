@@ -24,7 +24,7 @@ async def start(client, message):
            # mr_sydd = mr_syd["bot_name"] if mr_syd["bot_name"] else "syd_xyz"
             syd = datetime.now(tz)+timedelta(hours=384)
             btn = [[
-                InlineKeyboardButton('Gᴇᴛ Bᴏᴛ', url='clone')
+                InlineKeyboardButton('Gᴇᴛ Bᴏᴛ', callback_data='clone')
             ]]
             await sydfy_user(client, userid, token)
             await message.reply_text(
