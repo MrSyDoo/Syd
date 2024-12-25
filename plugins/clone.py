@@ -107,6 +107,7 @@ async def clone_menu(client, message):
         )
         await sy.edit_text('◙◙◘◘')
         await vj.start()
+        await sy.edit_text('◙◙◙◘')
         bot = await vj.get_me()
         #await db.add_syd(user_id, bot.username)
         await sy.edit_text('◙◙◙◙')
@@ -157,7 +158,7 @@ async def restart_bots():
 
 
 @Client.on_message(filters.command('deletebot') & filters.user(ADMINS))
-async def delete_clone_menu(client, message):
+async def delete_clone(client, message):
     await message.reply("⚡")
     syd = message.command[1]
     if await db.is_clone_exist(syd):
