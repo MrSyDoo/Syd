@@ -90,6 +90,7 @@ async def start(client, message):
         except Exception as e:
             print(f"Error sending message: {e}")
 
+    mrsydmen = await message.reply_text("✨")
     me = await client.get_me()
     cd = await db.get_bot(me.id)
     MR_SYD = cd["fsub"]  # Set AUTH_CHANNEL dynamically
@@ -108,6 +109,7 @@ async def start(client, message):
             ]
         ]
 
+        await mrsydmen.delete()
         if message.command[1] != "subscribe":
             try:
                 kk, file_id = message.command[1].split("_", 1)
@@ -140,6 +142,7 @@ async def start(client, message):
             InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=t)
         ]]
         k = await client.send_message(chat_id=message.from_user.id,text=f"<b>Get All Files in a Single Click!!!\n\n📂 ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(btn))
+        await mrsydmen.delete()
         await asyncio.sleep(300)
         await k.edit("<b>Your message is successfully deleted!!!</b>")
         return
@@ -157,11 +160,13 @@ async def start(client, message):
             InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=t)
         ]]
         k = await client.send_message(chat_id=user,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(btn))
+        await mrsydmen.delete()
         await asyncio.sleep(1200)
         await k.edit("<b>Your message is successfully deleted!!!</b>")
         return
         
     elif data.startswith("all"):
+        await mrsydmen.delete()
         files = temp.GETALL.get(file_id)
         if not files:
             return await message.reply('<b><i>No such file exist.</b></i>')
@@ -207,6 +212,7 @@ async def start(client, message):
         await k.edit_text("<b>Your All Files/Videos is successfully deleted!!!</b>")
         return    
     elif data.startswith("files"):
+        await mrsydmen.delete()
         if cd['url']:
             files_ = await get_file_details(file_id)
             files = files_[0]
@@ -265,6 +271,7 @@ async def start(client, message):
         except:
             pass
         return await message.reply('No such file exist.')
+    await mrsydmen.delete()
     files = files_[0]
     title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
