@@ -23,11 +23,11 @@ async def start(client, message):
             tz = pytz.timezone('Asia/Kolkata')
             mr_syd = await db.get_syd(userid)
             await message.reply_text("🫥")
-            mr_sy = mr_syd["bot_name"] if mr_syd["bot_name"] else "syd_xyz"
+           # mr_sy = mr_syd["bot_name"] if mr_syd["bot_name"] else "syd_xyz"
             await message.reply_text("⚡")
             syd = datetime.now(tz)+timedelta(hours=384)
             btn = [[
-                InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/{mr_sy}")
+                InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/mr_sy")
             ]]
             await message.reply_text("🩵")
             await sydfy_user(client, userid, token)
