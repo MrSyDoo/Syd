@@ -21,7 +21,6 @@ async def start(client, message):
         if is_valid == True:
             await message.reply_text("🎉")
             tz = pytz.timezone('Asia/Kolkata')
-            await message.reply_text("🌟")
             mr_syd = await db.get_syd(userid)
             await message.reply_text("🫥")
             mr_sy = mr_syd["bot_name"] if mr_syd["bot_name"] else "syd_xyz"
