@@ -146,6 +146,7 @@ class Database:
             'hbtnlink': None,
             'fsub': None,
             'pics': None,
+            'file': False,
             'strtsyd': script.CLONE_START_TXT,
             'abtsyd': script.CLONE_ABOUT_TXT
         }
