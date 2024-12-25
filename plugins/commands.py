@@ -16,20 +16,16 @@ async def start(client, message):
                 text="<b>Iɴᴠᴀʟɪᴅ ʟɪɴᴋ ᴏʀ Exᴘɪʀᴇᴅ ʟɪɴᴋ !</b>",
                 protect_content=True
             )
-        await message.reply_text("🩵")
         is_valid = await check_sydtoken(client, userid, token)
         if is_valid == True:
-            await message.reply_text("🎉")
             tz = pytz.timezone('Asia/Kolkata')
             mr_syd = await db.get_syd(userid)
-            await message.reply_text("🫥")
-           # mr_sy = mr_syd["bot_name"] if mr_syd["bot_name"] else "syd_xyz"
-            await message.reply_text("⚡")
+            await message.reply_text("🌟")
+            mr_sydd = mr_syd["bot_name"] if mr_syd["bot_name"] else "syd_xyz"
             syd = datetime.now(tz)+timedelta(hours=384)
             btn = [[
-                InlineKeyboardButton("Gᴇᴛ Bᴏᴛ", url=f"https://telegram.me/mr_sy")
+                InlineKeyboardButton('Gᴇᴛ Bᴏᴛ', url=f'https://telegram.me/{mr_sydd}')
             ]]
-            await message.reply_text("🩵")
             await sydfy_user(client, userid, token)
             await message.reply_text(
                 text=f"<b>Hᴇʏ {message.from_user.mention}, Yᴏᴜ ᴀʀᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴠᴇʀɪғɪᴇᴅ !\n\n<blockquote>Nᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ <u>16ᴅᴀʏꜱ [ {syd} ]</u>, Eɴᴊᴏʏ ᴡɪᴛʜ ᴛʜᴇ ʙᴏᴛ ⚡</blockquote></b>",
