@@ -824,7 +824,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('Vᴀʀɪᴏᴜꜱ Bᴜᴛᴛᴏɴꜱ', callback_data='bttn')
         ],[
-            InlineKeyboardButton('Fɪʟᴇ Δꜱꜱᴇꜱᴍᴇɴᴛ', callback_data='bttn')
+            InlineKeyboardButton('Fɪʟᴇ Δꜱꜱᴇꜱᴍᴇɴᴛ', callback_data='filte')
         ],[
             InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data')
         ]]
@@ -834,7 +834,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-        
+
+    elif query.data == "filte":
+        btn = [[
+            InlineKeyboardButton("Tʀᴜᴇ ✅", callback_data="file_true"),
+            InlineKeyboardButton("Fᴀʟꜱᴇ ✖️", callback_data="file_false"),
+        ],[
+            InlineKeyboardButton("« Bᴀᴄᴋ", callback_data="edit"),
+            InlineKeyboardButton('⛒ CʟᴏꜱE ⛒', callback_data='close_data')
+        ]]
+        await query.message.edit_text(text = "ᴛᴜʀɴ ᴏɴ ꜰɪʟᴇ ᴀꜱꜱᴇꜱᴍᴇɴᴛ ᴛᴏ ꜱᴇᴀʀᴄʜ ꜰɪʟᴇꜱ ᴇʟꜱᴇ ɪᴛ ᴡᴏɴᴛ ᴅᴇᴛᴇᴄᴛ ᴀɴʏ qᴜᴇʀɪᴇꜱ ᴏʀ ʀᴇqᴜᴇꜱᴛ ᴏꜰ ꜰɪʟᴇ", reply_markup = InlineKeyboardMarkup(btn))
+
     elif query.data == "bttn":
         btn = [[
             InlineKeyboardButton('Bᴜᴛᴛᴏɴ 1[ꜱᴛᴀʀᴛ]', callback_data='btn1'),
@@ -952,10 +962,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "file_false":
         data = {'file': False}
         await db.update_bot(me.id, data)
+        await query.message.reply(text="ꜰᴀʟꜱᴇ ✖️")
         
     elif query.data == "file_true":
         data = {'file': True}
         await db.update_bot(me.id, data)
+        await query.message.reply(text="ᴛʀᴜᴇ ✅")
     
     elif query.data == "pic":
         await query.message.delete()
