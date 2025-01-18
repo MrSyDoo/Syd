@@ -121,7 +121,7 @@ VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 'https://t.me/Mod_Moviez_X')
 # Shortlink Info
 SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'gplinks.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', '36d6dd04a79634bb5a4ae150903c78b9c9121ce6)
+SHORTLINK_API = environ.get('SHORTLINK_API', '36d6dd04a79634bb5a4ae150903c78b9c9121ce6')
 
 # Others
 MAX_B_TN = environ.get("MAX_B_TN", "5")
